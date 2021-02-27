@@ -648,6 +648,7 @@ draw = function() {
   }
   if (soundWanted === true && !themeSong.isPlaying() && player.health > 0 && gamePlaying === false) {
     themeSong.play();
+    pianoTheme.stop();
     soundPlaying = true
   }
   textSize(20);
