@@ -65,7 +65,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1200, 600);
+  createCanvas(600, 600);
 }
 
 var level = 1;
