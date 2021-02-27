@@ -645,7 +645,7 @@ draw = function() {
   if (soundWanted === true && !themeSong.isPlaying() && player.health > 0 && gamePlaying === false) {
     themeSong.play();
     pianoTheme.stop();
-    soundPlaying = true
+    soundPlaying = true;
   }
    if(soundWanted === true && !pianoTheme.isPlaying() && gamePlaying === true && player.health > 0) {
     themeSong.stop();
