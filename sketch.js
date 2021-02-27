@@ -560,10 +560,6 @@ draw = function() {
   if(mouseIsPressed && mouseX > scene + 2000 && mouseX < scene + 2200 && mouseY > 285 && mouseY < 305) {
     gameVolume = mouseX + 15 - 220;
   }
-  if(soundWanted === true && !pianoTheme.isPlaying() && gamePlaying === true && player.health > 0) {
-    themeSong.stop();
-    pianoTheme.play();
-  }
   if(deathTimer > 10 && walkFrame !== 12 && player.health < 1) {
     walkFrame++;
     deathTimer = 0;
@@ -650,6 +646,10 @@ draw = function() {
     themeSong.play();
     pianoTheme.stop();
     soundPlaying = true
+  }
+   if(soundWanted === true && !pianoTheme.isPlaying() && gamePlaying === true && player.health > 0) {
+    themeSong.stop();
+    pianoTheme.play();
   }
   textSize(20);
   fill(255);
