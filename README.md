@@ -1,2 +1,2 @@
 # killertomatogame
-killer tomatoe
+killer tomato
