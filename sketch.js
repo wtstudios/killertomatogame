@@ -642,12 +642,12 @@ draw = function() {
   if(mouseIsPressed && mouseX > 20 && mouseX < 100 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
     gamePlaying = false;
   }
-  if (soundWanted === true && !themeSong.isPlaying() && player.health > 0 && gamePlaying === true) {
+  if (soundWanted === true && !themeSong.isPlaying() && player.health > 0 && gamePlaying === false) {
     themeSong.play();
     pianoTheme.stop();
     soundPlaying = true;
   }
-   if(soundWanted === true && !pianoTheme.isPlaying() && gamePlaying === false && player.health > 0) {
+   if(soundWanted === true && !pianoTheme.isPlaying() && gamePlaying === true && player.health > 0) {
     themeSong.stop();
     pianoTheme.play();
   }
