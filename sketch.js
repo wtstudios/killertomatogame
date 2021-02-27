@@ -548,7 +548,6 @@ draw = function() {
     splatSound.setVolume(gameVolume / 200);
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 180 && mouseY < 230) {
       gamePlaying = true;
-      level = 1;
     }
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 260 && mouseY < 310) {
       scene = -1200;
