@@ -591,7 +591,11 @@ draw = function() {
     stroke(0, 0, 0);
     fill(0);
     text(score, 300, 30);
-    text(speedRunTimerSec + "." + speedRunTimerMil, 400, 30)
+    text(speedRunTimerSec + "." + speedRunTimerMil, 400, 30);
+    fill(255, 0, 0);
+    rect(20, 20, 80, 40, 5);
+    fill(0);
+    text("BACK", 35, 47);
     playerDraw();
     playerMove();
     timer++;
@@ -647,7 +651,10 @@ draw = function() {
       speedRunTimerMil = 0;
     }
   }
+  if(mouseIsPressed && mouseX > 20 && mouseX < 100 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
+    gamePlaying = false;
+  }
   textSize(20);
   fill(255);
-  text("Made by Henry MacDougall", 20, 30);
+  text("Made by Henry MacDougall", 20, 570);
 };
