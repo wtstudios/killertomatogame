@@ -556,10 +556,6 @@ draw = function() {
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 340 && mouseY < 390) {
       scene = -1800;
     }
-      if (soundWanted === true && !themeSong.isPlaying() && gamePlaying === false) {
-        themeSong.play();
-        soundPlaying = true
-      }
   }
   if(mouseIsPressed && mouseX > scene + 2000 && mouseX < scene + 2200 && mouseY > 285 && mouseY < 305) {
     gameVolume = mouseX + 15 - 220;
@@ -568,7 +564,7 @@ draw = function() {
     themeSong.stop();
     pianoTheme.play();
   }
-  if (soundWanted === true && !themeSong.isPlaying() && player.health > 0 && gamePlaying === false) {
+  if (soundWanted === true && !themeSong.isPlaying() && player.health > 0) {
       themeSong.play();
       soundPlaying = true
   }
