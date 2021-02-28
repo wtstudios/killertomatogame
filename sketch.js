@@ -548,6 +548,7 @@ draw = function() {
     splatSound.setVolume(gameVolume / 200);
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 180 && mouseY < 230) {
       gamePlaying = true;
+      level = 1;
     }
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 260 && mouseY < 310) {
       scene = -1200;
@@ -555,9 +556,21 @@ draw = function() {
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 340 && mouseY < 390) {
       scene = -1800;
     }
+      if (soundWanted === true && !themeSong.isPlaying() && gamePlaying === false) {
+        themeSong.play();
+        soundPlaying = true
+      }
   }
   if(mouseIsPressed && mouseX > scene + 2000 && mouseX < scene + 2200 && mouseY > 285 && mouseY < 305) {
     gameVolume = mouseX + 15 - 220;
+  }
+  if(soundWanted === true && !pianoTheme.isPlaying() && gamePlaying === true && player.health > 0) {
+    themeSong.stop();
+    pianoTheme.play();
+  }
+  if (soundWanted === true && !themeSong.isPlaying() && player.health > 0 && gamePlaying === false) {
+      themeSong.play();
+      soundPlaying = true
   }
   if(deathTimer > 10 && walkFrame !== 12 && player.health < 1) {
     walkFrame++;
@@ -640,9 +653,6 @@ draw = function() {
   }
   if(mouseIsPressed && mouseX > 20 && mouseX < 100 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
     gamePlaying = false;
-  }
-   if(soundWanted === true && !pianoTheme.isPlaying() && player.health > 0) {
-    pianoTheme.play();
   }
   textSize(20);
   fill(255);
