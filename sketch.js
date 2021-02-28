@@ -586,7 +586,7 @@ draw = function() {
   }
   if (gamePlaying === true) {
     player.onBlock = false;
-    background(173, 216, 230);
+    background(0, 200, 255);
     drawLevel(player.camX, -60);
     stroke(0, 0, 0);
     fill(0);
