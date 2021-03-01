@@ -18,6 +18,8 @@ let plant1Graphic;
 let brickGraphic;
 let humanGraphic;
 let stereoGraphic;
+let sun;
+let cloud;
 let themeSong;
 var walkFrames = [];
 var walkFrame = 1;
@@ -49,6 +51,8 @@ function preload() {
   plant1Graphic = loadImage('plant1.png');
   blankDirt = loadImage('dirt_block!grass.png');
   dirtBlock2Graphic = loadImage('dirt_block.rot1.png');
+  cloud = loadImage('cloud.png');
+  sun = loadImage('sun.png');
   walkFrames[0] = loadImage('tomato_graphic1.png');
   walkFrames[1] = loadImage('tomato_graphic2.png');
   walkFrames[2] = loadImage('tomato_graphic3.png');
@@ -494,7 +498,7 @@ function mouseReleased() {
   }
 }
 draw = function() {
-  background(173, 216, 230);
+  background(0, 0, 230);
   if (gamePlaying === false) {
     strokeWeight(1);
     stroke(0);
