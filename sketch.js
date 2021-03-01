@@ -399,6 +399,13 @@ var playerMove = function() {
   player.y += player.yVel;
 };
 var drawLevel = function(x, y) {
+  image(sun, 400, 100, 120, 120);
+  image(cloud, 300, 200, 60, 60);
+  image(cloud, 200, 100, 80, 80);
+  image(cloud, 390, 150, 60, 60);
+  image(cloud, 30, 60, 50, 50);
+  image(cloud, 100, 200, 60, 60);
+  image(cloud, 500, 50, 60, 60);
   for (var i = 0; i < levels[level - 1].length; i++) {
     for (var j = 0; j < levels[level - 1][i].length; j++) {
       switch (levels[level - 1][i][j]) {
