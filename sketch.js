@@ -498,7 +498,7 @@ function mouseReleased() {
   }
 }
 draw = function() {
-  background(0, 0, 230);
+  background(0, 200, 255);
   if (gamePlaying === false) {
     strokeWeight(1);
     stroke(0);
