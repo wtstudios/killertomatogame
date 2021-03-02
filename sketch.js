@@ -639,7 +639,7 @@ draw = function() {
     textSize(40);
     text("YOU WIN", 40, 100);
     textSize(20);
-    text("WITH A TOTAL OF " + score + " HUMANS KILLED AND A SPEEDRUN TIME OF " + speedRunTimerSec + "." + speedRunTimerMil + "SECONDS", 40, 150, 520, 300);
+    text("WITH A TOTAL OF " + score + " HUMANS KILLED AND A SPEEDRUN TIME OF " + speedRunTimerSec + "." + speedRunTimerMil + " SECONDS", 40, 150, 520, 300);
     speedRunTimerMil--;
   }
   if(gamePlaying === true) {
