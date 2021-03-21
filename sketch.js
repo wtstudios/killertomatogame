@@ -9,8 +9,7 @@ let blockGraphic;
 let tomatoCrateGraphic;
 let dirtBlockGraphic;
 let dirtBlock2Graphic;
-let pianoTheme;
-let pubertyLove;
+let pianoTheme;let pubertyLove;
 let scream;
 let splatSound;
 let blankDirt;
@@ -19,8 +18,7 @@ let brickGraphic;
 let humanGraphic;
 let stereoGraphic;
 let sun;
-let cloud;
-let themeSong;
+let cloud;let themeSong;
 var walkFrames = [];
 var walkFrame = 1;
 var walkTimer = 0;
@@ -103,19 +101,19 @@ var levels = [
     "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
-  [ "II-----------bbbbbbbbbbb-------------bbbbbbbbbbbbbbbb",
-    "I------------b---------b-------------B-----B--------b",
-    "I------------b---------b#-----i------B-----B--------b",
-    "I------------b---------bbbbbbbbb----bB--B--B--B-----b",
-    "I------------b---------b-----------bbB--B--B--B-----b",
-    "I------------b---------b----i-----bbbB--B--B--B-----b",
-    "I------------b---------b--bbbbbbbbbbbB--B--B--B-----b",
-    "I------------b---------b----------------B-----B-----b",
-    "I------------b---------b=------1--i-----B-i--=B--@--b",
-    "Iiiiiiiiiiiiib---------DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  [ "------------bbbbbbbbbbb-------------bbbbbbbbbbbbbbbb",
+    "------------b---------b-------------B-----B--------b",
+    "------------b---------b#-----i------B-----B--------b",
+    "------------b---------bbbbbbbbb----bB--B--B--B-----b",
+    "------------b---------b-----------bbB--B--B--B-----b",
+    "------------b---------b----i-----bbbB--B--B--B-----b",
+    "------------b---------b--bbbbbbbbbbbB--B--B--B-----b",
+    "------------b---------b----------------B-----B-----b",
+    "------------b---------b=------1--i-----B-i--=B--@--b",
+    "iiiiiiiiiiiib---------DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+    "bbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
-   ["bI----------------------------b",
+  ["b-----------------------------b",
     "b------------------b--bbbbbbbbb",
     "b---------------b--b--b-------b",
     "b------b----b------b--b----b--b",
@@ -127,7 +125,7 @@ var levels = [
     "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
-   ["II------------------------------------------------------II",
+   ["I--------------------------------------------------------I",
     "I--------------------------------------------------------I",
     "I------------------1-----------1-------------------------I",
     "I-----------------DDDD----DDDDDDDDDDD--------------------I",
@@ -184,11 +182,11 @@ var invisBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
+    player.camX = player.camX + x - 325;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 215;
     player.xVel = 0;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
@@ -207,11 +205,11 @@ var block = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
+    player.camX = player.camX + x - 325;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 215;
     player.xVel = 0;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
@@ -233,15 +231,11 @@ var brick = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
+    player.camX = player.camX + x - 325;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 215;
     player.xVel = 0;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
@@ -260,15 +254,11 @@ var dirtBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
+    player.camX = player.camX + x - 325;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 215;
     player.xVel = 0;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
@@ -287,15 +277,11 @@ var dirtBlock2 = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
+    player.camX = player.camX + x - 325;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 215;
     player.xVel = 0;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
@@ -314,15 +300,11 @@ var blankDirtBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
+    player.camX = player.camX + x - 325;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 215;
     player.xVel = 0;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
@@ -378,9 +360,8 @@ var playerMove = function() {
   if (player.keys[2] === true && player.xVel < 7 && player.health > 0) {
     player.xVel++;
   }
-  if (player.y > 520) {
-    player.onBlock = true;
-    player.y = 520;
+  if (player.y > height) {
+    player.respawn = true;
   }
   if (player.y < -30) {
     fill(229, 213, 0);
@@ -498,7 +479,7 @@ function mouseReleased() {
   }
 }
 draw = function() {
-  background(0, 200, 255);
+  background(0, 0, 230);
   if (gamePlaying === false) {
     strokeWeight(1);
     stroke(0);
@@ -639,7 +620,7 @@ draw = function() {
     textSize(40);
     text("YOU WIN", 40, 100);
     textSize(20);
-    text("WITH A TOTAL OF " + score + " HUMANS KILLED AND A SPEEDRUN TIME OF " + speedRunTimerSec + "." + speedRunTimerMil + " SECONDS", 40, 150, 520, 300);
+    text("WITH A TOTAL OF " + score + " HUMANS KILLED AND A SPEEDRUN TIME OF " + speedRunTimerSec + "." + speedRunTimerMil, 40, 150, 520, 300);
     speedRunTimerMil--;
   }
   if(gamePlaying === true) {
