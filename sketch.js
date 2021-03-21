@@ -182,7 +182,7 @@ var invisBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 325;
+    player.camX = player.camX + x - 330;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -205,7 +205,7 @@ var block = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 325;
+    player.camX = player.camX + x - 330;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -231,7 +231,7 @@ var brick = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 325;
+    player.camX = player.camX + x - 330;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -254,7 +254,7 @@ var dirtBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 325;
+    player.camX = player.camX + x - 315;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -277,7 +277,7 @@ var dirtBlock2 = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 325;
+    player.camX = player.camX + x - 315;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -300,7 +300,7 @@ var blankDirtBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 325;
+    player.camX = player.camX + x - 315;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
