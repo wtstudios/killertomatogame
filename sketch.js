@@ -91,7 +91,7 @@ var player = {
   health: 10,
 };
 var levels = [
-  ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbI",
     "b----------------------------I",
     "b----------i------i----------I",
     "b-----bbbbbbbbbbbbbbbb-------I",
@@ -99,7 +99,7 @@ var levels = [
     "bb-------------------b-------I",
     "bbb------------------b-------I",
     "bbbb-----------------b-------I",
-    "bbbbb--1=-i---i-1--@-b---#--=I",
+    "bbbbb--1=-i---i-1--@-x---#--=I",
     "dddddDDDDDDDDDDDDDDDDdDDDDDDDd",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
@@ -115,17 +115,17 @@ var levels = [
     "Iiiiiiiiiiiiib---------dDDDDDDDDDDDDDDDDdDDDDDdDDDDDd",
     "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
-   ["bI----------------------------b",
-    "b------------------b--bbbbbbbbb",
-    "b---------------b--b--b-------b",
-    "b------b----b------b--b----b--b",
-    "b-b----------------b---i---b--b",
-    "b------------------bbbbbbbbb--b",
-    "b-----i-------------b---------b",
-    "b-----b-------------b--bbbbbbbb",
-    "b@--------i---1-----b---i----#b",
-    "dDDDDDDDDDDDDDDDDDDDdDDDDDDDDDd",
-    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   ["bI----------------------------b---------II",
+    "b------------------b--bbbbbbbbb----------I",
+    "b---------------b--b--b-------b----------I",
+    "b------b----b------b--b----b--b----------I",
+    "b-b----------------b---i---b--b----------I",
+    "b------------------bbbbbbbbb--b----------I",
+    "b-----i-------------b---------b----------I",
+    "b-----b-------------b--bbbbbbbb----------I",
+    "b@--------i---1-----b---i----#b----------I",
+    "dDDDDDDDDDDDDDDDDDDDdDDDDDDDDDdDDDDDDDDDDD",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
    ["II------------------------------------------------------II",
     "I--------------------------------------------------------I",
@@ -226,9 +226,9 @@ var block = function(x, y) {
 var plant1 = function(x, y) {
   image(plant1Graphic, x, y, blockSize, blockSize);
 };
-var brick = function(x, y) {
+var brick = function(x, y, solid) {
   image(brickGraphic, x, y, blockSize, blockSize);
-  if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
+  if(solid === true) { if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
   }
@@ -250,7 +250,7 @@ var brick = function(x, y) {
     player.onBlock = false;
     if(player.yVel > 15) {
       player.health -= 10;
-    }
+    }}
   }
 };
 var dirtBlock = function(x, y) {
@@ -430,7 +430,10 @@ var drawLevel = function(x, y) {
           dirtBlock(j * blockSize + x, i * blockSize + y);
           break;
         case 'b':
-          brick(j * blockSize + x, i * blockSize + y);
+          brick(j * blockSize + x, i * blockSize + y, true);
+          break;
+          case 'x':
+          brick(j * blockSize + x, i * blockSize + y, false);
           break;
         case '1':
           plant1(j * blockSize + x, i * blockSize + y);
@@ -514,9 +517,7 @@ draw = function() {
     rect(scene + 200, 340, 200, 50, 5);
     fill(0, 0, 0);
     textSize(30);
-    text("Play", scene + 265, 215);
-    text("Help", scene + 265, 295);
-    text("Settings", scene + 250, 375);
+    text("Play", scene + 265, 215); text("Help", scene + 265, 295); text("Settings", scene + 250, 375);
     image(menuTomato, scene + 120, 370, 350, 300);
     fill(120, 120, 120);
     rect(scene + 740, 250, 80, 100, 10);
@@ -662,6 +663,5 @@ draw = function() {
   }
   textSize(20);
   fill(255);
-  text("Made by Henry MacDougall", 20, 570);
-};
+  text("Made by Henry MacDougall", 20, 570); };
 
