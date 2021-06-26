@@ -250,7 +250,7 @@ var brick = function(x, y, solid) {
     player.onBlock = false;
     if(player.yVel > 15) {
       player.health -= 10;
-    }}
+    }} else (fill(0, 0, 0, 100); rect(x, y, blockSize, blockSize);)
   }
 };
 var dirtBlock = function(x, y) {
