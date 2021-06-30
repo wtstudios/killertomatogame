@@ -586,7 +586,6 @@ draw = function() {
   if (gamePlaying === true) {
     player.onBlock = false;
     background(0, 200, 255);
-    playerDraw();
     drawLevel(player.camX, -60);
     stroke(0, 0, 0);
     fill(0);
@@ -596,6 +595,7 @@ draw = function() {
     rect(20, 20, 80, 40, 5);
     fill(0);
     text("BACK", 35, 47);
+    playerDraw();
     playerMove();
     timer++;
   }
