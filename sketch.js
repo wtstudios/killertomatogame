@@ -586,8 +586,8 @@ draw = function() {
   if (gamePlaying === true) {
     player.onBlock = false;
     background(0, 200, 255);
-    drawLevel(player.camX, -60);
     playerDraw();
+    drawLevel(player.camX, -60);
     stroke(0, 0, 0);
     fill(0);
     text(score, 300, 30);
