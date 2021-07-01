@@ -200,14 +200,18 @@ var invisBlock = function(x, y) {
     }
   }
 };
-var block = function(x, y) {
+var block = function(x, y, solid) {
   image(blockGraphic, x, y, blockSize, blockSize);
-  if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
+  if(solid === true) { if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
     player.camX = player.camX + x - 320;
+    player.xVel = 0;
+  }
+  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
+    player.camX = player.camX + x - 220;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -220,7 +224,7 @@ var block = function(x, y) {
     player.onBlock = false;
     if(player.yVel > 15) {
       player.health -= 10;
-    }
+    }}
   }
 };
 var plant1 = function(x, y) {
