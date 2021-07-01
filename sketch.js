@@ -109,7 +109,7 @@ var levels = [
     "I------------b---------bbbbbbbbb----xB--B--B--B-----b",
     "I------------b---------b-----------xxB--B--B--B-----b",
     "I------------b---------b----i-----bxxB--B--B--B-----b",
-    "I------------b---------b--bbbbbbbbbxxB--B--B--B-----b",
+    "I------------b---------b--bbbbbbbbbxxl--B--B--B-----b",
     "I------------b---------b----------------B-----B-----b",
     "I------------b---------b=------1--i-----B-i--=B--@--b",
     "Iiiiiiiiiiiiib---------dDDDDDDDDDDDDDDDDdDDDDDdDDDDDd",
@@ -453,6 +453,9 @@ var drawLevel = function(x, y) {
           break;
         case 'I':
           invisBlock(j * blockSize + x, i * blockSize + y);
+          break;
+        case 'l':
+          invisBlock(j * blockSize + x, i * blockSize + y, false);
           break;
       }
     }
