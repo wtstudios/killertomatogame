@@ -418,7 +418,7 @@ var drawLevel = function(x, y) {
     for (var j = 0; j < levels[level - 1][i].length; j++) {
       switch (levels[level - 1][i][j]) {
         case 'B':
-          block(j * blockSize + x, i * blockSize + y);
+          block(j * blockSize + x, i * blockSize + y, true);
           break;
         case '=':
           stereo(j * blockSize + x, i * blockSize + y);
@@ -455,7 +455,7 @@ var drawLevel = function(x, y) {
           invisBlock(j * blockSize + x, i * blockSize + y);
           break;
         case 'l':
-          invisBlock(j * blockSize + x, i * blockSize + y, false);
+          block(j * blockSize + x, i * blockSize + y, false);
           break;
       }
     }
@@ -464,25 +464,25 @@ var drawLevel = function(x, y) {
 
 };
 keyPressed = function() {
-  if (key.code === 97 || keyCode === LEFT_ARROW || key === 'a') {
+  if (key.code === 97 || keyCode === LEFT_ARROW) {
     player.keys[0] = true;
   }
-  if (key.code === 119 || keyCode === UP_ARROW || key === 'w') {
+  if (key.code === 119 || keyCode === UP_ARROW) {
     player.keys[1] = true;
   }
-  if (key.code === 100 || keyCode === RIGHT_ARROW || key === 'd') {
+  if (key.code === 100 || keyCode === RIGHT_ARROW) {
     player.keys[2] = true;
   }
 };
 
 keyReleased = function() {
-  if (key.code === 97 || keyCode === LEFT_ARROW || key === 'a') {
+  if (key.code === 97 || keyCode === LEFT_ARROW) {
     player.keys[0] = false;
   }
-  if (key.code === 119 || keyCode === UP_ARROW || key === 'w') {
+  if (key.code === 119 || keyCode === UP_ARROW) {
     player.keys[1] = false;
   }
-  if (key.code === 100 || keyCode === RIGHT_ARROW || key === 'd') {
+  if (key.code === 100 || keyCode === RIGHT_ARROW) {
     player.keys[2] = false;
   }
 };
@@ -558,7 +558,7 @@ draw = function() {
     text("HELP", scene + 1450, 100);
     textSize(30);
     fill(0);    
-    text("To play, use arrow keys or WAD. Avoid the stereos. Crush humans to get points. Jump and run into a wall to roll up it! Try to get to the crate of tomatoes to complete the level. Enjoy!", scene + 1300, 200, 400, 400);
+    text("To play, use arrow keys. Avoid the stereos. Crush humans to get points. Jump and run into a wall to roll up it! Try to get to the crate of tomatoes to complete the level. Enjoy!", scene + 1300, 200, 400, 400);
     textSize(12);
     themeSong.setVolume(gameVolume / 200);
     pianoTheme.setVolume(gameVolume / 200);
