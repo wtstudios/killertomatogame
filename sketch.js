@@ -558,7 +558,7 @@ draw = function() {
     text("HELP", scene + 1450, 100);
     textSize(30);
     fill(0);    
-    text("To play, use arrow keys. Avoid the stereos. Crush humans to get points. Jump and run into a wall to roll up it! Try to get to the crate of tomatoes to complete the level. Enjoy!", scene + 1300, 200, 400, 400);
+    text("To play, use WAD. Avoid the stereos. Crush humans to get points. Jump and run into a wall to roll up it! Try to get to the crate of tomatoes to complete the level. Enjoy!", scene + 1300, 200, 400, 400);
     textSize(12);
     themeSong.setVolume(gameVolume / 200);
     pianoTheme.setVolume(gameVolume / 200);
