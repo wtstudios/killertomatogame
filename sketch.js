@@ -70,7 +70,7 @@ function preload() {
 
 function setup() {
   let cnv = createCanvas(600, 600);
-  cnv.position(null, 100);
+  cnv.position(displayWidth / 2 - width / 2, 100);
 }
 
 var level = 1;
