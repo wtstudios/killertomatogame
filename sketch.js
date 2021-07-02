@@ -387,10 +387,6 @@ var playerMove = function() {
   if (player.keys[2] === true && player.xVel < 7 && player.health > 0) {
     player.xVel++;
   }
-  if (player.y > 520) {
-    player.onBlock = true;
-    player.y = 520;
-  }
   if (player.y < -30) {
     fill(229, 213, 0);
     triangle(290, 40, 300, 20, 310, 40);
@@ -407,7 +403,6 @@ var playerMove = function() {
   if (player.xVel < 0) {
     player.xVel += 0.5;
   }
-  
   player.camX -= player.xVel;
   player.y += player.yVel;
 };
