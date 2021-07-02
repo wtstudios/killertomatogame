@@ -360,7 +360,6 @@ var stereo = function(x, y) {
       walkTimer = 0;
       pubertyLove.play();
       pianoTheme.stop();
-      speedRunTimerMil--;
     }
   }
   if(dist(300, player.x, x + blockSize / 2, y + blockSize / 2) <= 100 && !pubertyLove.isPlaying()) {
@@ -653,6 +652,9 @@ draw = function() {
     speedRunTimerMil--;
   }
   if(gamePlaying === true) {
+    if(splatSound.isPlaying === true) {
+       speedRunTimerMil--;
+    }
     speedRunTimerMil++;
     if(speedRunTimerMil > 60) {
       speedRunTimerSec++;
