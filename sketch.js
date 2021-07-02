@@ -360,7 +360,6 @@ var stereo = function(x, y) {
       walkTimer = 0;
       pubertyLove.play();
       pianoTheme.stop();
-      speedRunTimerSec--;
       speedRunTimerMil--;
     }
   }
