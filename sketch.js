@@ -1,5 +1,6 @@
 var speedRunTimerSec = 0;
 var speedRunTimerMil = 0;
+var multi = 1;
 var score = 0;
 var deathTimer = 0;
 var timer = 0;
@@ -512,6 +513,7 @@ function mouseReleased() {
   }
 }
 draw = function() {
+  blockSize = width / 10;
   background(0, 200, 255);
   if (gamePlaying === false) {
     strokeWeight(1);
@@ -604,8 +606,9 @@ draw = function() {
     text(speedRunTimerSec + "." + speedRunTimerMil, 400, 30);
     fill(255, 0, 0);
     rect(20, 20, 80, 40, 5);
+    rect(120, 20, 100, 40, 5);
     fill(0);
-    text("BACK", 35, 47);
+    text("BACK             FULLSCREEN", 35, 47);
     playerDraw();
     playerMove();
     timer++;
@@ -675,7 +678,11 @@ draw = function() {
   if(mouseIsPressed && mouseX > 20 && mouseX < 100 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
     gamePlaying = false;
   }
-  textSize(20);
+  if(mouseIsPressed && mouseX > 120 && mouseX < 240 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
+    let fs = fullscreen();
+    fullscreen(true);
+  }
+  textSize(width / 30);
   fill(255);
-  text("Made by Henry MacDougall", 20, 570); };
-
+  text("Made by Henry MacDougall", 20, 570); 
+};
