@@ -360,6 +360,7 @@ var stereo = function(x, y) {
       walkTimer = 0;
       pubertyLove.play();
       pianoTheme.stop();
+      timer--;
     }
   }
   if(dist(300, player.x, x + blockSize / 2, y + blockSize / 2) <= 100 && !pubertyLove.isPlaying()) {
