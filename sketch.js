@@ -69,7 +69,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 600);
+  let cnv = createCanvas(600, 600);
+  cnv.position(100);
 }
 
 var level = 1;
