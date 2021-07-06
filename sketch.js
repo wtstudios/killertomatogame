@@ -34,8 +34,11 @@ var gameVolume = 100;
 var soundWanted = true;
 var soundPlaying = false;
 var humany = [];
-
+let skin;
+var showHitBox = false;
+var clickTimer = 0;
 function preload() {
+  skin = null;
   soundFormats('ogg', 'mp3');
   themeSong = loadSound('themesong.mp3');
   splatSound = loadSound('tomatosplat.mp3');
@@ -81,7 +84,6 @@ var player = {
   spawnY: 200,
   x: 200,
   y: 200,
-  sick: false,
   Size: 60,
   camX: -30,
   xVel: 0,
@@ -106,7 +108,7 @@ var levels = [
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
   [ "II-----------bbbbbbbbbbb-------------Bbbbbbbbbbbbbbbb",
-    "I------------b---------b-------------B-----B--------b",
+    "I------------b---------b-------------B-----B-------Ib",
     "I------------b---------b#-----i------B-----B--------b",
     "I------------b---------bbbbbbbbb----bB--B--B--B-----b",
     "I------------b---------b-----------bbB--B--B--B-----b",
@@ -116,7 +118,7 @@ var levels = [
     "I------------b---------b=------1--i-----B-i--=B--@--b",
     "Iiiiiiiiiiiiib---------dDDDDDDDDDDDDDDDDdDDDDDdDDDDDd",
     "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=================",
+    "Ibbbbbbbbbbbbb------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=================",
   ],
    ["bI----------------------------b-----------------II",
     "b------------------b--bbbbbbbbb------------------I",
@@ -189,7 +191,7 @@ var invisBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
+    player.camX = player.camX + x - 323;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -202,8 +204,7 @@ var invisBlock = function(x, y) {
     player.onBlock = false;
     if(player.yVel > 15) {
       player.health -= 10;
-    }
-  }
+    }}
 };
 var block = function(x, y, solid) {
   image(blockGraphic, x, y, blockSize, blockSize);
@@ -212,11 +213,7 @@ var block = function(x, y, solid) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 323;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -242,11 +239,7 @@ var brick = function(x, y, solid) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 323;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -269,11 +262,7 @@ var dirtBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 323;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -286,8 +275,7 @@ var dirtBlock = function(x, y) {
     player.onBlock = false;
     if(player.yVel > 15) {
       player.health -= 10;
-    }
-  }
+    }}
 };
 var dirtBlock2 = function(x, y) {
   image(dirtBlock2Graphic, x, y, blockSize, blockSize);
@@ -296,11 +284,7 @@ var dirtBlock2 = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 323;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -313,8 +297,7 @@ var dirtBlock2 = function(x, y) {
     player.onBlock = false;
     if(player.yVel > 15) {
       player.health -= 10;
-    }
-  }
+    }}
 };
 var blankDirtBlock = function(x, y) {
   image(blankDirt, x, y, blockSize, blockSize);
@@ -323,11 +306,7 @@ var blankDirtBlock = function(x, y) {
     player.onBlock = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 320;
-    player.xVel = 0;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
+    player.camX = player.camX + x - 323;
     player.xVel = 0;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
@@ -340,8 +319,7 @@ var blankDirtBlock = function(x, y) {
     player.onBlock = false;
     if(player.yVel > 15) {
       player.health -= 10;
-    }
-  }
+    }}
 };
 var portal = function(x, y) {
   image(tomatoCrateGraphic, x, y, blockSize, blockSize);
@@ -506,9 +484,17 @@ function mouseReleased() {
   if (mouseX > scene + 800 && mouseX < scene + 1000 && mouseY > 430 && mouseY < 480 && gamePlaying === false) {
     gamePlaying = true;
   }
+  if(mouseX > scene + 2090 && mouseX < scene + 2110 && mouseY > 395 && mouseY < 425 && showHitBox === true && clickTimer > 3) {
+    showHitBox = false;
+    clickTimer = 0;
+  }
+  if(mouseX > scene + 2090 && mouseX < scene + 2110 && mouseY > 395 && mouseY < 425 && showHitBox === false && clickTimer > 3) {
+    showHitBox = true;
+    clickTimer = 0;
+  }
 }
 draw = function() {
-  blockSize = width / 10;
+  clickTimer++;
   background(0, 200, 255);
   if (gamePlaying === false) {
     strokeWeight(1);
@@ -525,7 +511,9 @@ draw = function() {
     rect(scene + 200, 340, 200, 50, 5);
     fill(0, 0, 0);
     textSize(30);
-    text("Play", scene + 265, 215); text("Help", scene + 265, 295); text("Settings", scene + 250, 375);
+    text("Play", scene + 265, 215); 
+    text("Help", scene + 265, 295); 
+    text("Settings", scene + 250, 375);
     image(menuTomato, scene + 120, 370, 350, 300);
     fill(120, 120, 120);
     rect(scene + 740, 250, 80, 100, 10);
@@ -537,6 +525,13 @@ draw = function() {
     rect(scene + 650, 50, 100, 50, 5);
     rect(scene + 1250, 50, 100, 50, 5);
     rect(scene + 1850, 50, 100, 50, 5);
+    if(showHitBox === true) {
+      fill(0, 255, 0);
+    }
+    else {
+      fill(255, 0, 0);
+    }
+    rect(scene + 2095, 400, 20, 20, 4);
     fill(0);
     textSize(60);
     text("<                      >", scene + 750, 320);
@@ -553,7 +548,7 @@ draw = function() {
     fill(180);
     rect(scene + 1990 + gameVolume, 285, 30, 30, 5);
     fill(0);
-    text("Volume",scene + 2050, 370);
+    text("     Volume\n\n\nShow hitbox",scene + 2020, 260);
     fill(255, 0, 0);
     textSize(40);
     text("HELP", scene + 1450, 100);
@@ -676,8 +671,19 @@ draw = function() {
   if(mouseIsPressed && mouseX > 120 && mouseX < 240 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
     let fs = fullscreen();
     fullscreen(true);
+    resizeCanvas(windowHeight, windowHeight);
   }
   textSize(width / 30);
   fill(255);
   text("Made by Henry MacDougall", 20, 570); 
+  if(skin !== null) {
+    for(var i = 0; i < walkFrames.length; i++) {
+    walkFrames[i].filter(skin);
+  }
+  }
+  for(var i2 = 0; i2 < walkFrames.length; i2++) {
+      if(showHitBox === true) {
+      walkFrames[i2].filter(OPAQUE);
+    }
+  }
 };
