@@ -671,7 +671,7 @@ draw = function() {
   if(mouseIsPressed && mouseX > 120 && mouseX < 240 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
     let fs = fullscreen();
     fullscreen(true);
-    resizeCanvas(windowHeight, windowHeight);
+    //resizeCanvas(windowHeight, windowHeight);
   }
   textSize(width / 30);
   fill(255);
