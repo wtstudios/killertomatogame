@@ -658,7 +658,7 @@ draw = function() {
       speedRunTimerSec++;
       speedRunTimerMil = 0;
     }
-  }      if (soundWanted === true && !themeSong.isPlaying() && gamePlaying === false && player.health > 0) {
+  }      if (soundWanted === true && !themeSong.isPlaying() && gamePlaying === false) {
         themeSong.play();
         pianoTheme.stop();
         soundPlaying = true
