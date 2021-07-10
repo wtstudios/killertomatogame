@@ -497,7 +497,9 @@ draw = function() {
   clickTimer++;
   background(0, 200, 255);
   if (gamePlaying === false) {
+    if(!themeSong.isPlaying) {
     themeSong.play();
+    }
     strokeWeight(1);
     stroke(0);
     fill(100, 200, 200);
