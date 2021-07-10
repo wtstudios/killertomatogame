@@ -497,6 +497,7 @@ draw = function() {
   clickTimer++;
   background(0, 200, 255);
   if (gamePlaying === false) {
+    themeSong.play();
     strokeWeight(1);
     stroke(0);
     fill(100, 200, 200);
@@ -563,6 +564,7 @@ draw = function() {
     splatSound.setVolume(gameVolume / 200);
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 180 && mouseY < 230) {
       gamePlaying = true;
+      themeSong.stop();
     }
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 260 && mouseY < 310) {
       scene = -1200;
