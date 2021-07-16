@@ -145,7 +145,7 @@ var levels = [
     "DDDDDDDDDDDDDdBBBB------BBBBBBBB-----------i---BB===BBBBBB",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
-  [ "---------b-------------------------bbbb",
+  [ "---------b--------bbbb-------------bbbb",
     "---------b--b-------------------------b",
     "---------b--b--B----------------------b",
     "---------b--b-----i----B--------------b",
