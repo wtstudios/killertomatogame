@@ -166,7 +166,7 @@ var levels = [
     "b----------------------------b",
     "b----------------------------b",
     "b----------------------------b",
-    "b-------------------------@--b",
+    "b---------------------------@b",
     "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
