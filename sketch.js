@@ -19,6 +19,7 @@ let plant1Graphic;
 let brickGraphic;
 let humanGraphic;
 let stereoGraphic;
+let coin;
 let sun;
 let cloud;
 let themeSong;
@@ -71,6 +72,7 @@ function preload() {
   walkFrames[10] = loadImage('tomato11.png');
   walkFrames[11] = loadImage('tomato12.png');
   walkFrames[12] = loadImage('tomato13.png');
+  coin = loadImage('coin.png');
 }
 
 function setup() {
@@ -148,7 +150,7 @@ var levels = [
     "DDDDDDDDDDDDDdBBBB------BBBBBBBB-----------i---BB===BBBBBB",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
-  [ "---------b--------bbbb-------------bbbb",
+  [ "---------b-------------------------bbbb",
     "---------b--b-------------------------b",
     "---------b--b--B----------------------b",
     "---------b--b-----i----B--------------b",
@@ -606,8 +608,8 @@ draw = function() {
     drawLevel(player.camX, -60);
     stroke(0, 0, 0);
     fill(0);
-    text(score, 300, 50);
-    text(speedRunTimerSec + "." + speedRunTimerMil, 400, 50);
+    text(score, 400, 50);
+    text(speedRunTimerSec + "." + speedRunTimerMil, 500, 50);
     fill(255, 0, 0);
     rect(20, 20, 80, 40, 5);
     rect(120, 20, 100, 40, 5);
@@ -701,5 +703,6 @@ draw = function() {
     }
   }
   fill(0);
-  text("Coins: " + coins, width / 2 - 30, 20);
+  text(coins, width / 2 - 50, 50);
+  image(coin, width / 2 - 75, 28, 30, 30);
 };
