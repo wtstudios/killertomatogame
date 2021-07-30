@@ -22,6 +22,7 @@ let stereoGraphic;
 let sun;
 let cloud;
 let themeSong;
+var coins = 0;
 var walkFrames = [];
 var walkFrame = 1;
 var walkTimer = 0;
@@ -75,6 +76,8 @@ function preload() {
 function setup() {
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
+  coins = 0;
+  coins = getItem("coins");
 }
 
 var level = 1;
@@ -179,8 +182,15 @@ var human = function(x, y, num) {
     image(humanGraphic, x, humany[num], blockSize, blockSize);
     if (dist(270 + player.Size / 2, player.y + blockSize / 2, x + blockSize / 2, humany[num] + blockSize / 2) <= blockSize + 5) {
       score++;
+      coins += 10;
       humany[num] = 800;
       scream.play();
+      if(isNaN(coins)) {
+          storeItem("coins", score * 10);
+      }
+      else {
+          storeItem("coins", coins);
+      }
   }
   }
     
@@ -497,8 +507,8 @@ draw = function() {
   clickTimer++;
   background(0, 200, 255);
   if (gamePlaying === false) {
-    if(!themeSong.isPlaying) {
-    themeSong.play();
+      if(!themeSong.isPlaying) {
+      themeSong.play();
     }
     strokeWeight(1);
     stroke(0);
@@ -596,8 +606,8 @@ draw = function() {
     drawLevel(player.camX, -60);
     stroke(0, 0, 0);
     fill(0);
-    text(score, 300, 30);
-    text(speedRunTimerSec + "." + speedRunTimerMil, 400, 30);
+    text(score, 300, 50);
+    text(speedRunTimerSec + "." + speedRunTimerMil, 400, 50);
     fill(255, 0, 0);
     rect(20, 20, 80, 40, 5);
     rect(120, 20, 100, 40, 5);
@@ -690,4 +700,6 @@ draw = function() {
       walkFrames[i2].filter(OPAQUE);
     }
   }
+  fill(0);
+  text("Coins: " + coins, width / 2 - 30, 20);
 };
