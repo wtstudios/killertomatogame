@@ -710,4 +710,5 @@ draw = function() {
   fill(0);
   text(coins, width / 2 - 50, 50);
   image(coin, width / 2 - 75, 28, 30, 30);
+  document.addEventListener('contextmenu', event => event.preventDefault());
 };
