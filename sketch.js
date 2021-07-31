@@ -79,7 +79,9 @@ function setup() {
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
   coins = 0;
-  coins = getItem("coins");
+  if(getItem('coins') !== null) {
+      coins = getItem("coins");
+  }
 }
 
 var level = 1;
