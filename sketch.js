@@ -498,6 +498,12 @@ function mouseReleased() {
   if (mouseX > scene + 1850 && mouseX < scene + 1950 && mouseY > 50 && mouseY < 100 && gamePlaying === false) {
     scene = 0;
   }
+  if (mouseX > scene + 2450 && mouseX < scene + 2650 && mouseY > 50 && mouseY < 100 && gamePlaying === false) {
+    scene = 0;
+  }
+  if (mouseX > scene + 3050 && mouseX < scene + 3150 && mouseY > 50 && mouseY < 100 && gamePlaying === false) {
+    scene = 0;
+  }
   if (mouseX > scene + 800 && mouseX < scene + 1000 && mouseY > 430 && mouseY < 480 && gamePlaying === false) {
     gamePlaying = true;
   }
@@ -520,21 +526,25 @@ draw = function() {
     strokeWeight(1);
     stroke(0);
     fill(100, 200, 200);
-    rect(scene, 0, width * 4, height);
+    rect(scene, 0, width * 6, height);
     textFont('impact');
     fill(255, 0, 0);
     textSize(40);
     text("ATTACK OF THE KILLER TOMATOES", scene + 40, 100);
     text("YOU WIN!", scene + 650, 300);
-    rect(scene + 200, 180, 200, 50, 5);
-    rect(scene + 200, 260, 200, 50, 5);
-    rect(scene + 200, 340, 200, 50, 5);
+    rect(scene + 200, 130, 200, 50, 5);
+    rect(scene + 200, 190, 200, 50, 5);
+    rect(scene + 200, 250, 200, 50, 5);
+    rect(scene + 200, 310, 200, 50, 5);
+    rect(scene + 200, 370, 200, 50, 5);
     fill(0, 0, 0);
     textSize(30);
-    text("Play", scene + 265, 215); 
-    text("Help", scene + 265, 295); 
-    text("Settings", scene + 250, 375);
-    image(menuTomato, scene + 120, 370, 350, 300);
+    text("Play", scene + 265, 165); 
+    text("Help", scene + 265, 225); 
+    text("Settings", scene + 250, 285);
+    text("Trophies", scene + 250, 345);
+    text("Skins", scene + 265, 405);
+    image(menuTomato, scene + 120, 410, 350, 300);
     fill(120, 120, 120);
     rect(scene + 740, 250, 80, 100, 10);
     rect(scene + 980, 250, 80, 100, 10);
@@ -545,6 +555,8 @@ draw = function() {
     rect(scene + 650, 50, 100, 50, 5);
     rect(scene + 1250, 50, 100, 50, 5);
     rect(scene + 1850, 50, 100, 50, 5);
+    rect(scene + 2450, 50, 100, 50, 5);
+    rect(scene + 3050, 50, 100, 50, 5);
     if(showHitBox === true) {
       fill(0, 255, 0);
     }
@@ -563,6 +575,8 @@ draw = function() {
     text("BACK", scene + 660, 85);
     text("BACK", scene + 1260, 85);
     text("BACK", scene + 1860, 85);
+    text("BACK", scene + 2460, 85);
+    text("BACK", scene + 3060, 85);
     fill(220);
     rect(scene + 2000, 290, 200, 20, 5);
     fill(180);
@@ -581,17 +595,24 @@ draw = function() {
     scream.setVolume(gameVolume / 200);
     pubertyLove.setVolume(gameVolume / 200);
     splatSound.setVolume(gameVolume / 200);
-    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 180 && mouseY < 230) {
+    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 130 && mouseY < 180) {
       gamePlaying = true;
       themeSong.stop();
     }
-    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 260 && mouseY < 310) {
+    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 190 && mouseY < 240) {
       scene = -1200;
     }
-    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 340 && mouseY < 390) {
+    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 250 && mouseY < 300) {
       scene = -1800;
     }
+    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 310 && mouseY < 360) {
+      scene = -2400;
+    }
+    if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 370 && mouseY < 420) {
+      scene = -3000;
+    }
   }
+  
   if(mouseIsPressed && mouseX > scene + 2000 && mouseX < scene + 2200 && mouseY > 285 && mouseY < 305) {
     gameVolume = mouseX + 15 - 220;
   }
