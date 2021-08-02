@@ -2,6 +2,7 @@ var speedRunTimerSec = 0;
 var speedRunTimerMil = 0;
 var multi = 1;
 var score = 0;
+var highScore = 0;
 var deathTimer = 0;
 var timer = 0;
 var gamePlaying = false;
@@ -22,8 +23,13 @@ let stereoGraphic;
 let coin;
 let sun;
 let cloud;
+let trophy;
 let themeSong;
 var coins = 0;
+var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member"];
+var trophiesOwned = [false, false, false, false, false];
+var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server"];
+var display = null;
 var walkFrames = [];
 var walkFrame = 1;
 var walkTimer = 0;
@@ -73,6 +79,7 @@ function preload() {
   walkFrames[11] = loadImage('tomato12.png');
   walkFrames[12] = loadImage('tomato13.png');
   coin = loadImage('coin.png');
+  trophy = loadImage('trophy.png');
 }
 
 function setup() {
@@ -82,8 +89,16 @@ function setup() {
   if(getItem('coins') !== null) {
       coins = getItem("coins");
   }
+  for(var i = 0; i < trophiesOwned.length; i++) {
+    trophiesOwned[i] = false;
+  }
+  if(getItem('myTrophies') !== null) {
+    trophiesOwned = getItem('myTrophies');
+  }
+  if(getItem('myTrophies') === null) {
+    storeItem('myTrophies', [false, false, false, false, false])
+  }
 }
-
 var level = 1;
 var blockSize = 60;
 var player = {
@@ -181,6 +196,26 @@ var levels = [
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
 ];
+var trophyDisplay = function(num, x, y) {
+  if(trophiesOwned[num] === false) {
+      fill(100, 100, 100);
+  }
+  if(trophiesOwned[num] === true) {
+      fill(0, 200, 0);
+  }
+  rect(x + 10, y + 10, 80, 80, 5);
+  image(trophy, x + 10, y - 2, 80, 80);
+  fill(0);
+  textSize(11);
+  textAlign(CENTER);
+  textFont('sans serif');
+  text(trophies[num], x + 50, y + 85);
+  textAlign(LEFT);
+  if(mouseX > x + 10 && mouseX < x + 80 && mouseY > y + 10 && mouseY < y + 80) {
+    display = trophyDescription[num];
+  }
+  textFont('impact');
+}
 var human = function(x, y, num) {
   if(timer === 0) {
     humany[num] = y;
@@ -577,6 +612,17 @@ draw = function() {
     text("BACK", scene + 1860, 85);
     text("BACK", scene + 2460, 85);
     text("BACK", scene + 3060, 85);
+    display = null;
+    trophyDisplay(0, scene + 2450, 100);
+    trophyDisplay(1, scene + 2550, 100);
+    trophyDisplay(2, scene + 2650, 100);
+    trophyDisplay(3, scene + 2750, 100);
+    trophyDisplay(4, scene + 2850, 100);
+    textFont("sans serif");
+    if(display !== null) {
+      text(display, mouseX, mouseY);
+    }
+    textFont("impact");
     fill(220);
     rect(scene + 2000, 290, 200, 20, 5);
     fill(180);
@@ -683,11 +729,38 @@ draw = function() {
     fill(100, 200, 200);
     rect(0, 0, 600, 600);
     fill(255, 0, 0);
+    rect(20, 20, 80, 40, 5);
     textSize(40);
     text("YOU WIN", 40, 100);
     textSize(20);
     text("WITH A TOTAL OF " + score + " HUMANS KILLED AND A SPEEDRUN TIME OF " + speedRunTimerSec + "." + speedRunTimerMil + " SECONDS", 40, 150, 520, 300);
     speedRunTimerMil--;
+    fill(0);
+    text("BACK", 30, 50);
+    if(score >= 20) {
+      trophiesOwned[2] = true;
+    }
+    if(speedRunTimerSec <= 30) {
+      trophiesOwned[3] = true;
+    }
+    if(score === 0) {
+      trophiesOwned[1] = true;
+    }
+    storeItem('myTrophies', trophiesOwned);
+    if(speedRunTimerSec + speedRunTimerMil / 10 > highScore) {
+      highScore = speedRunTimerSec + speedRunTimerMil / 10;
+    }
+    if(mouseIsPressed && mouseX > 20 && mouseX < 100 && mouseY > 20 && mouseY < 60) {
+      score = 0;
+      speedRunTimerSec = 0;
+      speedRunTimerMil = 0;
+      level = 1;
+      gamePlaying = false;
+      player.spawnX = 200;
+      player.spawnY = 200;
+      timer = 0;
+      player.camX = -30;
+    }
   }
   if(gamePlaying === true) {
     if(splatSound.isPlaying === true) {
