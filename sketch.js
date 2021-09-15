@@ -28,7 +28,7 @@ let themeSong;
 var coins = 0;
 var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member"];
 var trophiesOwned = [false, false, false, false, false];
-var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server"];
+var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server (click on this box)"];
 var display = null;
 var walkFrames = [];
 var walkFrame = 1;
@@ -99,6 +99,8 @@ function setup() {
     storeItem('myTrophies', [false, false, false, false, false])
   }
 }
+var inputCode = "Enter Code";
+var codeClicked = false;
 var level = 1;
 var blockSize = 60;
 var player = {
@@ -196,6 +198,7 @@ var levels = [
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
 ];
+var levels2 = [];
 var trophyDisplay = function(num, x, y) {
   if(trophiesOwned[num] === false) {
       fill(100, 100, 100);
@@ -503,6 +506,13 @@ keyPressed = function() {
   if (key.code === 100 || keyCode === RIGHT_ARROW || key === 'd') {
     player.keys[2] = true;
   }
+  if(codeClicked === true) {
+    if (keyCode===BACKSPACE || keyCode===DELETE) {
+        inputCode=inputCode.slice(0,-1);
+    } else if(keyCode < 16 || keyCode > 18 && keyCode < 33 || keyCode > 47) { 
+    inputCode = inputCode + key.toString();
+    }
+  }
 };
 
 keyReleased = function() {
@@ -572,6 +582,28 @@ draw = function() {
     rect(scene + 200, 250, 200, 50, 5);
     rect(scene + 200, 310, 200, 50, 5);
     rect(scene + 200, 370, 200, 50, 5);
+    if(codeClicked === true) {
+      fill(255, 100, 0);
+    }
+    else {fill(255, 0, 0);}
+    if(mouseIsPressed) {
+      codeClicked = false;
+      if(mouseX < scene + 430 || mouseX > scene + 550 || mouseY < 550 || mouseY > 570) {
+        inputCode = "Enter Code";
+      }
+    }
+    if(mouseIsPressed && mouseX > scene + 430 && mouseX < scene + 550 && mouseY > 550 && mouseY < 570) {
+      if(inputCode === "Enter Code") {
+        inputCode = "";
+      }
+      codeClicked = true;
+    }
+    rect(scene + 430, 550, 120, 20, 5);
+    fill(0);
+    textSize(15);
+    textFont('Helvetica');
+    text(inputCode, scene + 435, 553, 120, 20);
+    textFont('Impact');
     fill(0, 0, 0);
     textSize(30);
     text("Play", scene + 265, 165); 
@@ -618,11 +650,17 @@ draw = function() {
     trophyDisplay(2, scene + 2650, 100);
     trophyDisplay(3, scene + 2750, 100);
     trophyDisplay(4, scene + 2850, 100);
-    textFont("sans serif");
+    if(mouseIsPressed && mouseX > scene + 2850 && mouseX < scene + 2930 && mouseY > 100 && mouseY < 180) {
+      window.open("https://discord.gg/ZXKx2kmKnp");
+      trophiesOwned[4] = true;
+      storeItem('myTrophies', trophiesOwned);
+    }
+    textFont("Helvetica");
     if(display !== null) {
-      text(display, mouseX, mouseY);
+      text(display, mouseX, mouseY, width - mouseX, height - mouseY);
     }
     textFont("impact");
+    textSize(30);
     fill(220);
     rect(scene + 2000, 290, 200, 20, 5);
     fill(180);
@@ -644,6 +682,86 @@ draw = function() {
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 130 && mouseY < 180) {
       gamePlaying = true;
       themeSong.stop();
+      levels = [
+  ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbI",
+    "b----------------------------I",
+    "b----------i------i----------I",
+    "b-----bbbbbbbbbbbbbbbb-------I",
+    "b--------------------b-------I",
+    "bb-------------------x-------I",
+    "bbb------------------x-------I",
+    "bbbb-----------------b-------I",
+    "bbbbb--1=i----i-1--@-b---#--=I",
+    "dddddDDDDDDDDDDDDDDDDdDDDDDDDd",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  ],
+  [ "II-----------bbbbbbbbbbb-------------Bbbbbbbbbbbbbbbb",
+    "I------------b---------b-------------l-----l-------Ib",
+    "I------------b---------b#-----i------l-----l--------b",
+    "I------------b---------bbbbbbbbb----bB--B--B--B-----b",
+    "I------------b---------b-----------bbB--B--B--B-----b",
+    "I------------b---------b----i-----bbbB--B--B--B-----b",
+    "I------------b---------b--bbbbbbbbbbbB--B--B--B-----b",
+    "I------------b---------b----------------B-----B-----b",
+    "I------------b---------b=------1--i-----B-i--=B--@--b",
+    "Iiiiiiiiiiiiib---------dDDDDDDDDDDDDDDDDdDDDDDdDDDDDd",
+    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=================",
+  ],
+   ["bI----------------------------b----I------------II",
+    "b------------------b--bbbbbbxxb----I-------------I",
+    "b---------------b--b--b-------b----I-------------I",
+    "b------b----b------b--b----b--b----I-------------I",
+    "b--b---------------b---i---b--b----I-------------I",
+    "b------------------bbbbbbbbb--x----I-------------I",
+    "b-----i-------------b---------x----I-------------I",
+    "b-----b-------------b--bbbbbbbb----I-------------I",
+    "b@--------i---1-----b---i----#x----I-------------I",
+    "dDDDDDDDDDDDDDDDDDDDdDDDDDDDDDDDDDDD-------------I",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB==================I",
+  ],
+   ["II------------------------------------------------------II",
+    "I--------------------------------------------------------I",
+    "I------------------1-----------1-------------------------I",
+    "I-----------------DDDD----DDDDDDDDDDD--------------------I",
+    "I----------------Ddddd---DdddddddddddD-------------------I",
+    "I---------------DdBBBBB----BBBBBBBBBBdD------------------I",
+    "I--------------DdBBBBBB--i-----BBBBBBBdD-----------------I",
+    "I-------------DdBBBBB----BB-----BBBBBBBdD---------------#I",
+    "I@---i---1---DdBBB------BBBB------BBBBBBdDDD---DD---DDDDDD",
+    "DDDDDDDDDDDDDdBBBB------BBBBBBBB-----------i---BB===BBBBBB",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  ],
+  [ "I--------b-------------------------bbbbIIIIII",
+    "I--------b--b-------------------------b-----I",
+    "I--------b--b--B----------------------b-----I",
+    "I--------b--b-----i----B--------------b-----I",
+    "I--------b#-b-----B--------B----------b-----I",
+    "I--------bbb--------------------------b-----I",
+    "I--------b-------------B-----B--------b-----I",
+    "I--------b----B-----------------------b-----I",
+    "I--------bi---------------i--------@--x-----I",
+    "I--------dDD==============DDDDDDDDDDDDd-----I",
+    "I--------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
+    "I--------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
+    "I-------------------------------------------I",
+    "I-------------------------------------------I",
+    "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  ],
+   ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b---------------------------@b",
+    "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  ],
+];
     }
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 190 && mouseY < 240) {
       scene = -1200;
