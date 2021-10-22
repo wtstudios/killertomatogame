@@ -750,7 +750,7 @@ draw = function() {
     fill(0, 0, 0);
     textSize(60);
     text("<                      >", scene + 750, 320);
-    fill(255);
+    fill(255, 255, 255);
     text(level, scene + 880, 300);
     fill(0, 0, 0);
     textSize(30);
@@ -805,9 +805,9 @@ draw = function() {
     }
     textFont("impact");
     textSize(30);
-    fill(220, 220, 220, 0);
+    fill(220, 220, 220);
     rect(scene + 2000, 290, 200, 20, 5);
-    fill(180, 180, 180, 0);
+    fill(180, 180, 180);
     rect(scene + 1990 + gameVolume, 285, 30, 30, 5);
     fill(0, 0, 0);
     text("     Volume\n\n\nShow hitbox",scene + 2020, 260);
