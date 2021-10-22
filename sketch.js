@@ -715,7 +715,7 @@ draw = function() {
       codeClicked = true;
     }
     rect(scene + 430, 550, 120, 20, 5);
-    fill(0);
+    fill(0, 0, 0);
     textSize(15);
     textFont('Helvetica');
     text(inputCode, scene + 435, 553, 120, 20);
@@ -731,7 +731,7 @@ draw = function() {
     fill(120, 120, 120);
     rect(scene + 740, 250, 80, 100, 10);
     rect(scene + 980, 250, 80, 100, 10);
-    fill(0);
+    fill(0, 0, 0);
     rect(scene + 800, 200, 200, 200, 10);
     fill(255, 0, 0);
     rect(scene + 800, 430, 200, 50, 5);
@@ -747,12 +747,12 @@ draw = function() {
       fill(255, 0, 0);
     }
     rect(scene + 2095, 400, 20, 20, 4);
-    fill(0);
+    fill(0, 0, 0);
     textSize(60);
     text("<                      >", scene + 750, 320);
     fill(255);
     text(level, scene + 880, 300);
-    fill(0);
+    fill(0, 0, 0);
     textSize(30);
     text("PLAY", scene + 870, 465);
     text("BACK", scene + 660, 85);
@@ -764,10 +764,10 @@ draw = function() {
     textSize(25);
     display = null;
     for(var i = 0; i < skins.length; i++) {
-      fill(200);
+      fill(200, 200, 200, 0);
       rect(scene + 3060, 120 + i * 50, 520, 45, 4);
       image(skinsPfp[i], scene + 3070, 122 + i * 50, 40, 40);
-      fill(0);
+      fill(0, 0, 0);
       if(ownedSkins[i] === true) {
         text(skins[i], scene + 3120, 150 + i * 50);
       }
@@ -805,17 +805,17 @@ draw = function() {
     }
     textFont("impact");
     textSize(30);
-    fill(220);
+    fill(220, 220, 220, 0);
     rect(scene + 2000, 290, 200, 20, 5);
-    fill(180);
+    fill(180, 180, 180, 0);
     rect(scene + 1990 + gameVolume, 285, 30, 30, 5);
-    fill(0);
+    fill(0, 0, 0);
     text("     Volume\n\n\nShow hitbox",scene + 2020, 260);
     fill(255, 0, 0);
     textSize(40);
     text("HELP", scene + 1450, 100);
     textSize(30);
-    fill(0);    
+    fill(0, 0, 0);    
     text("To play, use WAD. Avoid the stereos. Crush humans to get points. Jump and run into a wall to roll up it! Try to get to the crate of tomatoes to complete the level. Enjoy!", scene + 1300, 200, 400, 400);
     textSize(12);
     themeSong.setVolume(gameVolume / 200);
@@ -941,13 +941,13 @@ draw = function() {
     background(0, 200, 255);
     drawLevel(player.camX, -60);
     stroke(0, 0, 0);
-    fill(0);
+    fill(0, 0, 0);
     text(score, 400, 50);
     text(speedRunTimerSec + "." + speedRunTimerMil, 500, 50);
     fill(255, 0, 0);
     rect(20, 20, 80, 40, 5);
     rect(120, 20, 100, 40, 5);
-    fill(0);
+    fill(0, 0, 0);
     text("BACK             FULLSCREEN", 35, 47);
     playerDraw();
     playerMove();
@@ -1015,7 +1015,7 @@ draw = function() {
     textSize(20);
     text("WITH A TOTAL OF " + score + " HUMANS KILLED AND A SPEEDRUN TIME OF " + speedRunTimerSec + "." + speedRunTimerMil + " SECONDS", 40, 150, 520, 300);
     speedRunTimerMil--;
-    fill(0);
+    fill(0, 0, 0);
     text("BACK", 30, 50);
     if(score >= 20) {
       trophiesOwned[2] = true;
@@ -1069,14 +1069,14 @@ draw = function() {
     //resizeCanvas(windowHeight, windowHeight);
   }
   textSize(width / 30);
-  fill(255);
+  fill(255, 255, 255, 0);
   text("Made by Henry MacDougall", 20, 570); 
   for(var i2 = 0; i2 < walkFrames.length; i2++) {
       if(showHitBox === true) {
       //walkFrames[i2].filter(OPAQUE);
     }
   }
-  fill(0);
+  fill(0, 0, 0);
   text(coins, width / 2 - 50, 50);
   image(coin, width / 2 - 75, 28, 30, 30);
   document.addEventListener('contextmenu', event => event.preventDefault());
