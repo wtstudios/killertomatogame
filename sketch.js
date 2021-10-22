@@ -73,7 +73,6 @@ let boosterbase10;
 let boosterbase11;
 let boosterbase12;
 let boosterbase13;
-let boosteraccessory;
 var skin = 'Tomato';
 var skins = ['Tomato', 'Booster', 'Camo'];
 let skinsPfp;
@@ -128,7 +127,6 @@ function preload() {
   boosterbase11 = loadImage('boosterbase11.png');
   boosterbase12 = loadImage('boosterbase12.png');
   boosterbase13 = loadImage('boosterbase13.png');
-  boosteraccessory = loadImage('boosteraccessory.png');
   coin = loadImage('coin.png');
   trophy = loadImage('trophy.png');
   walkFrames[0] = tomato1;
