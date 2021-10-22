@@ -510,7 +510,7 @@ var playerDraw = function() {
       walkFrames[11] = boosterbase12;
       walkFrames[12] = boosterbase13;
   }
-  if(skin === 'Camo' && walkFrames[0] !== boosterbase1 && ownedSkins[2] === true) {
+  if(skin === 'Camo' && walkFrames[0] !== plantGraphic1 && ownedSkins[2] === true) {
       walkFrames[0] = plant1Graphic;
       walkFrames[1] = plant1Graphic;
       walkFrames[2] = plant1Graphic;
@@ -685,7 +685,7 @@ draw = function() {
       themeSong.play();
     }
     strokeWeight(1);
-    stroke(0);
+    stroke(0, 0, 0);
     fill(100, 200, 200);
     rect(scene, 0, width * 6, height);
     textFont('impact');
@@ -764,7 +764,7 @@ draw = function() {
     textSize(25);
     display = null;
     for(var i = 0; i < skins.length; i++) {
-      fill(200, 200, 200, 0);
+      fill(200, 200, 200);
       rect(scene + 3060, 120 + i * 50, 520, 45, 4);
       image(skinsPfp[i], scene + 3070, 122 + i * 50, 40, 40);
       fill(0, 0, 0);
