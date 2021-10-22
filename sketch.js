@@ -17,6 +17,9 @@ let scream;
 let splatSound;
 let blankDirt;
 let plant1Graphic;
+let plant2Graphic;
+let plant3Graphic;
+let plant4Graphic;
 let brickGraphic;
 let humanGraphic;
 let stereoGraphic;
@@ -42,11 +45,42 @@ var gameVolume = 100;
 var soundWanted = true;
 var soundPlaying = false;
 var humany = [];
-let skin;
 var showHitBox = false;
 var clickTimer = 0;
+let tomato1;
+let tomato2;
+let tomato3;
+let tomato4;
+let tomato5;
+let tomato6;
+let tomato7;
+let tomato8;
+let tomato9;
+let tomato10;
+let tomato11;
+let tomato12;
+let tomato13;
+let boosterbase1;
+let boosterbase2;
+let boosterbase3;
+let boosterbase4;
+let boosterbase5;
+let boosterbase6;
+let boosterbase7;
+let boosterbase8;
+let boosterbase9;
+let boosterbase10;
+let boosterbase11;
+let boosterbase12;
+let boosterbase13;
+let boosteraccessory;
+var skin = 'Tomato';
+var skins = ['Tomato', 'Booster', 'Camo'];
+let skinsPfp;
+var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces."];
+let ownedSkins;
+var food = "Ketchup";
 function preload() {
-  skin = null;
   soundFormats('ogg', 'mp3');
   themeSong = loadSound('themesong.mp3');
   splatSound = loadSound('tomatosplat.mp3');
@@ -61,30 +95,65 @@ function preload() {
   dirtBlockGraphic = loadImage('dirt_block.png');
   brickGraphic = loadImage('brick_block.png');
   plant1Graphic = loadImage('plant1.png');
+  plant2Graphic = loadImage('plant2Graphic.png');
+  plant3Graphic = loadImage('plant3Graphic.png');
+  plant4Graphic = loadImage('plant4Graphic.png');
   blankDirt = loadImage('dirt_block!grass.png');
   dirtBlock2Graphic = loadImage('dirt_block.rot1.png');
   cloud = loadImage('cloud.png');
   sun = loadImage('sun.png');
-  walkFrames[0] = loadImage('tomato_graphic1.png');
-  walkFrames[1] = loadImage('tomato_graphic2.png');
-  walkFrames[2] = loadImage('tomato_graphic3.png');
-  walkFrames[3] = loadImage('tomato_graphic4.png');
-  walkFrames[4] = loadImage('tomato_graphic5.png');
-  walkFrames[5] = loadImage('tomato_graphic6.png');
-  walkFrames[6] = loadImage('tomato_graphic7.png');
-  walkFrames[7] = loadImage('tomato_graphic8.png');
-  walkFrames[8] = loadImage('tomato_graphic1.png');
-  walkFrames[9] = loadImage('tomato10.png');
-  walkFrames[10] = loadImage('tomato11.png');
-  walkFrames[11] = loadImage('tomato12.png');
-  walkFrames[12] = loadImage('tomato13.png');
+  tomato1 = loadImage('tomato_graphic1.png');
+  tomato2 = loadImage('tomato_graphic2.png');
+  tomato3 = loadImage('tomato_graphic3.png');
+  tomato4 = loadImage('tomato_graphic4.png');
+  tomato5 = loadImage('tomato_graphic5.png');
+  tomato6 = loadImage('tomato_graphic6.png');
+  tomato7 = loadImage('tomato_graphic7.png');
+  tomato8 = loadImage('tomato_graphic8.png');
+  tomato9 = loadImage('tomato_graphic1.png');
+  tomato10 = loadImage('tomato10.png');
+  tomato11 = loadImage('tomato11.png');
+  tomato12 = loadImage('tomato12.png');
+  tomato13 = loadImage('tomato13.png');
+  boosterbase1 = loadImage('boosterbase1.png');
+  boosterbase2 = loadImage('boosterbase2.png');
+  boosterbase3 = loadImage('boosterbase3.png');
+  boosterbase4 = loadImage('boosterbase4.png');
+  boosterbase5 = loadImage('boosterbase5.png');
+  boosterbase6 = loadImage('boosterbase6.png');
+  boosterbase7 = loadImage('boosterbase7.png');
+  boosterbase8 = loadImage('boosterbase8.png');
+  boosterbase9 = loadImage('boosterbase1.png');
+  boosterbase10 = loadImage('boosterbase10.png');
+  boosterbase11 = loadImage('boosterbase11.png');
+  boosterbase12 = loadImage('boosterbase12.png');
+  boosterbase13 = loadImage('boosterbase13.png');
+  boosteraccessory = loadImage('boosteraccessory.png');
   coin = loadImage('coin.png');
   trophy = loadImage('trophy.png');
+  walkFrames[0] = tomato1;
+  walkFrames[1] = tomato2;
+  walkFrames[2] = tomato3;
+  walkFrames[3] = tomato4;
+  walkFrames[4] = tomato5;
+  walkFrames[5] = tomato6;
+  walkFrames[6] = tomato7;
+  walkFrames[7] = tomato8;
+  walkFrames[8] = tomato9;
+  walkFrames[9] = tomato10;
+  walkFrames[10] = tomato11;
+  walkFrames[11] = tomato12;
+  walkFrames[12] = tomato13;
 }
 
 function setup() {
+  skinsPfp = [tomato1, boosterbase1, plant1Graphic]
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
+  ownedSkins = [true, false, false];
+  if(getItem('skins') !== null) {
+    ownedSkins = getItem('skins');
+  }
   coins = 0;
   if(getItem('coins') !== null) {
       coins = getItem("coins");
@@ -411,6 +480,52 @@ var playerSpawn = function() {
   walkFrame = 3;
 };
 var playerDraw = function() {
+  if(skin === 'Tomato' && walkFrames[0] !== tomato1) {
+      walkFrames[0] = tomato1;
+      walkFrames[1] = tomato2;
+      walkFrames[2] = tomato3;
+      walkFrames[3] = tomato4;
+      walkFrames[4] = tomato5;
+      walkFrames[5] = tomato6;
+      walkFrames[6] = tomato7;
+      walkFrames[7] = tomato8;
+      walkFrames[8] = tomato9;
+      walkFrames[9] = tomato10;
+      walkFrames[10] = tomato11;
+      walkFrames[11] = tomato12;
+      walkFrames[12] = tomato13;
+  }
+  if(skin === 'Booster' && walkFrames[0] !== boosterbase1 && ownedSkins[1] === true) {
+    walkFrames[0] = boosterbase1;
+      walkFrames[1] = boosterbase2;
+      walkFrames[2] = boosterbase3;
+      walkFrames[3] = boosterbase4;
+      walkFrames[4] = boosterbase5;
+      walkFrames[5] = boosterbase6;
+      walkFrames[6] = boosterbase7;
+      walkFrames[7] = boosterbase8;
+      walkFrames[8] = boosterbase9;
+      walkFrames[9] = boosterbase10;
+      walkFrames[10] = boosterbase11;
+      walkFrames[11] = boosterbase12;
+      walkFrames[12] = boosterbase13;
+  }
+  if(skin === 'Camo' && walkFrames[0] !== boosterbase1 && ownedSkins[2] === true) {
+      walkFrames[0] = plant1Graphic;
+      walkFrames[1] = plant1Graphic;
+      walkFrames[2] = plant1Graphic;
+      walkFrames[3] = plant1Graphic;
+      walkFrames[4] = plant1Graphic;
+      walkFrames[5] = plant1Graphic;
+      walkFrames[6] = plant1Graphic;
+      walkFrames[7] = plant1Graphic;
+      walkFrames[8] = plant1Graphic;
+      walkFrames[9] = plant1Graphic;
+      walkFrames[10] = plant2Graphic;
+      walkFrames[11] = plant3Graphic;
+      walkFrames[12] = plant4Graphic;
+      food = "Salad";
+  }
   image(walkFrames[walkFrame], 270, player.y, player.Size, player.Size);
 };
 var playerMove = function() {
@@ -562,6 +677,7 @@ function mouseReleased() {
   }
 }
 draw = function() {
+  angleMode(DEGREES);
   clickTimer++;
   background(0, 200, 255);
   if (gamePlaying === false) {
@@ -644,7 +760,35 @@ draw = function() {
     text("BACK", scene + 1860, 85);
     text("BACK", scene + 2460, 85);
     text("BACK", scene + 3060, 85);
+    text("Skins", scene + 3250, 90);
+    textSize(25);
     display = null;
+    for(var i = 0; i < skins.length; i++) {
+      fill(200);
+      rect(scene + 3060, 120 + i * 50, 520, 45, 4);
+      image(skinsPfp[i], scene + 3070, 122 + i * 50, 40, 40);
+      fill(0);
+      if(ownedSkins[i] === true) {
+        text(skins[i], scene + 3120, 150 + i * 50);
+      }
+      else{
+        text("?", scene + 3120, 150 + i * 50);
+      }
+      if(skin === skins[i]) {
+        text('Equipped', scene + 3400, 150 + i * 50);
+      }
+      if(mouseX >= scene + 3060 && mouseX <= scene + 3580 && mouseY >= 120 + i * 50 && mouseY <= 185 + i * 50) {
+        if(ownedSkins[i] === true) {
+          display = skinDesc[i];
+        }
+        if(ownedSkins[i] !== true) {
+          display = 'Obtain this skin to see the description';
+        }
+        if(mouseIsPressed && mouseX >= scene + 3060 && mouseX <= scene + 3580 && mouseY >= 120 + i * 50 && mouseY <= 185 + i * 50 && ownedSkins[i] === true) {
+          skin = skins[i];
+        }
+      }
+    }
     trophyDisplay(0, scene + 2450, 100);
     trophyDisplay(1, scene + 2550, 100);
     trophyDisplay(2, scene + 2650, 100);
@@ -813,7 +957,7 @@ draw = function() {
     deathTimer++;
     fill(255, 0, 0);
     textSize(30);
-    text("You're Ketchup", 200, 300);
+    text("You're " + food, 200, 300);
   }
   if (walkFrame === 8 && walkTimer === 4 && player.keys[2] === true) {
     walkFrame = 1;
@@ -842,6 +986,24 @@ draw = function() {
   }
   if(gameVolume > 200) {
     gameVolume = 200;
+  }
+  if(inputCode === 'SkcUdgE') {
+    if(ownedSkins[1] !== true) {
+        ownedSkins[1] = true;
+        coins+=100;
+        storeItem('skins', ownedSkins);
+        skin = 'Booster';
+    }
+    inputCode = 'Enter Code';
+  }
+  if(inputCode === 'YbeIcUh') {
+    if(ownedSkins[2] !== true) {
+        ownedSkins[2] = true;
+        coins+=100;
+        skin = 'Camo';
+        storeItem('skins', ownedSkins);
+    }
+    inputCode = 'Enter Code';
   }
   if(level === levels.length) {
     fill(100, 200, 200);
@@ -909,14 +1071,9 @@ draw = function() {
   textSize(width / 30);
   fill(255);
   text("Made by Henry MacDougall", 20, 570); 
-  if(skin !== null) {
-    for(var i = 0; i < walkFrames.length; i++) {
-    walkFrames[i].filter(skin);
-  }
-  }
   for(var i2 = 0; i2 < walkFrames.length; i2++) {
       if(showHitBox === true) {
-      walkFrames[i2].filter(OPAQUE);
+      //walkFrames[i2].filter(OPAQUE);
     }
   }
   fill(0);
