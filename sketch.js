@@ -1069,7 +1069,7 @@ draw = function() {
     //resizeCanvas(windowHeight, windowHeight);
   }
   textSize(width / 30);
-  fill(255, 255, 255, 0);
+  fill(255, 255, 255);
   text("Made by Henry MacDougall", 20, 570); 
   for(var i2 = 0; i2 < walkFrames.length; i2++) {
       if(showHitBox === true) {
