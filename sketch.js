@@ -277,7 +277,7 @@ var trophyDisplay = function(num, x, y) {
   }
   rect(x + 10, y + 10, 80, 80, 5);
   image(trophy, x + 10, y - 2, 80, 80);
-  fill(0);
+  fill(0, 0, 0);
   textSize(11);
   textAlign(CENTER);
   textFont('sans serif');
