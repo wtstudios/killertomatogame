@@ -29,9 +29,9 @@ let cloud;
 let trophy;
 let themeSong;
 var coins = 0;
-var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member"];
-var trophiesOwned = [false, false, false, false, false];
-var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server (click on this box)"];
+var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member", "Serial Killer"];
+var trophiesOwned = [false, false, false, false, false, false];
+var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server (click on this box)", "Oct 2021 only. Win the game and kill 30 humans. "];
 var display = null;
 var walkFrames = [];
 var walkFrame = 1;
@@ -73,10 +73,23 @@ let boosterbase10;
 let boosterbase11;
 let boosterbase12;
 let boosterbase13;
+let pumpkin1;
+let pumpkin2;
+let pumpkin3;
+let pumpkin4;
+let pumpkin5;
+let pumpkin6;
+let pumpkin7;
+let pumpkin8;
+let pumpkin9;
+let pumpkin10;
+let pumpkin11;
+let pumpkin12;
+let pumpkin13;
 var skin = 'Tomato';
-var skins = ['Tomato', 'Booster', 'Camo'];
+var skins = ['Tomato', 'Booster', 'Camo', 'Pumpkin'];
 let skinsPfp;
-var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces."];
+var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to Oct. 2021"];
 let ownedSkins;
 var food = "Ketchup";
 function preload() {
@@ -127,6 +140,19 @@ function preload() {
   boosterbase11 = loadImage('boosterbase11.png');
   boosterbase12 = loadImage('boosterbase12.png');
   boosterbase13 = loadImage('boosterbase13.png');
+  pumpkin1 = loadImage('pumpkin1.png');
+  pumpkin2 = loadImage('pumpkin2.png');
+  pumpkin3 = loadImage('pumpkin3.png');
+  pumpkin4 = loadImage('pumpkin4.png');
+  pumpkin5 = loadImage('pumpkin5.png');
+  pumpkin6 = loadImage('pumpkin6.png');
+  pumpkin7 = loadImage('pumpkin7.png');
+  pumpkin8 = loadImage('pumpkin8.png');
+  pumpkin9 = loadImage('pumpkin1.png');
+  pumpkin10 = loadImage('pumpkin10.png');
+  pumpkin11 = loadImage('pumpkin11.png');
+  pumpkin12 = loadImage('pumpkin12.png');
+  pumpkin13 = loadImage('pumpkin13.png');
   coin = loadImage('coin.png');
   trophy = loadImage('trophy.png');
   walkFrames[0] = tomato1;
@@ -145,10 +171,11 @@ function preload() {
 }
 
 function setup() {
-  skinsPfp = [tomato1, boosterbase1, plant1Graphic]
+  skinsPfp = [tomato1, boosterbase1, plant1Graphic, pumpkin1];
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
-  ownedSkins = [true, false, false];
+  ownedSkins = [true, true, true, true];
+  storeItem('skins', ownedSkins);
   if(getItem('skins') !== null) {
     ownedSkins = getItem('skins');
   }
@@ -163,7 +190,7 @@ function setup() {
     trophiesOwned = getItem('myTrophies');
   }
   if(getItem('myTrophies') === null) {
-    storeItem('myTrophies', [false, false, false, false, false])
+    storeItem('myTrophies', [false, false, false, false, false, false])
   }
 }
 var inputCode = "Enter Code";
@@ -265,7 +292,6 @@ var levels = [
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
 ];
-var levels2 = [];
 var trophyDisplay = function(num, x, y) {
   if(trophiesOwned[num] === false) {
       fill(100, 100, 100);
@@ -285,6 +311,7 @@ var trophyDisplay = function(num, x, y) {
     display = trophyDescription[num];
   }
   textFont('impact');
+  fill(100, 100, 100);
 }
 var human = function(x, y, num) {
   if(timer === 0) {
@@ -508,9 +535,9 @@ var playerDraw = function() {
       walkFrames[10] = boosterbase11;
       walkFrames[11] = boosterbase12;
       walkFrames[12] = boosterbase13;
-      food = 'Wasting Your Money on Boosts';
+      food = 'Broke';
   }
-  if(skin === 'Camo' && walkFrames[0] !== plant1Graphic && ownedSkins[2] === true) {
+  if(skin === 'Camo' && walkFrames[0] !== plantGraphic1 && ownedSkins[2] === true) {
       walkFrames[0] = plant1Graphic;
       walkFrames[1] = plant1Graphic;
       walkFrames[2] = plant1Graphic;
@@ -525,6 +552,22 @@ var playerDraw = function() {
       walkFrames[11] = plant3Graphic;
       walkFrames[12] = plant4Graphic;
       food = "Salad";
+  }
+  if(skin === 'Pumpkin' && walkFrames[0] !== pumpkin1 && ownedSkins[3] === true) {
+      walkFrames[0] = pumpkin1;
+      walkFrames[1] = pumpkin2;
+      walkFrames[2] = pumpkin3;
+      walkFrames[3] = pumpkin4;
+      walkFrames[4] = pumpkin5;
+      walkFrames[5] = pumpkin6;
+      walkFrames[6] = pumpkin7;
+      walkFrames[7] = pumpkin8;
+      walkFrames[8] = pumpkin1;
+      walkFrames[9] = pumpkin10;
+      walkFrames[10] = pumpkin11;
+      walkFrames[11] = pumpkin12;
+      walkFrames[12] = pumpkin13;
+      food = "Pie";
   }
   image(walkFrames[walkFrame], 270, player.y, player.Size, player.Size);
 };
@@ -794,14 +837,16 @@ draw = function() {
     trophyDisplay(2, scene + 2650, 100);
     trophyDisplay(3, scene + 2750, 100);
     trophyDisplay(4, scene + 2850, 100);
+    trophyDisplay(5, scene + 2450, 200);
     if(mouseIsPressed && mouseX > scene + 2850 && mouseX < scene + 2930 && mouseY > 100 && mouseY < 180) {
       window.open("https://discord.gg/ZXKx2kmKnp");
       trophiesOwned[4] = true;
       storeItem('myTrophies', trophiesOwned);
     }
     textFont("Helvetica");
+    fill(0, 0, 0);
     if(display !== null) {
-      text(display, mouseX, mouseY, width - mouseX, height - mouseY);
+      text(display, mouseX + 15, mouseY, width - mouseX, height - mouseY);
     }
     textFont("impact");
     textSize(30);
@@ -826,86 +871,6 @@ draw = function() {
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 130 && mouseY < 180) {
       gamePlaying = true;
       themeSong.stop();
-      levels = [
-  ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbI",
-    "b----------------------------I",
-    "b----------i------i----------I",
-    "b-----bbbbbbbbbbbbbbbb-------I",
-    "b--------------------b-------I",
-    "bb-------------------x-------I",
-    "bbb------------------x-------I",
-    "bbbb-----------------b-------I",
-    "bbbbb--1=i----i-1--@-b---#--=I",
-    "dddddDDDDDDDDDDDDDDDDdDDDDDDDd",
-    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-  ],
-  [ "II-----------bbbbbbbbbbb-------------Bbbbbbbbbbbbbbbb",
-    "I------------b---------b-------------l-----l-------Ib",
-    "I------------b---------b#-----i------l-----l--------b",
-    "I------------b---------bbbbbbbbb----bB--B--B--B-----b",
-    "I------------b---------b-----------bbB--B--B--B-----b",
-    "I------------b---------b----i-----bbbB--B--B--B-----b",
-    "I------------b---------b--bbbbbbbbbbbB--B--B--B-----b",
-    "I------------b---------b----------------B-----B-----b",
-    "I------------b---------b=------1--i-----B-i--=B--@--b",
-    "Iiiiiiiiiiiiib---------dDDDDDDDDDDDDDDDDdDDDDDdDDDDDd",
-    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=================",
-  ],
-   ["bI----------------------------b----I------------II",
-    "b------------------b--bbbbbbxxb----I-------------I",
-    "b---------------b--b--b-------b----I-------------I",
-    "b------b----b------b--b----b--b----I-------------I",
-    "b--b---------------b---i---b--b----I-------------I",
-    "b------------------bbbbbbbbb--x----I-------------I",
-    "b-----i-------------b---------x----I-------------I",
-    "b-----b-------------b--bbbbbbbb----I-------------I",
-    "b@--------i---1-----b---i----#x----I-------------I",
-    "dDDDDDDDDDDDDDDDDDDDdDDDDDDDDDDDDDDD-------------I",
-    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
-    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB==================I",
-  ],
-   ["II------------------------------------------------------II",
-    "I--------------------------------------------------------I",
-    "I------------------1-----------1-------------------------I",
-    "I-----------------DDDD----DDDDDDDDDDD--------------------I",
-    "I----------------Ddddd---DdddddddddddD-------------------I",
-    "I---------------DdBBBBB----BBBBBBBBBBdD------------------I",
-    "I--------------DdBBBBBB--i-----BBBBBBBdD-----------------I",
-    "I-------------DdBBBBB----BB-----BBBBBBBdD---------------#I",
-    "I@---i---1---DdBBB------BBBB------BBBBBBdDDD---DD---DDDDDD",
-    "DDDDDDDDDDDDDdBBBB------BBBBBBBB-----------i---BB===BBBBBB",
-    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-  ],
-  [ "I--------b-------------------------bbbbIIIIII",
-    "I--------b--b-------------------------b-----I",
-    "I--------b--b--B----------------------b-----I",
-    "I--------b--b-----i----B--------------b-----I",
-    "I--------b#-b-----B--------B----------b-----I",
-    "I--------bbb--------------------------b-----I",
-    "I--------b-------------B-----B--------b-----I",
-    "I--------b----B-----------------------b-----I",
-    "I--------bi---------------i--------@--x-----I",
-    "I--------dDD==============DDDDDDDDDDDDd-----I",
-    "I--------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
-    "I--------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
-    "I-------------------------------------------I",
-    "I-------------------------------------------I",
-    "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
-  ],
-   ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-    "b----------------------------b",
-    "b----------------------------b",
-    "b----------------------------b",
-    "b----------------------------b",
-    "b----------------------------b",
-    "b----------------------------b",
-    "b----------------------------b",
-    "b---------------------------@b",
-    "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-  ],
-];
     }
     if (mouseIsPressed && mouseX > scene + 200 && mouseX < scene + 400 && mouseY > 190 && mouseY < 240) {
       scene = -1200;
@@ -996,7 +961,6 @@ draw = function() {
     }
     if(trophiesOwned[0] !== true) {
       trophiesOwned[0] = true;
-      storeItem('myTrophies', trophiesOwned);
     }
     inputCode = 'Enter Code';
   }
@@ -1023,6 +987,11 @@ draw = function() {
     text("BACK", 30, 50);
     if(score >= 20) {
       trophiesOwned[2] = true;
+    }
+    if(score >= 30) {
+      trophiesOwned[5] = true;
+      ownedSkins[3] = true;
+      storeItem('skins', ownedSkins);
     }
     if(speedRunTimerSec <= 30) {
       trophiesOwned[3] = true;
