@@ -29,7 +29,7 @@ let cloud;
 let trophy;
 let themeSong;
 var coins = 0;
-var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member", "Serial Killer"];
+var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member", "Grim Reaper"];
 var trophiesOwned = [false, false, false, false, false, false];
 var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server (click on this box)", "Oct 2021 only. Win the game and kill 30 humans. "];
 var display = null;
