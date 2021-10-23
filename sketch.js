@@ -25,13 +25,14 @@ let humanGraphic;
 let stereoGraphic;
 let coin;
 let sun;
+let moon;
 let cloud;
 let trophy;
 let themeSong;
 var coins = 0;
-var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member", "Grim Reaper"];
+var trophies = ["Booster", "Pacifist", "Bounty Hunter", "Pro", "Server Member", "Candy Thief"];
 var trophiesOwned = [false, false, false, false, false, false];
-var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server (click on this box)", "Oct 2021 only. Win the game and kill 30 humans. "];
+var trophyDescription = ["Boost the discord server", "Win the game without killing any humans", "Win the game and kill 20 or more humans", "Win the game in 30 seconds or less", "Join the discord server (click on this box)", "Oct 2021 only. Win the game and collect 30 lollypops. "];
 var display = null;
 var walkFrames = [];
 var walkFrame = 1;
@@ -47,6 +48,8 @@ var soundPlaying = false;
 var humany = [];
 var showHitBox = false;
 var clickTimer = 0;
+let ghost;
+let lollypop;
 let tomato1;
 let tomato2;
 let tomato3;
@@ -92,6 +95,7 @@ let skinsPfp;
 var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to Oct. 2021"];
 let ownedSkins;
 var food = "Ketchup";
+var mode = 'classic';
 function preload() {
   soundFormats('ogg', 'mp3');
   themeSong = loadSound('themesong.mp3');
@@ -114,6 +118,9 @@ function preload() {
   dirtBlock2Graphic = loadImage('dirt_block.rot1.png');
   cloud = loadImage('cloud.png');
   sun = loadImage('sun.png');
+  moon = loadImage('moon.png');
+  ghost = loadImage('ghost.png');
+  lollypop = loadImage('lollypop.png');
   tomato1 = loadImage('tomato_graphic1.png');
   tomato2 = loadImage('tomato_graphic2.png');
   tomato3 = loadImage('tomato_graphic3.png');
@@ -171,6 +178,9 @@ function preload() {
 }
 
 function setup() {
+  if(month() === 10) {
+    mode = 'halloween';
+  }
   skinsPfp = [tomato1, boosterbase1, plant1Graphic, pumpkin1];
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
@@ -317,7 +327,12 @@ var human = function(x, y, num) {
     humany[num] = y;
   }
   if(timer > 0) {
-    image(humanGraphic, x, humany[num], blockSize, blockSize);
+    if(mode === 'classic') {
+      image(humanGraphic, x, humany[num], blockSize, blockSize);
+    }
+    if(mode === 'halloween') {
+      image(lollypop, x, humany[num], blockSize, blockSize);
+    }
     if (dist(270 + player.Size / 2, player.y + blockSize / 2, x + blockSize / 2, humany[num] + blockSize / 2) <= blockSize + 5) {
       score++;
       coins += 10;
@@ -378,7 +393,11 @@ var block = function(x, y, solid) {
   }
 };
 var plant1 = function(x, y) {
-  image(plant1Graphic, x, y, blockSize, blockSize);
+  if(mode === 'classic') {
+    image(plant1Graphic, x, y, blockSize, blockSize);
+  }  
+  if(mode === 'halloween') {}
+    image(pumpkin1, x, y, blockSize, blockSize);
 };
 var brick = function(x, y, solid) {
   image(brickGraphic, x, y, blockSize, blockSize);
@@ -479,7 +498,12 @@ var portal = function(x, y) {
   }
 };
 var stereo = function(x, y) {
-  image(stereoGraphic, x, y, blockSize, blockSize);
+  if(mode === 'classic') {
+    image(stereoGraphic, x, y, blockSize, blockSize);
+  }
+  if(mode === 'halloween') {
+    image(ghost, x, y, blockSize, blockSize);
+  }
   if (player.y > y - 30 && player.y < y + 50 && 270 > x - 50 && 270 < x + 50 && player.health > 0) {
     player.health -= 10;
     player.yVel = -15;
@@ -569,6 +593,16 @@ var playerDraw = function() {
       food = "Pie";
   }
   image(walkFrames[walkFrame], 270, player.y, player.Size, player.Size);
+  if(showHitBox === true) {
+    noFill();
+    if(mode === 'classic') {
+      stroke(0, 0, 0);
+    }
+    if(mode === 'halloween') {
+      stroke(255, 255, 255);
+    }
+    rect(270, player.y, player.Size, player.Size);
+  }
 };
 var playerMove = function() {
   if (player.keys[0] === true && player.xVel > -7 && player.health > 0) {
@@ -597,13 +631,18 @@ var playerMove = function() {
   player.y += player.yVel;
 };
 var drawLevel = function(x, y) {
-  image(sun, 400, 100, 120, 120);
-  image(cloud, 300, 200, 60, 60);
-  image(cloud, 200, 100, 80, 80);
-  image(cloud, 390, 150, 60, 60);
-  image(cloud, 30, 60, 50, 50);
-  image(cloud, 100, 200, 60, 60);
-  image(cloud, 500, 50, 60, 60);
+  if(mode === 'classic') {
+      image(sun, 400, 100, 120, 120);
+      image(cloud, 300, 200, 60, 60);
+      image(cloud, 200, 100, 80, 80);
+      image(cloud, 390, 150, 60, 60);
+      image(cloud, 30, 60, 50, 50);
+      image(cloud, 100, 200, 60, 60);
+      image(cloud, 500, 50, 60, 60);
+  }
+  if(mode === 'halloween') {
+      image(moon, 400, 100, 120, 120);
+  }
   for (var i = 0; i < levels[level - 1].length; i++) {
     for (var j = 0; j < levels[level - 1][i].length; j++) {
       switch (levels[level - 1][i][j]) {
@@ -902,10 +941,20 @@ draw = function() {
   }
   if (gamePlaying === true) {
     player.onBlock = false;
-    background(0, 200, 255);
+    if(mode === 'classic') {
+        background(0, 200, 255);
+    }
+    if(mode === 'halloween') {
+      background(0);
+    }
     drawLevel(player.camX, -60);
     stroke(0, 0, 0);
-    fill(0, 0, 0);
+    if(mode === 'classic') {
+      fill(0, 0, 0);
+    }
+    if(mode === 'halloween') {
+      fill(255, 255, 255);
+    }
     text(score, 400, 50);
     text(speedRunTimerSec + "." + speedRunTimerMil, 500, 50);
     fill(255, 0, 0);
@@ -1043,12 +1092,12 @@ draw = function() {
   textSize(width / 30);
   fill(255, 255, 255);
   text("Made by Henry MacDougall", 20, 570); 
-  for(var i2 = 0; i2 < walkFrames.length; i2++) {
-      if(showHitBox === true) {
-      //walkFrames[i2].filter(OPAQUE);
-    }
+  if(mode === 'halloween') {
+    fill(255, 255, 255);
   }
-  fill(0, 0, 0);
+  if(mode === 'classic' || gamePlaying !== true) {
+      fill(0);
+  }
   text(coins, width / 2 - 50, 50);
   image(coin, width / 2 - 75, 28, 30, 30);
   document.addEventListener('contextmenu', event => event.preventDefault());
