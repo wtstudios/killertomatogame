@@ -175,7 +175,6 @@ function setup() {
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
   ownedSkins = [true, false, false, false];
-  storeItem('skins', ownedSkins);
   if(getItem('skins') !== null) {
     ownedSkins = getItem('skins');
   }
