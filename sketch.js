@@ -992,6 +992,9 @@ draw = function() {
         storeItem('skins', ownedSkins);
         skin = 'Booster';
     }
+    if(trophiesOwned[0] !== true) {
+      trophiesOwned[0] = true;
+    }
     inputCode = 'Enter Code';
   }
   if(inputCode === 'YbeIcUh') {
