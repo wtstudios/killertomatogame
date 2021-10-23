@@ -994,6 +994,7 @@ draw = function() {
     }
     if(trophiesOwned[0] !== true) {
       trophiesOwned[0] = true;
+      storeItem('myTrophies', trophiesOwned);
     }
     inputCode = 'Enter Code';
   }
