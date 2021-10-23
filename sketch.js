@@ -508,7 +508,7 @@ var playerDraw = function() {
       walkFrames[11] = boosterbase12;
       walkFrames[12] = boosterbase13;
   }
-  if(skin === 'Camo' && walkFrames[0] !== plantGraphic1 && ownedSkins[2] === true) {
+  if(skin === 'Camo' && walkFrames[0] !== plant1Graphic && ownedSkins[2] === true) {
       walkFrames[0] = plant1Graphic;
       walkFrames[1] = plant1Graphic;
       walkFrames[2] = plant1Graphic;
