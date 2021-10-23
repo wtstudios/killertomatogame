@@ -492,6 +492,7 @@ var playerDraw = function() {
       walkFrames[10] = tomato11;
       walkFrames[11] = tomato12;
       walkFrames[12] = tomato13;
+      food = 'Ketchup';
   }
   if(skin === 'Booster' && walkFrames[0] !== boosterbase1 && ownedSkins[1] === true) {
     walkFrames[0] = boosterbase1;
@@ -507,6 +508,7 @@ var playerDraw = function() {
       walkFrames[10] = boosterbase11;
       walkFrames[11] = boosterbase12;
       walkFrames[12] = boosterbase13;
+      food = 'Wasting Your Money on Boosts';
   }
   if(skin === 'Camo' && walkFrames[0] !== plant1Graphic && ownedSkins[2] === true) {
       walkFrames[0] = plant1Graphic;
@@ -955,7 +957,7 @@ draw = function() {
     deathTimer++;
     fill(255, 0, 0);
     textSize(30);
-    text("You're " + food, 200, 300);
+    text("You're " + food, 200, 300, 400, 300);
   }
   if (walkFrame === 8 && walkTimer === 4 && player.keys[2] === true) {
     walkFrame = 1;
