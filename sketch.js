@@ -92,7 +92,7 @@ let pumpkin13;
 var skin = 'Tomato';
 var skins = ['Tomato', 'Booster', 'Camo', 'Pumpkin'];
 let skinsPfp;
-var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to Oct. 2021"];
+var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to October."];
 let ownedSkins;
 var food = "Ketchup";
 var mode = 'classic';
@@ -1036,7 +1036,7 @@ draw = function() {
     if(score >= 20) {
       trophiesOwned[2] = true;
     }
-    if(score >= 30) {
+    if(score >= 30 && month() === 10) {
       trophiesOwned[5] = true;
       ownedSkins[3] = true;
       storeItem('skins', ownedSkins);
