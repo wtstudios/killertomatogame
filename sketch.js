@@ -92,7 +92,7 @@ let pumpkin13;
 var skin = 'Tomato';
 var skins = ['Tomato', 'Booster', 'Camo', 'Pumpkin'];
 let skinsPfp;
-var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to October."];
+var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to Oct. 2021"];
 let ownedSkins;
 var food = "Ketchup";
 var mode = 'classic';
