@@ -96,6 +96,8 @@ var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acqui
 let ownedSkins;
 var food = "Ketchup";
 var mode = 'classic';
+var insideCount = 0;
+var inside = false;
 function preload() {
   soundFormats('ogg', 'mp3');
   themeSong = loadSound('themesong.mp3');
@@ -110,7 +112,7 @@ function preload() {
   tomatoCrateGraphic = loadImage('tomato_crate.png');
   dirtBlockGraphic = loadImage('dirt_block.png');
   brickGraphic = loadImage('brick_block.png');
-  plant1Graphic = loadImage('plant1.png');
+  plant1Graphic = loadImage('plant1Graphic.png');
   plant2Graphic = loadImage('plant2Graphic.png');
   plant3Graphic = loadImage('plant3Graphic.png');
   plant4Graphic = loadImage('plant4Graphic.png');
@@ -352,19 +354,23 @@ var invisBlock = function(x, y) {
   if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
     player.camX = player.camX + x - 323;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
     player.camX = player.camX + x - 220;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
     player.yVel = 0;
     player.y = y + blockSize;
     player.onBlock = false;
+    inside = true;
     if(player.yVel > 15) {
       player.health -= 10;
     }}
@@ -374,19 +380,23 @@ var block = function(x, y, solid) {
   if(solid === true) { if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
     player.camX = player.camX + x - 323;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
     player.camX = player.camX + x - 220;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
     player.yVel = 0;
     player.y = y + blockSize;
     player.onBlock = false;
+    inside = true;
     if(player.yVel > 15) {
       player.health -= 10;
     }}
@@ -396,27 +406,32 @@ var plant1 = function(x, y) {
   if(mode === 'classic') {
     image(plant1Graphic, x, y, blockSize, blockSize);
   }  
-  if(mode === 'halloween') {}
+  if(mode === 'halloween') {
     image(pumpkin1, x, y, blockSize, blockSize);
+  }
 };
 var brick = function(x, y, solid) {
   image(brickGraphic, x, y, blockSize, blockSize);
   if(solid === true) { if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
     player.camX = player.camX + x - 323;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
     player.camX = player.camX + x - 220;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
     player.yVel = 0;
     player.y = y + blockSize;
     player.onBlock = false;
+    inside = true;
     if(player.yVel > 15) {
       player.health -= 10;
     }}
@@ -427,19 +442,23 @@ var dirtBlock = function(x, y) {
   if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
     player.camX = player.camX + x - 323;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
     player.camX = player.camX + x - 220;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
     player.yVel = 0;
     player.y = y + blockSize;
     player.onBlock = false;
+    inside = true;
     if(player.yVel > 15) {
       player.health -= 10;
     }}
@@ -449,19 +468,23 @@ var dirtBlock2 = function(x, y) {
   if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
     player.camX = player.camX + x - 323;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
     player.camX = player.camX + x - 220;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
     player.yVel = 0;
     player.y = y + blockSize;
     player.onBlock = false;
+    inside = true;
     if(player.yVel > 15) {
       player.health -= 10;
     }}
@@ -471,19 +494,23 @@ var blankDirtBlock = function(x, y) {
   if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
     player.camX = player.camX + x - 323;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
     player.camX = player.camX + x - 220;
     player.xVel = 0;
+    inside = true;
   }
   if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
     player.yVel = 0;
     player.y = y + blockSize;
     player.onBlock = false;
+    inside = true;
     if(player.yVel > 15) {
       player.health -= 10;
     }}
@@ -495,6 +522,7 @@ var portal = function(x, y) {
     player.respawn = true;
     player.transfer = false;
     timer = -1;
+    inside = true;
   }
 };
 var stereo = function(x, y) {
@@ -560,7 +588,7 @@ var playerDraw = function() {
       walkFrames[12] = boosterbase13;
       food = 'Broke';
   }
-  if(skin === 'Camo' && walkFrames[0] !== plantGraphic1 && ownedSkins[2] === true) {
+  if(skin === 'Camo' && walkFrames[0] !== plant1Graphic && ownedSkins[2] === true) {
       walkFrames[0] = plant1Graphic;
       walkFrames[1] = plant1Graphic;
       walkFrames[2] = plant1Graphic;
@@ -947,7 +975,14 @@ draw = function() {
     if(mode === 'halloween') {
       background(0);
     }
+    inside = false;
     drawLevel(player.camX, -60);
+    if(inside === true) {
+      insideCount++;
+    }
+    if(inside === false && insideCount > 0) {
+      insideCount--;
+    }
     stroke(0, 0, 0);
     if(mode === 'classic') {
       fill(0, 0, 0);
