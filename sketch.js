@@ -718,8 +718,6 @@ var drawLevel = function(x, y) {
       }
     }
   }
-
-
 };
 keyPressed = function() {
   if (key.code === 97 || keyCode === LEFT_ARROW || key === 'a' || key === 'A') {
@@ -1065,7 +1063,7 @@ draw = function() {
     textSize(40);
     text("YOU WIN", 40, 100);
     textSize(20);
-    text("WITH A TOTAL OF " + score + " HUMANS KILLED AND A SPEEDRUN TIME OF " + speedRunTimerSec + "." + speedRunTimerMil + " SECONDS", 40, 150, 520, 300);
+    text("With a total of " + score + " humans killed and a run time of " + speedRunTimerSec + "." + speedRunTimerMil + " seconds", 40, 150, 520, 300);
     speedRunTimerMil--;
     fill(0, 0, 0);
     text("BACK", 30, 50);
