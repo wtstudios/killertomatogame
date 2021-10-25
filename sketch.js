@@ -911,7 +911,7 @@ draw = function() {
     textFont("Helvetica");
     fill(0, 0, 0);
     if(display !== null) {
-      text(display, mouseX + 15, mouseY, width - mouseX, height - mouseY);
+      text(display, mouseX + 15, mouseY, width - mouseX - 15, height - mouseY);
     }
     textFont("impact");
     textSize(30);
