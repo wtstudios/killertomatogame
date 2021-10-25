@@ -112,7 +112,7 @@ function preload() {
   tomatoCrateGraphic = loadImage('tomato_crate.png');
   dirtBlockGraphic = loadImage('dirt_block.png');
   brickGraphic = loadImage('brick_block.png');
-  plant1Graphic = loadImage('plant1Graphic.png');
+  plant1Graphic = loadImage('plant1.png');
   plant2Graphic = loadImage('plant2Graphic.png');
   plant3Graphic = loadImage('plant3Graphic.png');
   plant4Graphic = loadImage('plant4Graphic.png');
@@ -630,6 +630,7 @@ var playerDraw = function() {
       stroke(255, 255, 255);
     }
     rect(270, player.y, player.Size, player.Size);
+    stroke(0, 0, 0);
   }
 };
 var playerMove = function() {
