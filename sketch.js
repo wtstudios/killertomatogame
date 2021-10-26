@@ -48,6 +48,10 @@ var soundPlaying = false;
 var humany = [];
 var showHitBox = false;
 var clickTimer = 0;
+let snow1;
+let snow2;
+let snow3;
+let snow4;
 let ghost;
 let lollypop;
 let tomato1;
@@ -123,6 +127,10 @@ function preload() {
   moon = loadImage('moon.png');
   ghost = loadImage('ghost.png');
   lollypop = loadImage('lollypop.png');
+  snow1 = loadImage('snow1.png');
+  snow2 = loadImage('snow2.png');
+  snow3 = loadImage('snow3.png');
+  snow4 = loadImage('snow4.png');
   tomato1 = loadImage('tomato_graphic1.png');
   tomato2 = loadImage('tomato_graphic2.png');
   tomato3 = loadImage('tomato_graphic3.png');
@@ -350,33 +358,23 @@ var human = function(x, y, num) {
   }
     
 };
-var invisBlock = function(x, y) {
-  if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
-    player.y = y - player.Size;
-    player.onBlock = true;
-    inside = true;
+var block = function(x, y, visible, solid, type) {
+  if(visible === true) {
+    switch(type) {
+      case 'brick':
+        image(brickGraphic, x, y, blockSize, blockSize);
+      break;
+      case 'block':
+        image(blockGraphic, x, y, blockSize, blockSize);
+      break;
+      case 'dirt1':
+        image(dirtBlockGraphic, x, y, blockSize, blockSize);
+      break;
+      case 'dirt2':
+        image(blankDirt, x, y, blockSize, blockSize);
+      break;
   }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 323;
-    player.xVel = 0;
-    inside = true;
   }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
-    player.yVel = 0;
-    player.y = y + blockSize;
-    player.onBlock = false;
-    inside = true;
-    if(player.yVel > 15) {
-      player.health -= 10;
-    }}
-};
-var block = function(x, y, solid) {
-  image(blockGraphic, x, y, blockSize, blockSize);
   if(solid === true) { if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
     player.y = y - player.Size;
     player.onBlock = true;
@@ -409,111 +407,6 @@ var plant1 = function(x, y) {
   if(mode === 'halloween') {
     image(pumpkin1, x, y, blockSize, blockSize);
   }
-};
-var brick = function(x, y, solid) {
-  image(brickGraphic, x, y, blockSize, blockSize);
-  if(solid === true) { if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
-    player.y = y - player.Size;
-    player.onBlock = true;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 323;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
-    player.yVel = 0;
-    player.y = y + blockSize;
-    player.onBlock = false;
-    inside = true;
-    if(player.yVel > 15) {
-      player.health -= 10;
-    }}
-  }
-};
-var dirtBlock = function(x, y) {
-  image(dirtBlockGraphic, x, y, blockSize, blockSize);
-  if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
-    player.y = y - player.Size;
-    player.onBlock = true;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 323;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
-    player.yVel = 0;
-    player.y = y + blockSize;
-    player.onBlock = false;
-    inside = true;
-    if(player.yVel > 15) {
-      player.health -= 10;
-    }}
-};
-var dirtBlock2 = function(x, y) {
-  image(dirtBlock2Graphic, x, y, blockSize, blockSize);
-  if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
-    player.y = y - player.Size;
-    player.onBlock = true;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 323;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
-    player.yVel = 0;
-    player.y = y + blockSize;
-    player.onBlock = false;
-    inside = true;
-    if(player.yVel > 15) {
-      player.health -= 10;
-    }}
-};
-var blankDirtBlock = function(x, y) {
-  image(blankDirt, x, y, blockSize, blockSize);
-  if (player.y >= y - blockSize && player.y < y && 270 > x - blockSize && 270 < x + blockSize) {
-    player.y = y - player.Size;
-    player.onBlock = true;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 < x - blockSize / 2 && 270 > x - blockSize) {
-    player.camX = player.camX + x - 323;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y < y + blockSize && player.y > y - blockSize && 270 > x + blockSize / 2 && 270 < x + blockSize) {
-    player.camX = player.camX + x - 220;
-    player.xVel = 0;
-    inside = true;
-  }
-  if (player.y <= y + blockSize && player.y > y + 30 && 270 > x - blockSize && 270 < x + blockSize) {
-    player.yVel = 0;
-    player.y = y + blockSize;
-    player.onBlock = false;
-    inside = true;
-    if(player.yVel > 15) {
-      player.health -= 10;
-    }}
 };
 var portal = function(x, y) {
   image(tomatoCrateGraphic, x, y, blockSize, blockSize);
@@ -676,7 +569,7 @@ var drawLevel = function(x, y) {
     for (var j = 0; j < levels[level - 1][i].length; j++) {
       switch (levels[level - 1][i][j]) {
         case 'B':
-          block(j * blockSize + x, i * blockSize + y, true);
+          block(j * blockSize + x, i * blockSize + y, true, true, 'block');
           break;
         case '=':
           stereo(j * blockSize + x, i * blockSize + y);
@@ -689,31 +582,28 @@ var drawLevel = function(x, y) {
           portal(j * blockSize + x, i * blockSize + y);
           break;
         case 'D':
-          dirtBlock(j * blockSize + x, i * blockSize + y);
+          block(j * blockSize + x, i * blockSize + y, true, true, 'dirt1');
           break;
         case 'b':
-          brick(j * blockSize + x, i * blockSize + y, true);
+          block(j * blockSize + x, i * blockSize + y, true, true, 'brick');
           break;
           case 'x':
-          brick(j * blockSize + x, i * blockSize + y, false);
+          block(j * blockSize + x, i * blockSize + y, true, false, 'brick');
           break;
         case '1':
           plant1(j * blockSize + x, i * blockSize + y);
           break;
         case 'd':
-          blankDirtBlock(j * blockSize + x, i * blockSize + y);
-          break;
-        case '2':
-          dirtBlock2(j * blockSize + x, i * blockSize + y);
+          block(j * blockSize + x, i * blockSize + y, true, true, 'dirt2');
           break;
         case 'i':
           human(j * blockSize + x, i * blockSize + y,i + j + level);
           break;
         case 'I':
-          invisBlock(j * blockSize + x, i * blockSize + y);
+          block(j * blockSize + x, i * blockSize + y, false, true, 'block');
           break;
         case 'l':
-          block(j * blockSize + x, i * blockSize + y, false);
+          block(j * blockSize + x, i * blockSize + y, true, false, 'block');
           break;
       }
     }
