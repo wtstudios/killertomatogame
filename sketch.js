@@ -95,10 +95,10 @@ let pumpkin11;
 let pumpkin12;
 let pumpkin13;
 var skin = 'Tomato';
-var skins = ['Tomato', 'Booster', 'Camo', 'Pumpkin'];
+var skins = ['Tomato', 'Booster', 'Pumpkin', 'Camo'];
 let skinsPfp;
-var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to Oct. 2021"];
-let ownedSkins;
+var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Exclusive to Oct. 2021", "Camoflauge. Originally used in the great tomato wars against the human forces."];
+let ownedSkins; 
 var food = "Ketchup";
 var mode = 'classic';
 var insideCount = 0;
@@ -192,7 +192,7 @@ function setup() {
   if(month() === 10) {
     mode = 'halloween';
   }
-  skinsPfp = [tomato1, boosterbase1, plant1Graphic, pumpkin1];
+  skinsPfp = [tomato1, boosterbase1, pumpkin1, plant1Graphic];
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
   ownedSkins = [true, false, false, false];
