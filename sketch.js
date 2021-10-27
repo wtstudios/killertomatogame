@@ -1,3 +1,4 @@
+var accepting = false;
 var speedRunTimerSec = 0;
 var speedRunTimerMil = 0;
 var multi = 1;
@@ -924,7 +925,7 @@ draw = function() {
   if(gameVolume > 200) {
     gameVolume = 200;
   }
-  if(inputCode === 'SkcUdgE') {
+  if(inputCode === 'SkcUdgE' && accepting === true) {
     if(ownedSkins[1] !== true) {
         ownedSkins[1] = true;
         coins+=100;
@@ -936,7 +937,7 @@ draw = function() {
     }
     inputCode = 'Enter Code';
   }
-  if(inputCode === 'YbeIcUh') {
+  if(inputCode === 'YbeIcUh' && accepting === true) {
     if(ownedSkins[2] !== true) {
         ownedSkins[2] = true;
         coins+=100;
