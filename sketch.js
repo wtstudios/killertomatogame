@@ -1,3 +1,7 @@
+// omg! you are so cool!
+// this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
+// have fun!
+var codes = ['none', 'skcudge', 'ybeicuh', 'none'];
 var accepting = false;
 var speedRunTimerSec = 0;
 var speedRunTimerMil = 0;
@@ -95,14 +99,15 @@ let pumpkin11;
 let pumpkin12;
 let pumpkin13;
 var skin = 'Tomato';
-var skins = ['Tomato', 'Booster', 'Pumpkin', 'Camo'];
+var skins = ['Tomato', 'Booster', 'Camo', 'Pumpkin'];
 let skinsPfp;
-var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Exclusive to Oct. 2021", "Camoflauge. Originally used in the great tomato wars against the human forces."];
+var skinDesc = ["The default. An icon of early tomato-hood.", "Can only be acquired by boosting the discord server.", "Camoflauge. Originally used in the great tomato wars against the human forces.", "Exclusive to Oct. 2021"]; 
 let ownedSkins; 
 var food = "Ketchup";
 var mode = 'classic';
 var insideCount = 0;
 var inside = false;
+var colours;
 function preload() {
   soundFormats('ogg', 'mp3');
   themeSong = loadSound('themesong.mp3');
@@ -186,13 +191,17 @@ function preload() {
   walkFrames[10] = tomato11;
   walkFrames[11] = tomato12;
   walkFrames[12] = tomato13;
+  let palette = 'https://api.jsonserve.com/FU-n3Z';
+  grey = loadJSON(palette);
 }
 
 function setup() {
+  ownedSkins = [true, false, false, true];
+  storeItem('skins', ownedSkins);
   if(month() === 10) {
     mode = 'halloween';
   }
-  skinsPfp = [tomato1, boosterbase1, pumpkin1, plant1Graphic];
+  skinsPfp = [tomato1, boosterbase1, plant1Graphic, pumpkin1];
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
   ownedSkins = [true, false, false, false];
@@ -925,7 +934,7 @@ draw = function() {
   if(gameVolume > 200) {
     gameVolume = 200;
   }
-  if(inputCode === 'SkcUdgE' && accepting === true) {
+  if(inputCode === grey.codes.code2 && accepting === true) {
     if(ownedSkins[1] !== true) {
         ownedSkins[1] = true;
         coins+=100;
@@ -937,7 +946,7 @@ draw = function() {
     }
     inputCode = 'Enter Code';
   }
-  if(inputCode === 'YbeIcUh' && accepting === true) {
+  if(inputCode === grey.codes.code3 && accepting === true) {
     if(ownedSkins[2] !== true) {
         ownedSkins[2] = true;
         coins+=100;
