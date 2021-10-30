@@ -196,7 +196,7 @@ function preload() {
 }
 
 function setup() {
-  ownedSkins = [true, false, false, true];
+  ownedSkins = [true, false, false];
   storeItem('skins', ownedSkins);
   if(month() === 10) {
     mode = 'halloween';
