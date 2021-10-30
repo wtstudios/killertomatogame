@@ -197,7 +197,10 @@ function preload() {
 
 function setup() {
   ownedSkins = [true, false, false, false];
-  ownedSkins[0] = true;
+  if(getItem('skins') !== null) {
+    ownedSkins = getItem('skins');
+  }
+  storeItem('skins', ownedSkins);
   ownedSkins[1] = false;
   ownedSkins[2] = false;
   storeItem('skins', ownedSkins);
