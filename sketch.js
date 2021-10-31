@@ -759,7 +759,7 @@ draw = function() {
     text("Trophies", scene + 250, 345);
     text("Skins", scene + 265, 405);
     textAlign(CENTER);
-    textSize(sin(frameCount * 4) * 4 + 20);
+    textSize(20);
     translate(scene + 300, 120);
     rotate(sin(frameCount * 10) * 4);
     text(menuText[num], 0, 0);
