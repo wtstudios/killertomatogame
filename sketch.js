@@ -1,8 +1,10 @@
 // omg! you are so cool!
 // this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
 // have fun!
+var menuText = ['Respawn button coming 2026', 'In colour!', 'Total profits ¢11!', 'Genocide edition!', 'Produced 300 ketchup bottles in 2020!', 'Jump on stereos to level up!'];
+let num;
 var codes = ['none', 'skcudge', 'ybeicuh', 'none'];
-var accepting = false;
+var accepting = true;
 var speedRunTimerSec = 0;
 var speedRunTimerMil = 0;
 var multi = 1;
@@ -196,11 +198,25 @@ function preload() {
 }
 
 function setup() {
+  if(getItem('number') === null) {
+    num = 0;
+    storeItem('number', num);
+  }
+  if(getItem('number') !== null) {
+    num = getItem('number');
+    num++;
+    storeItem('number', num);
+  }
+  if(num === menuText.length) {
+    num = 0;
+    storeItem('number', num);
+  }
   ownedSkins = [true, false, false, false];
   if(getItem('skins') !== null) {
     ownedSkins = getItem('skins');
   }
   storeItem('skins', ownedSkins);
+  ownedSkins[0] = true;
   ownedSkins[1] = false;
   ownedSkins[2] = false;
   storeItem('skins', ownedSkins);
@@ -691,6 +707,7 @@ function mouseReleased() {
   }
 }
 draw = function() {
+  textAlign(LEFT);
   angleMode(DEGREES);
   clickTimer++;
   background(0, 200, 255);
@@ -741,6 +758,14 @@ draw = function() {
     text("Settings", scene + 250, 285);
     text("Trophies", scene + 250, 345);
     text("Skins", scene + 265, 405);
+    textAlign(CENTER);
+    textSize(sin(frameCount * 4) * 4 + 20);
+    translate(scene + 300, 120);
+    rotate(sin(frameCount * 10) * 4);
+    text(menuText[num], 0, 0);
+    textAlign(LEFT);
+    rotate(-sin(frameCount * 10) * 4);
+    translate(-(scene + 300), -120);
     image(menuTomato, scene + 120, 410, 350, 300);
     fill(120, 120, 120);
     rect(scene + 740, 250, 80, 100, 10);
