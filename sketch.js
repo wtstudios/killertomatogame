@@ -1,7 +1,8 @@
 // omg! you are so cool!
 // this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
 // have fun!
-var menuText = ['Respawn button coming 2026', 'In colour!', 'Total profits ¢11!', 'Produced 300 ketchup bottles in 2020!', 'Jump on stereos to level up!'];
+let impact;
+var menuText = ['Respawn button coming 2026', 'In colour!', 'Total profits ¢11!', 'Produced 300 ketchup bottles in 2020!', 'Jump on stereos to level up!', 'Respawn button delayed to 2032'];
 let num;
 var codes = ['none', 'skcudge', 'ybeicuh', 'none'];
 var accepting = true;
@@ -58,6 +59,9 @@ var clickTimer = 0;
 let snow1;
 let snowflake;
 let lollypop;
+let elf;
+let snowtree;
+let yellowsnow;
 var dx = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0];
 var dy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0];
 let tomato1;
@@ -111,6 +115,7 @@ var inside = false;
 var colours;
 function preload() {
   soundFormats('ogg', 'mp3');
+  impact = loadFont('copyfonts.com_impact-opentype.otf');
   themeSong = loadSound('themesong.mp3');
   splatSound = loadSound('tomatosplat.mp3');
   pubertyLove = loadSound('pubertyLoveSong.mp3');
@@ -192,6 +197,9 @@ function preload() {
   walkFrames[12] = tomato13;
   let palette = 'https://api.jsonserve.com/FU-n3Z';
   grey = loadJSON(palette);
+  snowtree = loadImage('snowtree.png');
+  yellowsnow = loadImage('yellowsnow.png');
+  elf = loadImage('elf.png');
 }
 
 function setup() {
@@ -363,7 +371,7 @@ var trophyDisplay = function(num, x, y) {
   if(mouseX > x + 10 && mouseX < x + 80 && mouseY > y + 10 && mouseY < y + 80) {
     display = trophyDescription[num];
   }
-  textFont('impact');
+  textFont(impact);
   fill(100, 100, 100);
 }
 var human = function(x, y, num) {
@@ -371,11 +379,14 @@ var human = function(x, y, num) {
     humany[num] = y;
   }
   if(timer > 0) {
-    if(mode === 'classic' || mode === 'christmas') {
+    if(mode === 'classic') {
       image(humanGraphic, x, humany[num], blockSize, blockSize);
     }
     if(mode === 'halloween') {
       image(lollypop, x, humany[num], blockSize, blockSize);
+    }
+    if(mode === 'christmas') {
+      image(elf, x, humany[num], blockSize, blockSize);
     }
     if (dist(270 + player.Size / 2, player.y + blockSize / 2, x + blockSize / 2, humany[num] + blockSize / 2) <= blockSize + 5) {
       score++;
@@ -435,11 +446,14 @@ var block = function(x, y, visible, solid, type) {
   }
 };
 var plant1 = function(x, y) {
-  if(mode === 'classic' || mode === 'christmas') {
+  if(mode === 'classic') {
     image(plant1Graphic, x, y, blockSize, blockSize);
   }  
   if(mode === 'halloween') {
     image(pumpkin1, x, y, blockSize, blockSize);
+  }
+  if(mode === 'christmas') {
+    image(snowtree, x, y, blockSize, blockSize);
   }
 };
 var portal = function(x, y) {
@@ -453,11 +467,14 @@ var portal = function(x, y) {
   }
 };
 var stereo = function(x, y) {
-  if(mode === 'classic' || mode === 'christmas') {
+  if(mode === 'classic') {
     image(stereoGraphic, x, y, blockSize, blockSize);
   }
   if(mode === 'halloween') {
     image(ghost, x, y, blockSize, blockSize);
+  }
+  if(mode === 'christmas') {
+    image(yellowsnow, x, y, blockSize, blockSize);
   }
   if (player.y > y - 30 && player.y < y + 50 && 270 > x - 50 && 270 < x + 50 && player.health > 0) {
     player.health -= 10;
@@ -476,7 +493,7 @@ var stereo = function(x, y) {
   }
 };
 var snow = function(x, y) {
-  image(snow1, x, y + 55, blockSize, blockSize);
+  image(snow1, x, y + 57, blockSize, blockSize);
 };
 var playerSpawn = function() {
   player.y = player.spawnY;
@@ -741,7 +758,7 @@ draw = function() {
     stroke(0, 0, 0);
     fill(100, 200, 200);
     rect(scene, 0, width * 6, height);
-    textFont('impact');
+    textFont(impact);
     fill(255, 0, 0);
     textSize(40);
     text("ATTACK OF THE KILLER TOMATOES", scene + 40, 100);
@@ -866,7 +883,7 @@ draw = function() {
     if(display !== null) {
       text(display, mouseX + 15, mouseY, width - mouseX - 15, height - mouseY);
     }
-    textFont("impact");
+    textFont(impact);
     textSize(30);
     fill(220, 220, 220);
     rect(scene + 2000, 290, 200, 20, 5);
