@@ -56,11 +56,10 @@ var humany = [];
 var showHitBox = false;
 var clickTimer = 0;
 let snow1;
-let snow2;
-let snow3;
-let snow4;
-let ghost;
+let snowflake;
 let lollypop;
+var dx = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0];
+var dy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0];
 let tomato1;
 let tomato2;
 let tomato3;
@@ -136,9 +135,7 @@ function preload() {
   ghost = loadImage('ghost.png');
   lollypop = loadImage('lollypop.png');
   snow1 = loadImage('snow1.png');
-  snow2 = loadImage('snow2.png');
-  snow3 = loadImage('snow3.png');
-  snow4 = loadImage('snow4.png');
+  snowflake = loadImage('snowflake.png');
   tomato1 = loadImage('tomato_graphic1.png');
   tomato2 = loadImage('tomato_graphic2.png');
   tomato3 = loadImage('tomato_graphic3.png');
@@ -223,6 +220,9 @@ function setup() {
   if(month() === 10) {
     mode = 'halloween';
   }
+  if(month() === 12) {
+    mode = 'christmas';
+  }
   skinsPfp = [tomato1, boosterbase1, plant1Graphic, pumpkin1];
   let cnv = createCanvas(600, 600);
   cnv.position(windowWidth / 2 - width / 2, 100);
@@ -267,14 +267,15 @@ var levels = [
   ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbI",
     "b----------------------------I",
     "b----------i------i----------I",
-    "b-----bbbbbbbbbbbbbbbb-------I",
+    "b@----bbbbbbbbbbbbbbbb-------I",
     "b--------------------b-------I",
     "bb-------------------x-------I",
     "bbb------------------x-------I",
     "bbbb-----------------b-------I",
-    "bbbbb--1=i----i-1--@-b---#--=I",
+    "bbbbb--1=i----i-1----b---#--=I",
     "dddddDDDDDDDDDDDDDDDDdDDDDDDDd",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
   [ "II-----------bbbbbbbbbbb-------------Bbbbbbbbbbbbbbbb",
     "I------------b---------b-------------l-----l-------Ib",
@@ -286,8 +287,8 @@ var levels = [
     "I------------b---------b----------------B-----B-----b",
     "I------------b---------b=------1--i-----B-i--=B--@--b",
     "Iiiiiiiiiiiiib---------dDDDDDDDDDDDDDDDDdDDDDDdDDDDDd",
-    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-    "Ibbbbbbbbbbbbb---------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=================",
+    "IbbbbbbbbbbbbbIIIIIIIIIBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "IbbbbbbbbbbbbbIIIIIIIIIBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
    ["bI----------------------------b----I------------II",
     "b------------------b--bbbbbbxxb----I-------------I",
@@ -299,6 +300,7 @@ var levels = [
     "b-----b-------------b--bbbbbbbb----I-------------I",
     "b@--------i---1-----b---i----#x----I-------------I",
     "dDDDDDDDDDDDDDDDDDDDdDDDDDDDDDDDDDDD-------------I",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB==================I",
   ],
@@ -325,7 +327,7 @@ var levels = [
     "I--------bi---------------i--------@--x-----I",
     "I--------dDD==============DDDDDDDDDDDDd-----I",
     "I--------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
-    "I--------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
+    "IbbbbbbbbBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbbbI",
     "I-------------------------------------------I",
     "I-------------------------------------------I",
     "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
@@ -369,7 +371,7 @@ var human = function(x, y, num) {
     humany[num] = y;
   }
   if(timer > 0) {
-    if(mode === 'classic') {
+    if(mode === 'classic' || mode === 'christmas') {
       image(humanGraphic, x, humany[num], blockSize, blockSize);
     }
     if(mode === 'halloween') {
@@ -400,7 +402,7 @@ var block = function(x, y, visible, solid, type) {
         image(blockGraphic, x, y, blockSize, blockSize);
       break;
       case 'dirt1':
-        image(dirtBlockGraphic, x, y, blockSize, blockSize);
+        image(dirtBlockGraphic, x, y, blockSize, blockSize); 
       break;
       case 'dirt2':
         image(blankDirt, x, y, blockSize, blockSize);
@@ -433,7 +435,7 @@ var block = function(x, y, visible, solid, type) {
   }
 };
 var plant1 = function(x, y) {
-  if(mode === 'classic') {
+  if(mode === 'classic' || mode === 'christmas') {
     image(plant1Graphic, x, y, blockSize, blockSize);
   }  
   if(mode === 'halloween') {
@@ -451,7 +453,7 @@ var portal = function(x, y) {
   }
 };
 var stereo = function(x, y) {
-  if(mode === 'classic') {
+  if(mode === 'classic' || mode === 'christmas') {
     image(stereoGraphic, x, y, blockSize, blockSize);
   }
   if(mode === 'halloween') {
@@ -472,6 +474,9 @@ var stereo = function(x, y) {
   if(dist(300, player.x, x + blockSize / 2, y + blockSize / 2) <= 100 && !pubertyLove.isPlaying()) {
     pubertyLove.play();
   }
+};
+var snow = function(x, y) {
+  image(snow1, x, y + 55, blockSize, blockSize);
 };
 var playerSpawn = function() {
   player.y = player.spawnY;
@@ -585,8 +590,10 @@ var playerMove = function() {
   player.y += player.yVel;
 };
 var drawLevel = function(x, y) {
-  if(mode === 'classic') {
-      image(sun, 400, 100, 120, 120);
+  if(mode === 'classic' || mode === 'christmas') {
+      if(mode === 'classic') {
+        image(sun, 400, 100, 120, 120);
+      }
       image(cloud, 300, 200, 60, 60);
       image(cloud, 200, 100, 80, 80);
       image(cloud, 390, 150, 60, 60);
@@ -636,6 +643,13 @@ var drawLevel = function(x, y) {
           break;
         case 'l':
           block(j * blockSize + x, i * blockSize + y, true, false, 'block');
+          break;
+        case '-':
+          if(mode === 'christmas') {
+            if(levels[level - 1][i + 1][j] === 'B' || levels[level - 1][i + 1][j] === 'D' || levels[level - 1][i + 1][j] === 'b' || levels[level - 1][i + 1][j] === 'd' || levels[level - 1][i + 1][j] === 'l'){
+            snow(j * blockSize + x, i * blockSize + y);
+             }
+          }
           break;
       }
     }
@@ -706,7 +720,15 @@ function mouseReleased() {
     clickTimer = 0;
   }
 }
+
 draw = function() {
+  imageMode(CORNER);
+  if(timer === 1 && mode !== 'classic') {
+        for(var c = 0; c < 30; c++) {
+    dx[c] = random(0, width);
+    dy[c] = random(0, height);
+  }
+  }
   textAlign(LEFT);
   angleMode(DEGREES);
   clickTimer++;
@@ -905,6 +927,9 @@ draw = function() {
     if(mode === 'halloween') {
       background(0);
     }
+    if(mode === 'christmas') {
+      background(200);
+    }
     inside = false;
     drawLevel(player.camX, -60);
     if(inside === true) {
@@ -929,6 +954,25 @@ draw = function() {
     text("BACK             FULLSCREEN", 35, 47);
     playerDraw();
     playerMove();
+        for(f = 0; f < dx.length; f++) {
+      imageMode(CENTER);
+      translate(dx[f], dy[f]);
+      rotate(dy[f]);
+      if(mode === 'christmas') {
+        image(snowflake, 0, 0, 20, 20);
+      }
+      imageMode(CORNER);
+      rotate(-dy[f]);
+      translate(-dx[f], -dy[f]);
+      dx[f]--;
+      dy[f]++;
+      if(dx[f] <= -10) {
+        dx[f] = width + 10;
+      }
+      if(dy[f] >= 610) {
+        dy[f] = -10;
+      }
+    }
     timer++;
   }
   if (player.health < 1) {
@@ -982,6 +1026,14 @@ draw = function() {
         ownedSkins[2] = true;
         coins+=100;
         skin = 'Camo';
+        storeItem('skins', ownedSkins);
+    }
+    inputCode = 'Enter Code';
+  }
+  if(inputCode === 'ethereal') {
+    skin = 'Pumpkin';
+    if(ownedSkins[3] !== true) {
+        ownedSkins[3] = true;
         storeItem('skins', ownedSkins);
     }
     inputCode = 'Enter Code';
