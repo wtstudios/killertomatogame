@@ -833,11 +833,11 @@ draw = function() {
     fill(0, 0, 0);
     textSize(30);
     text("PLAY", scene + 870, 465);
-    text("BACK", scene + 660, 85);
-    text("BACK", scene + 1260, 85);
-    text("BACK", scene + 1860, 85);
-    text("BACK", scene + 2460, 85);
-    text("BACK", scene + 3060, 85);
+    text("EXIT", scene + 660, 85);
+    text("EXIT", scene + 1260, 85);
+    text("EXIT", scene + 1860, 85);
+    text("EXIT", scene + 2460, 85);
+    text("EXIT", scene + 3060, 85);
     text("Skins", scene + 3250, 90);
     textSize(25);
     display = null;
@@ -968,7 +968,7 @@ draw = function() {
     rect(20, 20, 80, 40, 5);
     rect(120, 20, 100, 40, 5);
     fill(0, 0, 0);
-    text("BACK             FULLSCREEN", 35, 47);
+    text("EXIT             FULLSCREEN", 35, 47);
     playerDraw();
     playerMove();
         for(f = 0; f < dx.length; f++) {
@@ -1058,7 +1058,7 @@ draw = function() {
     text("With a total of " + score + " humans killed and a run time of " + speedRunTimerSec + "." + speedRunTimerMil + " seconds", 40, 150, 520, 300);
     speedRunTimerMil--;
     fill(0, 0, 0);
-    text("BACK", 30, 50);
+    text("EXIT", 30, 50);
     if(score >= 20) {
       trophiesOwned[2] = true;
     }
