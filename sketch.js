@@ -1030,14 +1030,6 @@ draw = function() {
     }
     inputCode = 'Enter Code';
   }
-  if(inputCode === 'ethereal') {
-    skin = 'Pumpkin';
-    if(ownedSkins[3] !== true) {
-        ownedSkins[3] = true;
-        storeItem('skins', ownedSkins);
-    }
-    inputCode = 'Enter Code';
-  }
   if(level === levels.length) {
     fill(100, 200, 200);
     rect(0, 0, 600, 600);
