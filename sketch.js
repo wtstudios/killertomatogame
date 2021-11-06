@@ -1,7 +1,7 @@
 // omg! you are so cool!
 // this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
 // have fun!
-var menuText = ['Respawn button coming 2026', 'In colour!', 'Total profits ¢11!', 'Genocide edition!', 'Produced 300 ketchup bottles in 2020!', 'Jump on stereos to level up!'];
+var menuText = ['Respawn button coming 2026', 'In colour!', 'Total profits ¢11!', 'Produced 300 ketchup bottles in 2020!', 'Jump on stereos to level up!'];
 let num;
 var codes = ['none', 'skcudge', 'ybeicuh', 'none'];
 var accepting = true;
