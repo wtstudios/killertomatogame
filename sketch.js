@@ -965,7 +965,7 @@ draw = function() {
       insideCount--;
     }
     stroke(0, 0, 0);
-    if(mode === 'classic') {
+    if(mode === 'classic' || mode === 'classic') {
       fill(0, 0, 0);
     }
     if(mode === 'halloween') {
