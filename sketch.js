@@ -5,7 +5,7 @@ let impact;
 var menuText = ['Respawn button coming 2026', 'In colour!', 'Total profits ¢11!', 'Produced 300 ketchup bottles in 2020!', 'Jump on stereos to level up!', 'Respawn button delayed to 2032'];
 let num;
 var codes = ['none', 'skcudge', 'ybeicuh', 'none'];
-var accepting = true;
+var accepting = false;
 var speedRunTimerSec = 0;
 var speedRunTimerMil = 0;
 var multi = 1;
