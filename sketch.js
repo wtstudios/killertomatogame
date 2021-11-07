@@ -1,6 +1,7 @@
 // omg! you are so cool!
 // this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
 // have fun!
+var hacker;
 let impact;
 var menuText = ['Respawn button coming 2026', 'In colour!', 'Total profits ¢11!', 'Produced 300 ketchup bottles in 2020!', 'Jump on stereos to level up!', 'Respawn button delayed to 2032'];
 let num;
@@ -203,6 +204,11 @@ function preload() {
 }
 
 function setup() {
+  hacker = false;
+  if(getItem('hacker') !== null) {
+    hacker = getItem('hacker');
+    storeItem('hacker', hacker);
+  }
   if(getItem('number') === null) {
     num = 0;
     storeItem('number', num);
@@ -1110,11 +1116,6 @@ draw = function() {
   if(mouseIsPressed && mouseX > 20 && mouseX < 100 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
     gamePlaying = false;
   }
-  if(mouseIsPressed && mouseX > 120 && mouseX < 240 && mouseY > 20 && mouseY < 60 && gamePlaying === true) {
-    let fs = fullscreen();
-    fullscreen(true);
-    //resizeCanvas(windowHeight, windowHeight);
-  }
   textSize(width / 30);
   fill(255, 255, 255);
   text("Made by Henry MacDougall", 20, 570); 
@@ -1127,4 +1128,16 @@ draw = function() {
   text(coins, width / 2 - 50, 50);
   image(coin, width / 2 - 75, 28, 30, 30);
   document.addEventListener('contextmenu', event => event.preventDefault());
+  if(keyCode === 123) {
+    hacker = true;
+    storeItem('hacker', hacker);
+  }
+  if(hacker === true) {
+    coins = 0;
+    storeItem('coins', coins);
+    ownedSkins = [true, false, false, false];
+    storeItem('skins', ownedSkins);
+    trophiesOwned = [false, false, false, false, false, false];
+    storeItem('myTrophies', trophiesOwned);
+  }
 };
