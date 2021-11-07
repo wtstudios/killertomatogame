@@ -205,6 +205,9 @@ function preload() {
 
 function setup() {
   hacker = false;
+   if(getItem('hacker') === null) {
+    storeItem('hacker', hacker);
+  }
   if(getItem('hacker') !== null) {
     hacker = getItem('hacker');
     storeItem('hacker', hacker);
