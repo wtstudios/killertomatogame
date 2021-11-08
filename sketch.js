@@ -1140,7 +1140,7 @@ draw = function() {
   }
   textSize(width / 30);
   fill(255, 255, 255);
-  text("Made by Henry MacDougall", 20, 570); 
+  text("Made by [REDACTED]", 20, 570); 
   if(mode === 'halloween') {
     fill(255, 255, 255);
   }
