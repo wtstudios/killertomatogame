@@ -197,7 +197,7 @@ function preload() {
   walkFrames[10] = tomato11;
   walkFrames[11] = tomato12;
   walkFrames[12] = tomato13;
-  let palette = 'https://api.jsonserve.com/FU-n3Z';
+  let palette = 'https://api.jsonserve.com/bOErK6';
   grey = loadJSON(palette);
   snowtree = loadImage('snowtree.png');
   yellowsnow = loadImage('yellowsnow.png');
