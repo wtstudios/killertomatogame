@@ -114,6 +114,7 @@ var mode = 'classic';
 var insideCount = 0;
 var inside = false;
 var colours;
+var k = [false, false, false];
 function preload() {
   soundFormats('ogg', 'mp3');
   impact = loadFont('copyfonts.com_impact-opentype.otf');
@@ -205,7 +206,7 @@ function preload() {
 
 function setup() {
   hacker = false;
-   if(getItem('hacker') === null) {
+  if(getItem('hacker') === null) {
     storeItem('hacker', hacker);
   }
   if(getItem('hacker') !== null) {
@@ -333,20 +334,20 @@ var levels = [
     "DDDDDDDDDDDDDdBBBB------BBBBBBBB-----------i---BB===BBBBBB",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
-  [ "I--------b-------------------------bbbbIIIIII",
-    "I--------b--b-------------------------b-----I",
-    "I--------b--b--B----------------------b-----I",
-    "I--------b--b-----i----B--------------b-----I",
-    "I--------b#-b-----B--------B----------b-----I",
-    "I--------bbb--------------------------b-----I",
-    "I--------b-------------B-----B--------b-----I",
-    "I--------b----B-----------------------b-----I",
-    "I--------bi---------------i--------@--x-----I",
-    "I--------dDD==============DDDDDDDDDDDDd-----I",
-    "I--------BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
-    "IbbbbbbbbBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbbbI",
-    "I-------------------------------------------I",
-    "I-------------------------------------------I",
+  [ "IIIIIII--b-------------------------bbbbIIIIII",
+    "I-----I--b--b-------------------------b-----I",
+    "I-----I--b--b--B----------------------b-----I",
+    "I-----I--b--b-----i----B--------------b-----I",
+    "I-----I--b#-b-----B--------B----------b-----I",
+    "I-----I--bbb--------------------------b-----I",
+    "I-----I--b-------------B-----B--------b-----I",
+    "I-----I--b----B-----------------------b-----I",
+    "I-----I--bi---------------i--------@--x-----I",
+    "I-----I--dDD==============DDDDDDDDDDDDd-----I",
+    "I-----I--BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
+    "I-----I--BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
+    "I-----I-------------------------------------I",
+    "I-----I-------------------------------------I",
     "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
   ],
    ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
@@ -682,6 +683,15 @@ var drawLevel = function(x, y) {
   }
 };
 keyPressed = function() {
+  if(key.code === 17 || key.code === 91) {
+    k[0] = true;
+  }
+  if(key.code === 16) {
+    k[1] = true;
+  }
+  if(key.code === 73) {
+    k[2] = true;
+  }
   if (key.code === 97 || keyCode === LEFT_ARROW || key === 'a' || key === 'A') {
     player.keys[0] = true;
   }
@@ -701,6 +711,15 @@ keyPressed = function() {
 };
 
 keyReleased = function() {
+  if(key.code === 17 || key.code === 91) {
+    k[0] = false;
+  }
+  if(key.code === 16) {
+    k[1] = false;
+  }
+  if(key.code === 73) {
+    k[2] = false;
+  }
   if (key.code === 97 || keyCode === LEFT_ARROW || key === 'a' || key === 'A') {
     player.keys[0] = false;
   }
@@ -1131,7 +1150,7 @@ draw = function() {
   text(coins, width / 2 - 50, 50);
   image(coin, width / 2 - 75, 28, 30, 30);
   document.addEventListener('contextmenu', event => event.preventDefault());
-  if(keyCode === 123) {
+  if(keyCode === 123 || k[0] === true && k[1] === true && k[2] === true) {
     hacker = true;
     storeItem('hacker', hacker);
   }
