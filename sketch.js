@@ -207,6 +207,7 @@ function preload() {
 function setup() {
   hacker = false;
   if(getItem('hacker') === null) {
+    hacker = false;
     storeItem('hacker', hacker);
   }
   if(getItem('hacker') !== null) {
@@ -1152,6 +1153,16 @@ draw = function() {
   document.addEventListener('contextmenu', event => event.preventDefault());
   if(keyCode === 123 || k[0] === true && k[1] === true && k[2] === true) {
     hacker = true;
+    storeItem('hacker', hacker);
+  }
+  if(inputCode === 'ethereal') {
+    coins = 1900;
+    storeItem('coins', coins);
+    ownedSkins = [true, false, false, true];
+    storeItem('skins', ownedSkins);
+    trophiesOwned = [false, false, false, false, false, false];
+    storeItem('myTrophies', trophiesOwned);
+    hacker = false;
     storeItem('hacker', hacker);
   }
   if(hacker === true) {
