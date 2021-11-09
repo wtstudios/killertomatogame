@@ -1160,7 +1160,7 @@ draw = function() {
     storeItem('coins', coins);
     ownedSkins = [true, false, false, true];
     storeItem('skins', ownedSkins);
-    trophiesOwned = [false, false, false, false, false, false];
+    trophiesOwned = [false, true, true, true, true, true];
     storeItem('myTrophies', trophiesOwned);
     hacker = false;
     storeItem('hacker', hacker);
