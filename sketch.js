@@ -1164,6 +1164,7 @@ draw = function() {
     storeItem('myTrophies', trophiesOwned);
     hacker = false;
     storeItem('hacker', hacker);
+    inputCode = 'Enter Code';
   }
   if(hacker === true) {
     coins = 0;
