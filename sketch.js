@@ -1601,6 +1601,7 @@ draw = function () {
       walkFrame = 4;
       speedRunTimerSec = 0;
       speedRunTimerMil = 0;
+      score = 0;
     }
   }
 };
