@@ -778,6 +778,7 @@ var playerDraw = function () {
     walkFrames[10] = ornament11;
     walkFrames[11] = ornament12;
     walkFrames[12] = ornament13;
+    food = 'Smashed';
   }
   if (skin === "Cookie" && walkFrames[0] !== cookie1) {
     walkFrames[0] = cookie1;
@@ -793,6 +794,7 @@ var playerDraw = function () {
     walkFrames[10] = cookie11;
     walkFrames[11] = cookie12;
     walkFrames[12] = cookie13;
+    food = "Crumbled";
   }
   image(walkFrames[walkFrame], 270, player.y, player.Size, player.Size);
   if (showHitBox === true) {
