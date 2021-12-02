@@ -2,7 +2,7 @@
 // this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
 // have fun!
 var hacker;
-let impact;
+let impact; 
 var menuText = [
   "Respawn button coming 2026",
   "In colour!",
@@ -154,7 +154,7 @@ let pumpkin10;
 let pumpkin11;
 let pumpkin12;
 let pumpkin13;
-var skin = "Cookie";
+var skin = "Tomato";
 var skins = ["Tomato", "Booster", "Camo", "Pumpkin", "Ornament", "Cookie"];
 let skinsPfp;
 var skinDesc = [
