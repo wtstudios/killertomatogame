@@ -13,7 +13,7 @@ var menuText = [
 ];
 let num;
 var codes = ["none", "skcudge", "ybeicuh", "none"];
-var accepting = false;
+var accepting = true;
 var speedRunTimerSec = 0;
 var speedRunTimerMil = 0;
 var multi = 1;
@@ -1564,17 +1564,6 @@ draw = function () {
     hacker = true;
     storeItem("hacker", hacker);
   }
-  if (inputCode === "ethereal") {
-    coins = 1900;
-    storeItem("coins", coins);
-    ownedSkins = [true, false, false, true];
-    storeItem("skins", ownedSkins);
-    trophiesOwned = [false, true, true, true, true, true];
-    storeItem("myTrophies", trophiesOwned);
-    hacker = false;
-    storeItem("hacker", hacker);
-    inputCode = "Enter Code";
-  }
   if (hacker === true) {
     coins = 0;
     storeItem("coins", coins);
@@ -1582,6 +1571,7 @@ draw = function () {
     storeItem("skins", ownedSkins);
     trophiesOwned = [false, false, false, false, false, false];
     storeItem("myTrophies", trophiesOwned);
+    accepting = false
   }
   if(player.health <= 1 && gamePlaying === true) {
     fill(255, 0, 0);
