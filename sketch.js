@@ -1599,6 +1599,8 @@ draw = function () {
       player.health = 10;
       gamePlaying = true;
       walkFrame = 4;
+      speedRunTimerSec = 0;
+      speedRunTimerMil = 0;
     }
   }
 };
