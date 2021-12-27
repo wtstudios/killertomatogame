@@ -348,7 +348,7 @@ function setup() {
   if (getItem("myTrophies") === null) {
     storeItem("myTrophies", [false, false, false, false, false, false]);
   }
-  if (day() === 25 && month() === 12) {
+  if (day() >= 25 && month() === 12) {
     ownedSkins[5] = true;
     storeItem("skins", ownedSkins);
   }
