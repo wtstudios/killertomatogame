@@ -4,12 +4,13 @@
 var hacker;
 let impact; 
 var menuText = [
-  "Respawn button coming 2026",
+  "Tomatoes rule the world",
   "In colour!",
   "Total profits ¢11!",
   "Produced 300 ketchup bottles in 2020!",
   "Jump on stereos to level up!",
-  "Respawn button delayed to 2032",
+  "A toomaaatoooo ate my sister",
+  "Is it wrong that I like ketchup?",
 ];
 let num;
 var codes = ["none", "skcudge", "ybeicuh", "none"];
@@ -348,7 +349,7 @@ function setup() {
   if (getItem("myTrophies") === null) {
     storeItem("myTrophies", [false, false, false, false, false, false]);
   }
-  if (day() >= 25 && month() === 12) {
+  if (day() === 25 && month() === 12) {
     ownedSkins[5] = true;
     storeItem("skins", ownedSkins);
   }
@@ -810,6 +811,9 @@ var playerDraw = function () {
   }
 };
 var playerMove = function () {
+  if(player.y >= height * 4) {
+    player.health -= 1;
+  }
   if (player.keys[0] === true && player.xVel > -7 && player.health > 0) {
     player.xVel--;
   }
@@ -1134,6 +1138,7 @@ draw = function () {
     textFont(impact);
     fill(0, 0, 0);
     textSize(30);
+    noStroke();
     text("Play", scene + 265, 165);
     text("Help", scene + 265, 225);
     text("Settings", scene + 250, 285);
@@ -1571,7 +1576,7 @@ draw = function () {
     storeItem("skins", ownedSkins);
     trophiesOwned = [false, false, false, false, false, false];
     storeItem("myTrophies", trophiesOwned);
-    accepting = false
+    accepting = false;
   }
   if(player.health <= 1 && gamePlaying === true) {
     fill(255, 0, 0);
