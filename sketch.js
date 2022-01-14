@@ -1153,6 +1153,7 @@ draw = function () {
     rotate(-sin(frameCount * 10) * 4);
     translate(-(scene + 300), -120);
     image(menuTomato, scene + 120, 410, 350, 300);
+    stroke(0);
     fill(120, 120, 120);
     rect(scene + 740, 250, 80, 100, 10);
     rect(scene + 980, 250, 80, 100, 10);
