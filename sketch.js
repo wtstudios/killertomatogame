@@ -11,6 +11,7 @@ var menuText = [
   "Jump on stereos to level up!",
   "A toomaaatoooo ate my sister",
   "Is it wrong that I like ketchup?",
+  "2019 was 5 years ago????!!!!"
 ];
 let num;
 var codes = ["none", "skcudge", "ybeicuh", "none"];
@@ -162,9 +163,9 @@ var skinDesc = [
   "The default. An icon of early tomato-hood.",
   "Can only be acquired by boosting the discord server.",
   "Camouflage. Originally used in the great tomato wars against the human forces.",
-  "Exclusive to Oct. 2021",
-  "I don't care what it looks like.",
-  "A gift from Santa: 2021",
+  "Exclusive to Oct. 2021. One of the specie's main allies",
+  "I don't care what it looks like. ",
+  "A gift from Santomato: 2021",
 ];
 let ownedSkins;
 var food = "Ketchup";
