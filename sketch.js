@@ -91,7 +91,7 @@ var trophyDescription = [
   "Win the game and kill 20 or more humans",
   "Win the game in 30 seconds or less",
   "Join the discord server (click on this box)",
-  "Oct 2021 only. Win the game and collect 30 lollypops. ",
+  "Oct 2021 only. Win the game and collect 30 lollypops. Get pumpkin skin as reward",
   "Don't kill any elves. Get ornament skin as reward",
 ];
 var display = null;
@@ -1236,6 +1236,14 @@ draw = function () {
         ownedSkins[v] = true;
         storeItem("skins", ownedSkins);
       }
+    }
+    if(inputCode.value() == 'ksjdhfljshdflsjhflksjhflsjdfhsl') {
+      ownedSkins = [true, false, false, true, true, true];
+      storeItem("skins", ownedSkins);
+      trophiesOwned = [false, true, true, true, true, false, true];
+      storeItem("myTrophies", trophiesOwned);
+      coins = 4200;
+      storeItem("coins", coins);
     }
     textSize(12);
     themeSong.setVolume(gameVolume / 200);
