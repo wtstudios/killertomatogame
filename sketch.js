@@ -101,7 +101,7 @@ var blockSize = 60;
 var upKeyPressed = false;
 var leftKeyPressed = false;
 var rightKeyPressed = false;
-var scene = 1;
+var scene = 0;
 var gameVolume = 100;
 var soundWanted = true;
 var soundPlaying = false;
@@ -1148,10 +1148,12 @@ draw = function () {
     textSize(25);
     display = null;
     for (var i = 0; i < skins.length; i++) {
+      stroke(0);
       fill(200, 200, 200);
       rect(scene + 3060, 120 + i * 50, 520, 45, 4);
       image(skinsPfp[i], scene + 3070, 122 + i * 50, 40, 40);
       fill(0, 0, 0);
+      noStroke();
       if (ownedSkins[i] === true) {
         text(skins[i], scene + 3120, 150 + i * 50);
       } else {
@@ -1184,6 +1186,7 @@ draw = function () {
         }
       }
     }
+    stroke(0);
     trophyDisplay(0, scene + 2450, 100);
     trophyDisplay(1, scene + 2550, 100);
     trophyDisplay(2, scene + 2650, 100);
@@ -1460,8 +1463,10 @@ draw = function () {
     }
   }
   inputCode.show();
-  if (gamePlaying === true) {
+  if(gamePlaying == true || scene !== 0) {
     inputCode.hide();
+  }
+  if (gamePlaying === true) {
     textSize(20);
     fill(0);
     text(coins, 380, 50);
@@ -1546,5 +1551,5 @@ draw = function () {
       score = 0;
     }
   }
-  inputCode.position(scene + 430, 650);
+  inputCode.position(windowWidth / 2 + 130, 650);
 };
