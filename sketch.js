@@ -281,14 +281,15 @@ function preload() {
   ornament11 = loadImage("ornament11.png");
   ornament12 = loadImage("ornament12.png");
   ornament13 = loadImage("ornament13.png");
-  let palette = "https://api.jsonserve.com/bOErK6";
-  grey = loadJSON(palette);
+  grey = loadJSON("https://api.jsonserve.com/YbRz-Z");
   snowtree = loadImage("snowtree.png");
   yellowsnow = loadImage("yellowsnow.png");
   elf = loadImage("elf.png");
 }
-
+let inputCode;
 function setup() {
+  inputCode = createInput('');
+  inputCode.position(440, 650);
   hacker = false;
   if (getItem("hacker") === null) {
     hacker = false;
@@ -354,8 +355,6 @@ function setup() {
     storeItem("skins", ownedSkins);
   }
 }
-var inputCode = "Enter Code";
-var codeClicked = false;
 var level = 1;
 var blockSize = 60;
 var player = {
@@ -935,13 +934,6 @@ keyPressed = function () {
   ) {
     player.keys[2] = true;
   }
-  if (codeClicked === true) {
-    if (keyCode === BACKSPACE || keyCode === DELETE) {
-      inputCode = inputCode.slice(0, -1);
-    } else if (keyCode < 16 || (keyCode > 18 && keyCode < 33) || keyCode > 47) {
-      inputCode = inputCode + key.toString();
-    }
-  }
 };
 
 keyReleased = function () {
@@ -1102,39 +1094,6 @@ draw = function () {
     rect(scene + 200, 250, 200, 50, 5);
     rect(scene + 200, 310, 200, 50, 5);
     rect(scene + 200, 370, 200, 50, 5);
-    if (codeClicked === true) {
-      fill(255, 100, 0);
-    } else {
-      fill(255, 0, 0);
-    }
-    if (mouseIsPressed) {
-      codeClicked = false;
-      if (
-        mouseX < scene + 430 ||
-        mouseX > scene + 550 ||
-        mouseY < 550 ||
-        mouseY > 570
-      ) {
-        inputCode = "Enter Code";
-      }
-    }
-    if (
-      mouseIsPressed &&
-      mouseX > scene + 430 &&
-      mouseX < scene + 550 &&
-      mouseY > 550 &&
-      mouseY < 570
-    ) {
-      if (inputCode === "Enter Code") {
-        inputCode = "";
-      }
-      codeClicked = true;
-    }
-    rect(scene + 430, 550, 120, 20, 5);
-    fill(0, 0, 0);
-    textSize(15);
-    textFont("Helvetica");
-    text(inputCode, scene + 435, 553, 120, 20);
     textFont(impact);
     fill(0, 0, 0);
     textSize(30);
@@ -1268,6 +1227,12 @@ draw = function () {
       400,
       400
     );
+    for(var v = 0; v < grey.codes.length; v++) {
+      if(grey.codes[v] !== "none" && inputCode.value() == grey.codes[v]) {
+        ownedSkins[v] = true;
+        storeItem("skins", ownedSkins);
+      }
+    }
     textSize(12);
     themeSong.setVolume(gameVolume / 200);
     pianoTheme.setVolume(gameVolume / 200);
@@ -1427,27 +1392,6 @@ draw = function () {
   if (gameVolume > 200) {
     gameVolume = 200;
   }
-  if (inputCode === grey.codes.code2 && accepting === true) {
-    if (ownedSkins[1] !== true) {
-      ownedSkins[1] = true;
-      coins += 100;
-      storeItem("skins", ownedSkins);
-      skin = "Booster";
-    }
-    if (trophiesOwned[0] !== true) {
-      trophiesOwned[0] = true;
-    }
-    inputCode = "Enter Code";
-  }
-  if (inputCode === grey.codes.code3 && accepting === true) {
-    if (ownedSkins[2] !== true) {
-      ownedSkins[2] = true;
-      coins += 100;
-      skin = "Camo";
-      storeItem("skins", ownedSkins);
-    }
-    inputCode = "Enter Code";
-  }
   if (level === levels.length) {
     fill(100, 200, 200);
     rect(0, 0, 600, 600);
@@ -1515,7 +1459,9 @@ draw = function () {
       //player.camX = -30;
     }
   }
+  inputCode.show();
   if (gamePlaying === true) {
+    inputCode.hide();
     textSize(20);
     fill(0);
     text(coins, 380, 50);
@@ -1600,4 +1546,5 @@ draw = function () {
       score = 0;
     }
   }
+  inputCode.position(scene + 430, 650);
 };
