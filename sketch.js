@@ -161,7 +161,7 @@ let skinsPfp;
 var skinDesc = [
   "The default. An icon of early tomato-hood.",
   "Can only be acquired by boosting the discord server.",
-  "Camoflauge. Originally used in the great tomato wars against the human forces.",
+  "Camouflage. Originally used in the great tomato wars against the human forces.",
   "Exclusive to Oct. 2021",
   "I don't care what it looks like.",
   "A gift from Santa: 2021",
@@ -289,7 +289,7 @@ function preload() {
 let inputCode;
 function setup() {
   inputCode = createInput('');
-  inputCode.position(440, 650);
+  inputCode.position(windowWidth / 2 + 130, 650);
   hacker = false;
   if (getItem("hacker") === null) {
     hacker = false;
@@ -1551,5 +1551,4 @@ draw = function () {
       score = 0;
     }
   }
-  inputCode.position(windowWidth / 2 + 130, 650);
 };
