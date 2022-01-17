@@ -73,6 +73,7 @@ let moon;
 let cloud;
 let trophy;
 let arrow;
+let trampolineImg;
 let themeSong;
 var coins = 0;
 var trophies = [
@@ -215,6 +216,7 @@ function preload() {
   tomato12 = loadImage("tomato12.png");
   tomato13 = loadImage("tomato13.png");
   arrow = loadImage("arrow.png");
+  trampolineImg = loadImage("trampoline.png");
   boosterbase1 = loadImage("boosterbase1.png");
   boosterbase2 = loadImage("boosterbase2.png");
   boosterbase3 = loadImage("boosterbase3.png");
@@ -361,7 +363,7 @@ var blockSize = 60;
 var player = {
   spawnX: 200,
   spawnY: 200,
-  x: 200,
+  x: 270,
   y: 200,
   Size: 60,
   camX: -30,
@@ -383,24 +385,23 @@ var levels = [
     "bb-------------------x-------I",
     "bbb------------------x-------I",
     "bbbb-----------------b-------I",
-    "bbbbb--1=i----i-1----b---#--=I",
+    "bbbbb--1=i-t--i-1----b---#--=I",
     "dddddDDDDDDDDDDDDDDDDdDDDDDDDd",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
   ],
   [
-    "II-----------bbbbbbbbbbb-------------Bbbbbbbbbbbbbbbb",
-    "I------------b---------b-------------l-----l-------Ib",
-    "I------------b---------b#-----i------l-----l--------b",
-    "I------------b---------bbbbbbbbb----bB--B--B--B-----b",
-    "I------------b---------b-----------bbB--B--B--B-----b",
-    "I------------b---------b----i-----bbbB--B--B--B-----b",
-    "I------------b---------b--bbbbbbbbbbbB--B--B--B-----b",
-    "I------------b---------b----------------B-----B-----b",
-    "I------------b---------b=------1--i-----B-i--=B--@--b",
-    "Iiiiiiiiiiiiib---------dDDDDDDDDDDDDDDDDdDDDDDdDDDDDd",
-    "IbbbbbbbbbbbbbIIIIIIIIIBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-    "IbbbbbbbbbbbbbIIIIIIIIIBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "bbbbbbbbbbbbbbbbbbbbbbbbbb==============bbbbbbbb",
+    "b---------b------------------------------------x",
+    "b---------b------------------------------------x",
+    "b---------------------------------------------#b",
+    "b---------b--------------------------------xxxxb",
+    "b---------b------------------------------------b",
+    "b---------b------------------------------------b",
+    "b---------b-----b--b--b------------------------b",
+    "b@----t---b-----b--b--b-----t---t-------------tbccccccccccccccc",
+    "dDDDDDD===dDDDDDb==b==b===DDDDDDDDDD---DDDDDDDDdDDDDDDDDDDDDDDD",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB---BBBBBBBBBBBBBBBBBBBBBBBB",
   ],
   [
     "bI----------------------------b----I------------II",
@@ -409,10 +410,10 @@ var levels = [
     "b------b----b------b--b----b--b----I-------------I",
     "b--b---------------b---i---b--b----I-------------I",
     "b------------------bbbbbbbbb--x----I-------------I",
-    "b-----i-------------b---------x----I-------------I",
-    "b-----b-------------b--bbbbbbbb----I-------------I",
-    "b@--------i---1-----b---i----#x----I-------------I",
-    "dDDDDDDDDDDDDDDDDDDDdDDDDDDDDDDDDDDD-------------I",
+    "b-----i------------b----------x----I-------------I",
+    "b-----b------------b--bbbbbbbbb----I-------------I",
+    "b@--------i---1----b----i----#x----I-------------I",
+    "dDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD-------------I",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
     "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB==================I",
@@ -473,7 +474,7 @@ var trophyDisplay = function (num, x, y) {
   fill(0, 0, 0);
   textSize(11);
   textAlign(CENTER);
-  textFont("sans serif");
+  textFont(impact);
   text(trophies[num], x + 50, y + 85);
   textAlign(LEFT);
   if (
@@ -487,6 +488,13 @@ var trophyDisplay = function (num, x, y) {
   textFont(impact);
   fill(100, 100, 100);
 };
+var trampoline = function(x, y) {
+  image(trampolineImg, x, y, blockSize, blockSize);
+  if(player.health > 0 && player.x + player.Size >= x && player.x <= x + blockSize && player.y + player.Size >= y + blockSize / 3 && player.y <= y + blockSize) {
+    inside = true;
+    player.yVel = -30;
+  }
+}
 var human = function (x, y, num) {
   if (timer === 0) {
     humany[num] = y;
@@ -503,7 +511,7 @@ var human = function (x, y, num) {
     }
     if (
       dist(
-        270 + player.Size / 2,
+        player.x + player.Size / 2,
         player.y + blockSize / 2,
         x + blockSize / 2,
         humany[num] + blockSize / 2
@@ -560,8 +568,8 @@ var block = function (x, y, visible, solid, type) {
     if (
       player.y >= y - blockSize &&
       player.y < y &&
-      270 > x - blockSize &&
-      270 < x + blockSize
+      player.x > x - blockSize &&
+      player.x < x + blockSize
     ) {
       player.y = y - player.Size;
       player.onBlock = true;
@@ -570,28 +578,28 @@ var block = function (x, y, visible, solid, type) {
     if (
       player.y < y + blockSize &&
       player.y > y - blockSize &&
-      270 < x - blockSize / 2 &&
-      270 > x - blockSize
+      player.x < x - blockSize / 2 &&
+      player.x > x - blockSize
     ) {
-      player.camX = player.camX + x - 323;
+      player.x = x - blockSize;
       player.xVel = 0;
       inside = true;
     }
     if (
       player.y < y + blockSize &&
       player.y > y - blockSize &&
-      270 > x + blockSize / 2 &&
-      270 < x + blockSize
+      player.x > x + blockSize / 2 &&
+      player.x < x + blockSize
     ) {
-      player.camX = player.camX + x - 220;
+      player.x = x + blockSize;
       player.xVel = 0;
       inside = true;
     }
     if (
       player.y <= y + blockSize &&
       player.y > y + 30 &&
-      270 > x - blockSize &&
-      270 < x + blockSize
+      player.x > x - blockSize &&
+      player.x < x + blockSize
     ) {
       player.yVel = 0;
       player.y = y + blockSize;
@@ -618,7 +626,7 @@ var portal = function (x, y) {
   image(tomatoCrateGraphic, x, y, blockSize, blockSize);
   if (
     dist(
-      270 + player.Size / 2,
+      player.x + player.Size / 2,
       player.y + blockSize / 2,
       x + blockSize / 2,
       y + blockSize / 2
@@ -630,9 +638,11 @@ var portal = function (x, y) {
     player.transfer = false;
     timer = -1;
     inside = true;
+    player.yVel = 0;
   }
 };
 var stereo = function (x, y) {
+  imageMode(CORNER);
   if (mode === "classic") {
     image(stereoGraphic, x, y, blockSize, blockSize);
   }
@@ -643,10 +653,10 @@ var stereo = function (x, y) {
     image(yellowsnow, x, y, blockSize, blockSize);
   }
   if (
-    player.y > y - 30 &&
-    player.y < y + 50 &&
-    270 > x - 50 &&
-    270 < x + 50 &&
+    player.y + player.Size > y + blockSize / 3 &&
+    player.y < y + blockSize &&
+    player.x + player.Size > x &&
+    player.x < x + blockSize &&
     player.health > 0
   ) {
     player.health -= 10;
@@ -674,7 +684,7 @@ var stereo = function (x, y) {
     if (mode === "halloween") {
       stroke(255, 255, 255);
     }
-    rect(x, y, blockSize, blockSize);
+    rect(x, y + blockSize / 3, blockSize, blockSize - blockSize / 3);
     stroke(0, 0, 0);
   }
 };
@@ -683,7 +693,7 @@ var snow = function (x, y) {
 };
 var playerSpawn = function () {
   player.y = player.spawnY;
-  player.camX = player.spawnX;
+  player.x = player.spawnX;
   player.health = 10;
   player.respawn = false;
   walkFrame = 3;
@@ -836,7 +846,7 @@ var playerMove = function () {
   if (player.xVel < 0) {
     player.xVel += 0.5;
   }
-  player.camX -= player.xVel;
+  player.x += player.xVel;
   player.y += player.yVel;
 };
 var drawLevel = function (x, y) {
@@ -854,6 +864,8 @@ var drawLevel = function (x, y) {
   if (mode === "halloween") {
     image(moon, 400, 100, 120, 120);
   }
+  push();
+  translate(-player.x + 270, 0);
   for (var i = 0; i < levels[level - 1].length; i++) {
     for (var j = 0; j < levels[level - 1][i].length; j++) {
       switch (levels[level - 1][i][j]) {
@@ -864,7 +876,7 @@ var drawLevel = function (x, y) {
           stereo(j * blockSize + x, i * blockSize + y);
           break;
         case "@":
-          player.spawnX = -(j * blockSize - 220);
+          player.spawnX = j * blockSize + x;
           player.spawnY = i * blockSize + y;
           break;
         case "#":
@@ -885,7 +897,10 @@ var drawLevel = function (x, y) {
         case "d":
           block(j * blockSize + x, i * blockSize + y, true, true, "dirt2");
           break;
-        case "i":
+          case "t":
+          trampoline(j * blockSize + x, i * blockSize + y);
+          break;
+          case "i":
           human(j * blockSize + x, i * blockSize + y, i + j + level);
           break;
         case "I":
@@ -894,7 +909,10 @@ var drawLevel = function (x, y) {
         case "l":
           block(j * blockSize + x, i * blockSize + y, true, false, "block");
           break;
-        case "-":
+          case "c":
+          image(coin, j * blockSize + x, i * blockSize + y + blockSize / 4, blockSize, blockSize);
+          break;
+          case "-":
           if (mode === "christmas") {
             if (
               levels[level - 1][i + 1][j] === "B" ||
@@ -910,6 +928,7 @@ var drawLevel = function (x, y) {
       }
     }
   }
+  pop();
 };
 keyPressed = function () {
   if (key.code === 17 || key.code === 91) {
@@ -1206,7 +1225,7 @@ draw = function () {
       trophiesOwned[4] = true;
       storeItem("myTrophies", trophiesOwned);
     }
-    textFont("Helvetica");
+    textFont(impact);
     fill(0, 0, 0);
     if (display !== null) {
       text(display, mouseX + 15, mouseY, width - mouseX - 15, height - mouseY);
@@ -1332,7 +1351,7 @@ draw = function () {
       background(200);
     }
     inside = false;
-    drawLevel(player.camX, -60);
+    drawLevel(0, -60);
     stroke(0, 0, 0);
     if (mode === "classic" || mode === "christmas") {
       fill(0, 0, 0);
@@ -1347,6 +1366,7 @@ draw = function () {
     rect(120, 20, 100, 40, 5);
     fill(0, 0, 0);
     text("EXIT             FULLSCREEN", 35, 47);
+    push();
     playerDraw();
     playerMove();
     for (f = 0; f < dx.length; f++) {
@@ -1370,7 +1390,7 @@ draw = function () {
     }
     timer++;
   }
-  if (player.health < 1) {
+  if (player.health < 1 && gamePlaying == true) {
     deathTimer++;
     fill(255, 0, 0);
     textSize(30);
@@ -1549,7 +1569,7 @@ draw = function () {
     if(mouseIsPressed && mouseX >= 240 && mouseX <= 340 && mouseY >= 20 && mouseY <= 60) {
       level = 1;
       timer = 0;
-      player.camX = 200;
+      player.x = 60;
       player.y = 180;
       pubertyLove.stop();
       player.health = 10;
