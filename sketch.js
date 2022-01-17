@@ -394,14 +394,14 @@ var levels = [
     "bbbbbbbbbbbbbbbbbbbbbbbbbb==============bbbbbbbb",
     "b---------b------------------------------------x",
     "b---------b------------------------------------x",
-    "b---------------------------------------------#b",
+    "b---------i-----------------------------------#b",
     "b---------b--------------------------------xxxxb",
-    "b---------b------------------------------------b",
-    "b---------b------------------------------------b",
-    "b---------b-----b--b--b------------------------b",
-    "b@----t---b-----b--b--b-----t---t-------------tbccccccccccccccc",
-    "dDDDDDD===dDDDDDb==b==b===DDDDDDDDDD---DDDDDDDDdDDDDDDDDDDDDDDD",
-    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB---BBBBBBBBBBBBBBBBBBBBBBBB",
+    "b---------b------------------------------------x",
+    "b---------b-----i-----i------------------------x------------------I",
+    "b---------b-----b--b--b------------------------x------------------I",
+    "b@--i-t---b-----b--b--b-----t-i-t--------i----tb------iiiiiiiiiiiI",
+    "dDDDDDD===dDDDDDb==b==b===DDDDDDDDDD---DDDDDDDDdDDDDDDDDDDDDDDDDDI",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB---BBBBBBBBBBBBBBBBBBBBBBBBBBI",
   ],
   [
     "bI----------------------------b----I------------II",
@@ -493,6 +493,17 @@ var trampoline = function(x, y) {
   if(player.health > 0 && player.x + player.Size >= x && player.x <= x + blockSize && player.y + player.Size >= y + blockSize / 3 && player.y <= y + blockSize) {
     inside = true;
     player.yVel = -30;
+  }
+  if (showHitBox === true) {
+    noFill();
+    if (mode === "classic") {
+      stroke(0, 0, 0);
+    }
+    if (mode === "halloween") {
+      stroke(255, 255, 255);
+    }
+    rect(x, y + blockSize / 3, blockSize, blockSize - blockSize / 3);
+    stroke(0, 0, 0);
   }
 }
 var human = function (x, y, num) {
