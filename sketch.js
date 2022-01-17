@@ -2,6 +2,7 @@
 // this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
 // have fun!
 var hacker;
+let spring;
 let impact; 
 var menuText = [
   "Tomatoes rule the world",
@@ -216,6 +217,7 @@ function preload() {
   tomato12 = loadImage("tomato12.png");
   tomato13 = loadImage("tomato13.png");
   arrow = loadImage("arrow.png");
+  spring = loadSound("spring.mp3");
   trampolineImg = loadImage("trampoline.png");
   boosterbase1 = loadImage("boosterbase1.png");
   boosterbase2 = loadImage("boosterbase2.png");
@@ -493,6 +495,7 @@ var trampoline = function(x, y) {
   if(player.health > 0 && player.x + player.Size >= x && player.x <= x + blockSize && player.y + player.Size >= y + blockSize / 3 && player.y <= y + blockSize) {
     inside = true;
     player.yVel = -30;
+    spring.play();
   }
   if (showHitBox === true) {
     noFill();
@@ -1281,6 +1284,7 @@ draw = function () {
     scream.setVolume(gameVolume / 200);
     pubertyLove.setVolume(gameVolume / 200);
     splatSound.setVolume(gameVolume / 200);
+    spring.setVolume(gameVolume / 200);
     if (
       mouseIsPressed &&
       mouseX > scene + 200 &&
