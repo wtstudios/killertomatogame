@@ -286,7 +286,7 @@ function preload() {
   ornament11 = loadImage("ornament11.png");
   ornament12 = loadImage("ornament12.png");
   ornament13 = loadImage("ornament13.png");
-  grey = loadJSON(secrets.skinCodes);
+  grey = loadJSON(process.env.skinCodes);
   snowtree = loadImage("snowtree.png");
   yellowsnow = loadImage("yellowsnow.png");
   elf = loadImage("elf.png");
