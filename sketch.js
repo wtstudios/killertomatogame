@@ -1,1 +1,1622 @@
-const _0x3ea020=_0x2ca4;(function(_0x51e65b,_0x5bea34){const _0x1f2792=_0x2ca4,_0x337979=_0x51e65b();while(!![]){try{const _0x3ee893=parseInt(_0x1f2792(0x1a3))/0x1+-parseInt(_0x1f2792(0x1b7))/0x2*(parseInt(_0x1f2792(0x183))/0x3)+-parseInt(_0x1f2792(0x15a))/0x4*(-parseInt(_0x1f2792(0x136))/0x5)+parseInt(_0x1f2792(0x1b2))/0x6+-parseInt(_0x1f2792(0x104))/0x7+-parseInt(_0x1f2792(0x12f))/0x8+-parseInt(_0x1f2792(0x18e))/0x9*(-parseInt(_0x1f2792(0xf5))/0xa);if(_0x3ee893===_0x5bea34)break;else _0x337979['push'](_0x337979['shift']());}catch(_0x1e3dca){_0x337979['push'](_0x337979['shift']());}}}(_0x2868,0xa5d87));var hacker;let spring,impact;var menuText=['Tomatoes\x20rule\x20the\x20world',_0x3ea020(0x160),_0x3ea020(0x16d),'Produced\x20300\x20ketchup\x20bottles\x20in\x202020!',_0x3ea020(0x12e),_0x3ea020(0xf2),_0x3ea020(0x140),_0x3ea020(0x1a6)];let num;var codes=['none',_0x3ea020(0x115),_0x3ea020(0xf8),_0x3ea020(0x17c)],accepting=!![],speedRunTimerSec=0x0,speedRunTimerMil=0x0,multi=0x1,score=0x0,highScore=0x0,deathTimer=0x0,timer=0x0,gamePlaying=![];let menuTomato,blockGraphic,tomatoCrateGraphic,dirtBlockGraphic,dirtBlock2Graphic,pianoTheme,pubertyLove,D='D',scream,splatSound,blankDirt,plant1Graphic,plant2Graphic,plant3Graphic,plant4Graphic,B='B',b='b',t='t',equals='=',one='1',ornament1,ornament2,ornament3,ornament4,ornament5,ornament6,ornament7,ornament8,ornament9,ornament10,ornament11,ornament12,ornament13,cookie1,cookie2,cookie3,cookie4,cookie5,cookie6,cookie7,cookie8,cookie9,cookie10,cookie11,cookie12,cookie13,brickGraphic,humanGraphic,stereoGraphic,coin,sun,moon,cloud,trophy,arrow,trampolineImg,themeSong;var coins=0x0,trophies=['Booster','Pacifist','Bounty\x20Hunter','Pro',_0x3ea020(0x114),_0x3ea020(0x15d),_0x3ea020(0x1a9)],trophiesOwned=[![],![],![],![],![],![]],trophyDescription=[_0x3ea020(0x17d),_0x3ea020(0x184),'Win\x20the\x20game\x20and\x20kill\x2020\x20or\x20more\x20humans',_0x3ea020(0x10f),'Join\x20the\x20discord\x20server\x20(click\x20on\x20this\x20box)','Oct\x202021\x20only.\x20Win\x20the\x20game\x20and\x20collect\x2030\x20lollypops.\x20Get\x20pumpkin\x20skin\x20as\x20reward',_0x3ea020(0x16e)],display=null,walkFrames=[],walkFrame=0x1,walkTimer=0x0,blockSize=0x3c,upKeyPressed=![],leftKeyPressed=![],rightKeyPressed=![],scene=0x0,gameVolume=0x64,soundWanted=!![],soundPlaying=![],humany=[],showHitBox=![],clickTimer=0x0;let snow1,snowflake,lollypop,elf,snowtree,yellowsnow;var dx=[],dy=[];let tomato1,tomato2,tomato3,tomato4,tomato5,tomato6,tomato7,tomato8,tomato9,tomato10,tomato11,tomato12,tomato13,boosterbase1,boosterbase2,boosterbase3,boosterbase4,boosterbase5,boosterbase6,boosterbase7,boosterbase8,boosterbase9,boosterbase10,boosterbase11,boosterbase12,boosterbase13,pumpkin1,pumpkin2,pumpkin3,pumpkin4,pumpkin5,pumpkin6,pumpkin7,pumpkin8,pumpkin9,pumpkin10,pumpkin11,pumpkin12,pumpkin13;var skin=_0x3ea020(0x10a),skins=[_0x3ea020(0x10a),_0x3ea020(0xed),_0x3ea020(0x13d),_0x3ea020(0x14b),_0x3ea020(0x1ae),'Cookie'];let skinsPfp;var skinDesc=['The\x20default.\x20An\x20icon\x20of\x20early\x20tomato-hood.','Can\x20only\x20be\x20acquired\x20by\x20boosting\x20the\x20discord\x20server.',_0x3ea020(0x19f),'Exclusive\x20to\x20Oct.\x202021.\x20One\x20of\x20the\x20species\x20main\x20allies',_0x3ea020(0x148),_0x3ea020(0x113)];let ownedSkins;function _0x2868(){const _0x2b646d=['Size','code','boosterbase8.png','HELP','myTrophies','ornament8.png','I--------------------------------------------------------I','4cFhvzy','respawn','transfer','Candy\x20Thief','b---------------b--b--b-------b----I-------------I','I----------------Ddddd---DdddddddddddD-------------------I','In\x20colour!','bb-------------------x-------I','b---------b------------------------------------x','\x20seconds','christmas','dirt_block!grass.png','spawnX','With\x20a\x20total\x20of\x20','stop','isPlaying','bbbbbbbbbbbbbbbbbbbbbbbbbb==============bbbbbbbb','\x20humans\x20killed\x20and\x20a\x20run\x20time\x20of\x20','pumpkin13.png','Total\x20profits\x20¢11!','Don\x27t\x20kill\x20any\x20elves.\x20Get\x20ornament\x20skin\x20as\x20reward','EXIT','I-----I--b-------------B-----B--------b-----I','b---------------------------@b','ornament6.png','bbbb-----------------b-------I','YOU\x20WIN','plant1.png','dirt_block.rot1.png','b@--i-t---b-----b--b--b-----t-i-t--------i----tb------iiiiiiiiiiiI','I---------------DdBBBBB----BBBBBBBBBBdD------------------I','Skins','0,\x200,\x20255','cookie2.png','none','Boost\x20the\x20discord\x20server','coins','hide','cloud.png','tomato_graphic4.png','bI----------------------------b----I------------II','6mNjRmM','Win\x20the\x20game\x20without\x20killing\x20any\x20humans','classic','ornament4.png','Play','b--------------------b-------I','Help','YOU\x20WIN!','brick','I-----I--bbb--------------------------b-----I','moon.png','882081RMXGuj','255,\x200,\x200','Crumbled','tomato_graphic7.png','boosterbase7.png','ksjdhfljshdflsjhflksjhflsjdfhsl','stone_block.png','ATTACK\x20OF\x20THE\x20KILLER\x20TOMATOES','ornament2.png','b---------b-----i-----i------------------------x------------------I','pumpkin5.png','cookie6.png','keys','wickwncaowkcdjjs','120,\x20120,\x20120','Obtain\x20this\x20skin\x20to\x20see\x20the\x20description','value','Camouflage.\x20Originally\x20used\x20in\x20the\x20great\x20tomato\x20wars\x20against\x20the\x20human\x20forces.','Tomatoes-Theme.mp3','I-----I--BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I','II------------------------------------------------------II','266219ZuvgGu','I--------------DdBBBBBB--i-----BBBBBBBdD-----------------I','Equipped','2019\x20was\x205\x20years\x20ago????!!!!','boosterbase2.png','fkjshbfksjhdbakjshdb','Deck\x20the\x20Halls','dirt1','pumpkin2.png','https://discord.gg/ZXKx2kmKnp','ornament1.png','Ornament','pumpkin6.png','IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII','ornament10.png','4454454IzMZDQ','pubertyLoveSong.mp3','dDDDDDD===dDDDDDb==b==b===DDDDDDDDDD---DDDDDDDDdDDDDDDDDDDDDDDDDDI','b--b---------------b---i---b--b----I-------------I','tomato_graphic3.png','641590skFWIP','stereo.png','Trophies','IIIIIII--b-------------------------bbbbIIIIII','snowtree.png','ornament13.png','pumpkin10.png','block','Booster','number','camX','\x20\x20\x20\x20\x20Volume\x0a\x0a\x0aShow\x20hitbox','boosterbase1.png','A\x20toomaaatoooo\x20ate\x20my\x20sister','Cookie','halloween','170UovcIU','boosterbase6.png','elf.png','ybeicuh','Pie','hacker','30,\x2030,\x2030','pumpkin8.png','snow1.png','Salad','cookie7.png','skins','0,\x20255,\x200','health','BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB','385392uozlbh','coin.png','bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbI','Broke','setVolume','xVel','Tomato','snowflake.png','I-----I-------------------------------------I','codes','I-----I--bi---------------i--------@--x-----I','Win\x20the\x20game\x20in\x2030\x20seconds\x20or\x20less','tomato_graphic1.png','b@----bbbbbbbbbbbbbbbb-------I','BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB---BBBBBBBBBBBBBBBBBBBBBBBBBBI','A\x20gift\x20from\x20Santomato:\x202021','Server\x20Member','skcudge','dkfshkjhfgksdhfkhsdh','Ketchup','I-----I--b--b-------------------------b-----I','ornament3.png','boosterbase3.png','cookie3.png','dirt2','pumpkin12.png','ornament5.png','dirt_block.png','yVel','Smashed','open','255,\x20255,\x20255','cuwocjwucadakjsdnjk','tomato11.png','bbbbb--1=i----i-1----b---#--=I','plant2Graphic.png','b----------------------------I','I-----------------DDDD----DDDDDDDDDDD--------------------I','b---------b-----b--b--b------------------------x------------------I','pumpkin11.png','trampoline.png','pumpkin1.png','Jump\x20on\x20stereos\x20to\x20level\x20up!','10606664KXCMGt','b@--------i---1----b----i----#x----I-------------I','<\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20>','ornament7.png','plant3Graphic.png','position','length','135005Bykxnm','cookie1.png','play','brick_block.png','b----------------------------b','I-----I--dDD==============DDDDDDDDDDDDd-----I','BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB','Camo','EXIT\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20FULLSCREEN','To\x20play,\x20use\x20WAD.\x20Avoid\x20the\x20stereos.\x20Crush\x20humans\x20to\x20get\x20points.\x20Jump\x20and\x20run\x20into\x20a\x20wall\x20to\x20roll\x20up\x20it!\x20Try\x20to\x20get\x20to\x20the\x20crate\x20of\x20tomatoes\x20to\x20complete\x20the\x20level.\x20Enjoy!','Is\x20it\x20wrong\x20that\x20I\x20like\x20ketchup?','b---------b--------------------------------xxxxb','tomato_graphic5.png','lollypop.png','contextmenu','I-----I--b--b--B----------------------b-----I','tomato_graphic8.png','cookie8.png','I\x20don\x27t\x20care\x20what\x20it\x20looks\x20like.\x20','b------------------bbbbbbbbb--x----I-------------I','I-----I--b#-b-----B--------B----------b-----I','Pumpkin','copyfonts.com_impact-opentype.otf','yellowsnow.png','boosterbase10.png','spawnY','ornament12.png','RESPAWN','tomato_crate.png'];_0x2868=function(){return _0x2b646d;};return _0x2868();}var food=_0x3ea020(0x117),mode=_0x3ea020(0x185),inside=![],colours,k=[![],![],![]];function _0x2ca4(_0x1fc51a,_0xb30f5f){const _0x286849=_0x2868();return _0x2ca4=function(_0x2ca473,_0xd1b6c8){_0x2ca473=_0x2ca473-0xe7;let _0x577d9a=_0x286849[_0x2ca473];return _0x577d9a;},_0x2ca4(_0x1fc51a,_0xb30f5f);}function preload(){const _0x16f2e0=_0x3ea020;soundFormats('ogg','mp3'),impact=loadFont(_0x16f2e0(0x14c)),themeSong=loadSound('themesong.mp3'),splatSound=loadSound('tomatosplat.mp3'),pubertyLove=loadSound(_0x16f2e0(0x1b3)),pianoTheme=loadSound(_0x16f2e0(0x1a0)),scream=loadSound('scream.mp3'),menuTomato=loadImage('Tomato_menu_graphic.png'),blockGraphic=loadImage(_0x16f2e0(0x194)),humanGraphic=loadImage('human_graphic.png'),stereoGraphic=loadImage(_0x16f2e0(0x1b8)),tomatoCrateGraphic=loadImage(_0x16f2e0(0x152)),dirtBlockGraphic=loadImage(_0x16f2e0(0x11f)),brickGraphic=loadImage(_0x16f2e0(0x139)),plant1Graphic=loadImage(_0x16f2e0(0x175)),plant2Graphic=loadImage(_0x16f2e0(0x127)),plant3Graphic=loadImage(_0x16f2e0(0x133)),plant4Graphic=loadImage('plant4Graphic.png'),blankDirt=loadImage(_0x16f2e0(0x165)),dirtBlock2Graphic=loadImage(_0x16f2e0(0x176)),cloud=loadImage(_0x16f2e0(0x180)),sun=loadImage('sun.png'),moon=loadImage(_0x16f2e0(0x18d)),ghost=loadImage('ghost.png'),lollypop=loadImage(_0x16f2e0(0x143)),snow1=loadImage(_0x16f2e0(0xfd)),snowflake=loadImage(_0x16f2e0(0x10b)),tomato1=loadImage(_0x16f2e0(0x110)),tomato2=loadImage('tomato_graphic2.png'),tomato3=loadImage(_0x16f2e0(0x1b6)),tomato4=loadImage(_0x16f2e0(0x181)),tomato5=loadImage(_0x16f2e0(0x142)),tomato6=loadImage('tomato_graphic6.png'),tomato7=loadImage(_0x16f2e0(0x191)),tomato8=loadImage(_0x16f2e0(0x146)),tomato9=loadImage(_0x16f2e0(0x110)),tomato10=loadImage('tomato10.png'),tomato11=loadImage(_0x16f2e0(0x125)),tomato12=loadImage('tomato12.png'),tomato13=loadImage('tomato13.png'),arrow=loadImage('arrow.png'),spring=loadSound('spring.mp3'),trampolineImg=loadImage(_0x16f2e0(0x12c)),boosterbase1=loadImage(_0x16f2e0(0xf1)),boosterbase2=loadImage(_0x16f2e0(0x1a7)),boosterbase3=loadImage(_0x16f2e0(0x11a)),boosterbase4=loadImage('boosterbase4.png'),boosterbase5=loadImage('boosterbase5.png'),boosterbase6=loadImage(_0x16f2e0(0xf6)),boosterbase7=loadImage(_0x16f2e0(0x192)),boosterbase8=loadImage(_0x16f2e0(0x155)),boosterbase9=loadImage('boosterbase1.png'),boosterbase10=loadImage(_0x16f2e0(0x14e)),boosterbase11=loadImage('boosterbase11.png'),boosterbase12=loadImage('boosterbase12.png'),boosterbase13=loadImage('boosterbase13.png'),pumpkin1=loadImage(_0x16f2e0(0x12d)),pumpkin2=loadImage(_0x16f2e0(0x1ab)),pumpkin3=loadImage('pumpkin3.png'),pumpkin4=loadImage('pumpkin4.png'),pumpkin5=loadImage(_0x16f2e0(0x198)),pumpkin6=loadImage(_0x16f2e0(0x1af)),pumpkin7=loadImage('pumpkin7.png'),pumpkin8=loadImage(_0x16f2e0(0xfc)),pumpkin9=loadImage(_0x16f2e0(0x12d)),pumpkin10=loadImage(_0x16f2e0(0xeb)),pumpkin11=loadImage(_0x16f2e0(0x12b)),pumpkin12=loadImage(_0x16f2e0(0x11d)),pumpkin13=loadImage(_0x16f2e0(0x16c)),cookie1=loadImage('cookie1.png'),cookie2=loadImage(_0x16f2e0(0x17b)),cookie3=loadImage(_0x16f2e0(0x11b)),cookie4=loadImage('cookie4.png'),cookie5=loadImage('cookie5.png'),cookie6=loadImage(_0x16f2e0(0x199)),cookie7=loadImage(_0x16f2e0(0xff)),cookie8=loadImage(_0x16f2e0(0x147)),cookie9=loadImage(_0x16f2e0(0x137)),cookie10=loadImage(_0x16f2e0(0x137)),cookie11=loadImage(_0x16f2e0(0x137)),cookie12=loadImage(_0x16f2e0(0x137)),cookie13=loadImage(_0x16f2e0(0x137)),coin=loadImage(_0x16f2e0(0x105)),trophy=loadImage('trophy.png'),walkFrames[0x0]=tomato1,walkFrames[0x1]=tomato2,walkFrames[0x2]=tomato3,walkFrames[0x3]=tomato4,walkFrames[0x4]=tomato5,walkFrames[0x5]=tomato6,walkFrames[0x6]=tomato7,walkFrames[0x7]=tomato8,walkFrames[0x8]=tomato9,walkFrames[0x9]=tomato10,walkFrames[0xa]=tomato11,walkFrames[0xb]=tomato12,walkFrames[0xc]=tomato13,ornament1=loadImage(_0x16f2e0(0x1ad)),ornament2=loadImage(_0x16f2e0(0x196)),ornament3=loadImage(_0x16f2e0(0x119)),ornament4=loadImage(_0x16f2e0(0x186)),ornament5=loadImage(_0x16f2e0(0x11e)),ornament6=loadImage(_0x16f2e0(0x172)),ornament7=loadImage(_0x16f2e0(0x132)),ornament8=loadImage(_0x16f2e0(0x158)),ornament9=loadImage(_0x16f2e0(0x1ad)),ornament10=loadImage(_0x16f2e0(0x1b1)),ornament11=loadImage('ornament11.png'),ornament12=loadImage(_0x16f2e0(0x150)),ornament13=loadImage(_0x16f2e0(0xea)),grey={'colours':{'red':_0x16f2e0(0x18f),'green':_0x16f2e0(0x101),'blue':_0x16f2e0(0x17a),'cyan':'0,\x20255,\x20255','yellow':'255,\x20255,\x2051','brown':'153,\x2076,\x200','black':'0,\x200,\x200','white':_0x16f2e0(0x123),'lightGrey':_0x16f2e0(0x19c),'darkGrey':_0x16f2e0(0xfb)},'codes':[_0x16f2e0(0x17c),_0x16f2e0(0x124),_0x16f2e0(0x19b),_0x16f2e0(0x1a8),'ljfsjkdflsdjflsjhljfljs',_0x16f2e0(0x116)]},snowtree=loadImage(_0x16f2e0(0xe9)),yellowsnow=loadImage(_0x16f2e0(0x14d)),elf=loadImage(_0x16f2e0(0xf7));}let inputCode;function setup(){const _0x10db94=_0x3ea020;inputCode=createInput(''),inputCode['position'](windowWidth/0x2+0x82,0x28a),hacker=![];getItem(_0x10db94(0xfa))===null&&(hacker=![],storeItem('hacker',hacker));getItem(_0x10db94(0xfa))!==null&&(hacker=getItem(_0x10db94(0xfa)),storeItem(_0x10db94(0xfa),hacker));getItem(_0x10db94(0xee))===null&&(num=0x0,storeItem(_0x10db94(0xee),num));getItem(_0x10db94(0xee))!==null&&(num=getItem(_0x10db94(0xee)),num++,storeItem(_0x10db94(0xee),num));num===menuText[_0x10db94(0x135)]&&(num=0x0,storeItem(_0x10db94(0xee),num));ownedSkins=[!![],![],![],![],![],![]];getItem('skins')!==null&&(ownedSkins=getItem(_0x10db94(0x100)));storeItem(_0x10db94(0x100),ownedSkins);month()===0xa&&(mode='halloween');month()===0xc&&(mode=_0x10db94(0x164));skinsPfp=[tomato1,boosterbase1,plant1Graphic,pumpkin1,ornament1,cookie1];let _0xff34e3=createCanvas(0x258,0x258);_0xff34e3[_0x10db94(0x134)](windowWidth/0x2-width/0x2,0x64),ownedSkins=[!![],![],![],![],![],![]];getItem('skins')!==null&&(ownedSkins=getItem('skins'));coins=0x0;getItem(_0x10db94(0x17e))!==null&&(coins=getItem(_0x10db94(0x17e)));for(var _0x6724c5=0x0;_0x6724c5<trophiesOwned[_0x10db94(0x135)];_0x6724c5++){trophiesOwned[_0x6724c5]=![];}getItem(_0x10db94(0x157))!==null&&(trophiesOwned=getItem('myTrophies')),getItem(_0x10db94(0x157))===null&&storeItem(_0x10db94(0x157),[![],![],![],![],![],![]]),day()===0x19&&month()===0xc&&(ownedSkins[0x5]=!![],storeItem(_0x10db94(0x100),ownedSkins));}var level=0x1,blockSize=0x3c,player={'spawnX':0x3c,'spawnY':0xc8,'x':0x3c,'y':0xc8,'Size':0x3c,'camX':-0x1e,'xVel':0x0,'yVel':0x0,'onBlock':![],'keys':[![],![],![]],'respawn':!![],'transfer':!![],'health':0xa},levels=[[_0x3ea020(0x106),_0x3ea020(0x128),'b----------i------i----------I',_0x3ea020(0x111),_0x3ea020(0x188),_0x3ea020(0x161),'bbb------------------x-------I',_0x3ea020(0x173),_0x3ea020(0x126),'dddddDDDDDDDDDDDDDDDDdDDDDDDDd',_0x3ea020(0x103),_0x3ea020(0x103)],[_0x3ea020(0x16a),_0x3ea020(0x162),_0x3ea020(0x162),'b---------i-----------------------------------#b',_0x3ea020(0x141),'b---------b------------------------------------x',_0x3ea020(0x197),_0x3ea020(0x12a),_0x3ea020(0x177),_0x3ea020(0x1b4),_0x3ea020(0x112)],[_0x3ea020(0x182),'b------------------b--bbbbbbxxb----I-------------I',_0x3ea020(0x15e),'b------b----b------b--b----b--b----I-------------I',_0x3ea020(0x1b5),_0x3ea020(0x149),'b-----i------------b----------x----I-------------I','b-----b------------b--bbbbbbbbb----I-------------I',_0x3ea020(0x130),'dDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD-------------I','BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I','BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I','BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB==================I'],[_0x3ea020(0x1a2),_0x3ea020(0x159),'I------------------1-----------1-------------------------I',_0x3ea020(0x129),_0x3ea020(0x15f),_0x3ea020(0x178),_0x3ea020(0x1a4),'I-------------DdBBBBB----BB-----BBBBBBBdD---------------#I','I@---i---1---DdBBB------BBBB------BBBBBBdDDD---DD---DDDDDD','DDDDDDDDDDDDDdBBBB------BBBBBBBB-----------i---BB===BBBBBB',_0x3ea020(0x13c)],[_0x3ea020(0xe8),_0x3ea020(0x118),_0x3ea020(0x145),'I-----I--b--b-----i----B--------------b-----I',_0x3ea020(0x14a),_0x3ea020(0x18c),_0x3ea020(0x170),'I-----I--b----B-----------------------b-----I',_0x3ea020(0x10e),_0x3ea020(0x13b),_0x3ea020(0x1a1),_0x3ea020(0x1a1),_0x3ea020(0x10c),_0x3ea020(0x10c),_0x3ea020(0x1b0)],['bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',_0x3ea020(0x13a),_0x3ea020(0x13a),'b----------------------------b',_0x3ea020(0x13a),'b----------------------------b',_0x3ea020(0x13a),_0x3ea020(0x13a),_0x3ea020(0x171),'DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD',_0x3ea020(0x103)]],trophyDisplay=function(_0x3da198,_0x4956e4,_0xac366d){trophiesOwned[_0x3da198]===![]&&fill(0x64,0x64,0x64),trophiesOwned[_0x3da198]===!![]&&fill(0x0,0xc8,0x0),stroke(0x0),rect(_0x4956e4+0xa,_0xac366d+0xa,0x50,0x50,0x5),image(trophy,_0x4956e4+0xa,_0xac366d-0x2,0x50,0x50),fill(0x0,0x0,0x0),textSize(0xb),textAlign(CENTER),noStroke(),textFont(impact),text(trophies[_0x3da198],_0x4956e4+0x32,_0xac366d+0x55),textAlign(LEFT),mouseX>_0x4956e4+0xa&&mouseX<_0x4956e4+0x5a&&mouseY>_0xac366d+0xa&&mouseY<_0xac366d+0x5a&&(display=trophyDescription[_0x3da198]),textFont(impact),fill(0x64,0x64,0x64);},trampoline=function(_0xa780d7,_0x4d62b2){const _0x391bc2=_0x3ea020;image(trampolineImg,_0xa780d7,_0x4d62b2,blockSize,blockSize),player[_0x391bc2(0x102)]>0x0&&player['x']+player[_0x391bc2(0x153)]>=_0xa780d7&&player['x']<=_0xa780d7+blockSize&&player['y']+player['Size']>=_0x4d62b2+blockSize/0x3&&player['y']<=_0x4d62b2+blockSize&&(inside=!![],player['yVel']=-0x1e,spring[_0x391bc2(0x138)]()),showHitBox===!![]&&(noFill(),mode===_0x391bc2(0x185)&&stroke(0x0,0x0,0x0),mode==='halloween'&&stroke(0xff,0xff,0xff),rect(_0xa780d7,_0x4d62b2+blockSize/0x3,blockSize,blockSize-blockSize/0x3),stroke(0x0,0x0,0x0));},human=function(_0x405573,_0x233d82,_0x6197c0){const _0x4f11fb=_0x3ea020;timer===0x0&&(humany[_0x6197c0]=_0x233d82),timer>0x0&&(mode===_0x4f11fb(0x185)&&image(humanGraphic,_0x405573,humany[_0x6197c0],blockSize,blockSize),mode==='halloween'&&image(lollypop,_0x405573,humany[_0x6197c0],blockSize,blockSize),mode==='christmas'&&image(elf,_0x405573,humany[_0x6197c0],blockSize,blockSize),dist(player['x']+player['Size']/0x2,player['y']+blockSize/0x2,_0x405573+blockSize/0x2,humany[_0x6197c0]+blockSize/0x2)<=blockSize+0x5&&(score++,coins+=0xa,humany[_0x6197c0]=0x320,scream[_0x4f11fb(0x138)](),isNaN(coins)?storeItem(_0x4f11fb(0x17e),score*0xa):storeItem('coins',coins))),mode===_0x4f11fb(0x164)&&image(snow1,_0x405573,_0x233d82+0x39,blockSize,blockSize),showHitBox===!![]&&humany[_0x6197c0]<=height&&(noFill(),mode==='classic'&&stroke(0x0,0x0,0x0),mode==='halloween'&&stroke(0xff,0xff,0xff),rect(_0x405573,_0x233d82,blockSize,blockSize),stroke(0x0,0x0,0x0));},block=function(_0x492482,_0x40dd02,_0x22678f,_0x3a74bc,_0x2c5c0b){const _0x19160d=_0x3ea020;if(_0x22678f===!![])switch(_0x2c5c0b){case _0x19160d(0x18b):image(brickGraphic,_0x492482,_0x40dd02,blockSize,blockSize);break;case _0x19160d(0xec):image(blockGraphic,_0x492482,_0x40dd02,blockSize,blockSize);break;case _0x19160d(0x1aa):mode==='christmas'&&image(snow1,_0x492482,_0x40dd02-0x3,blockSize,blockSize);image(dirtBlockGraphic,_0x492482,_0x40dd02,blockSize,blockSize);break;case _0x19160d(0x11c):image(blankDirt,_0x492482,_0x40dd02,blockSize,blockSize);break;}_0x3a74bc===!![]&&(player['y']>=_0x40dd02-blockSize&&player['y']<_0x40dd02&&player['x']>_0x492482-blockSize&&player['x']<_0x492482+blockSize&&(player['y']=_0x40dd02-player[_0x19160d(0x153)],player['onBlock']=!![],inside=!![]),player['y']<_0x40dd02+blockSize&&player['y']>_0x40dd02-blockSize&&player['x']<_0x492482-blockSize/0x2&&player['x']>_0x492482-blockSize&&(player['x']=_0x492482-blockSize,player[_0x19160d(0x109)]=0x0,inside=!![]),player['y']<_0x40dd02+blockSize&&player['y']>_0x40dd02-blockSize&&player['x']>_0x492482+blockSize/0x2&&player['x']<_0x492482+blockSize&&(player['x']=_0x492482+blockSize,player[_0x19160d(0x109)]=0x0,inside=!![]),player['y']<=_0x40dd02+blockSize&&player['y']>_0x40dd02+0x1e&&player['x']>_0x492482-blockSize&&player['x']<_0x492482+blockSize&&(player[_0x19160d(0x120)]=0x0,player['y']=_0x40dd02+blockSize,player['onBlock']=![],inside=!![],player['yVel']>0xf&&(player[_0x19160d(0x102)]-=0xa)));},plant1=function(_0x37ae27,_0x452e18){const _0x3e25b5=_0x3ea020;mode===_0x3e25b5(0x185)&&image(plant1Graphic,_0x37ae27,_0x452e18,blockSize,blockSize),mode==='halloween'&&image(pumpkin1,_0x37ae27,_0x452e18,blockSize,blockSize),mode===_0x3e25b5(0x164)&&image(snowtree,_0x37ae27,_0x452e18,blockSize,blockSize);},portal=function(_0x5c793a,_0x46c7d1){const _0x4022c6=_0x3ea020;image(tomatoCrateGraphic,_0x5c793a,_0x46c7d1,blockSize,blockSize),dist(player['x']+player['Size']/0x2,player['y']+blockSize/0x2,_0x5c793a+blockSize/0x2,_0x46c7d1+blockSize/0x2)<=blockSize+0x5&&(level++,player[_0x4022c6(0x15b)]=!![],player[_0x4022c6(0x15c)]=![],timer=-0x1,inside=!![],player[_0x4022c6(0x120)]=0x0);},stereo=function(_0x2a9215,_0x5eb292){const _0x1a037c=_0x3ea020;imageMode(CORNER),mode===_0x1a037c(0x185)&&image(stereoGraphic,_0x2a9215,_0x5eb292,blockSize,blockSize),mode==='halloween'&&image(ghost,_0x2a9215,_0x5eb292,blockSize,blockSize),mode===_0x1a037c(0x164)&&image(yellowsnow,_0x2a9215,_0x5eb292,blockSize,blockSize),player['y']+player[_0x1a037c(0x153)]>_0x5eb292+blockSize/0x3&&player['y']<_0x5eb292+blockSize&&player['x']+player[_0x1a037c(0x153)]>_0x2a9215&&player['x']<_0x2a9215+blockSize&&player[_0x1a037c(0x102)]>0x0&&(player[_0x1a037c(0x102)]-=0xa,player[_0x1a037c(0x120)]=-0xf,player['y']=_0x5eb292-0x1e,!splatSound[_0x1a037c(0x169)]()&&(splatSound[_0x1a037c(0x138)](),walkFrame=0x8,walkTimer=0x0,pubertyLove[_0x1a037c(0x138)](),pianoTheme[_0x1a037c(0x168)]())),dist(0x12c,player['x'],_0x2a9215+blockSize/0x2,_0x5eb292+blockSize/0x2)<=0x64&&!pubertyLove[_0x1a037c(0x169)]()&&pubertyLove[_0x1a037c(0x138)](),showHitBox===!![]&&(noFill(),mode===_0x1a037c(0x185)&&stroke(0x0,0x0,0x0),mode===_0x1a037c(0xf4)&&stroke(0xff,0xff,0xff),rect(_0x2a9215,_0x5eb292+blockSize/0x3,blockSize,blockSize-blockSize/0x3),stroke(0x0,0x0,0x0));},snow=function(_0x208abe,_0x43acb5){image(snow1,_0x208abe,_0x43acb5+0x39,blockSize,blockSize);},playerSpawn=function(){const _0x380761=_0x3ea020;player['y']=player[_0x380761(0x14f)],player['x']=player[_0x380761(0x166)],player[_0x380761(0x102)]=0xa,player[_0x380761(0x15b)]=![],walkFrame=0x3;},playerDraw=function(){const _0x172ec2=_0x3ea020;skin===_0x172ec2(0x10a)&&walkFrames[0x0]!==tomato1&&(walkFrames[0x0]=tomato1,walkFrames[0x1]=tomato2,walkFrames[0x2]=tomato3,walkFrames[0x3]=tomato4,walkFrames[0x4]=tomato5,walkFrames[0x5]=tomato6,walkFrames[0x6]=tomato7,walkFrames[0x7]=tomato8,walkFrames[0x8]=tomato9,walkFrames[0x9]=tomato10,walkFrames[0xa]=tomato11,walkFrames[0xb]=tomato12,walkFrames[0xc]=tomato13,food=_0x172ec2(0x117)),skin===_0x172ec2(0xed)&&walkFrames[0x0]!==boosterbase1&&ownedSkins[0x1]===!![]&&(walkFrames[0x0]=boosterbase1,walkFrames[0x1]=boosterbase2,walkFrames[0x2]=boosterbase3,walkFrames[0x3]=boosterbase4,walkFrames[0x4]=boosterbase5,walkFrames[0x5]=boosterbase6,walkFrames[0x6]=boosterbase7,walkFrames[0x7]=boosterbase8,walkFrames[0x8]=boosterbase9,walkFrames[0x9]=boosterbase10,walkFrames[0xa]=boosterbase11,walkFrames[0xb]=boosterbase12,walkFrames[0xc]=boosterbase13,food=_0x172ec2(0x107)),skin==='Camo'&&walkFrames[0x0]!==plant1Graphic&&ownedSkins[0x2]===!![]&&(walkFrames[0x0]=plant1Graphic,walkFrames[0x1]=plant1Graphic,walkFrames[0x2]=plant1Graphic,walkFrames[0x3]=plant1Graphic,walkFrames[0x4]=plant1Graphic,walkFrames[0x5]=plant1Graphic,walkFrames[0x6]=plant1Graphic,walkFrames[0x7]=plant1Graphic,walkFrames[0x8]=plant1Graphic,walkFrames[0x9]=plant1Graphic,walkFrames[0xa]=plant2Graphic,walkFrames[0xb]=plant3Graphic,walkFrames[0xc]=plant4Graphic,food=_0x172ec2(0xfe)),skin===_0x172ec2(0x14b)&&walkFrames[0x0]!==pumpkin1&&ownedSkins[0x3]===!![]&&(walkFrames[0x0]=pumpkin1,walkFrames[0x1]=pumpkin2,walkFrames[0x2]=pumpkin3,walkFrames[0x3]=pumpkin4,walkFrames[0x4]=pumpkin5,walkFrames[0x5]=pumpkin6,walkFrames[0x6]=pumpkin7,walkFrames[0x7]=pumpkin8,walkFrames[0x8]=pumpkin1,walkFrames[0x9]=pumpkin10,walkFrames[0xa]=pumpkin11,walkFrames[0xb]=pumpkin12,walkFrames[0xc]=pumpkin13,food=_0x172ec2(0xf9)),skin===_0x172ec2(0x1ae)&&walkFrames[0x0]!==ornament1&&(walkFrames[0x0]=ornament1,walkFrames[0x1]=ornament2,walkFrames[0x2]=ornament3,walkFrames[0x3]=ornament4,walkFrames[0x4]=ornament5,walkFrames[0x5]=ornament6,walkFrames[0x6]=ornament7,walkFrames[0x7]=ornament8,walkFrames[0x8]=ornament1,walkFrames[0x9]=ornament10,walkFrames[0xa]=ornament11,walkFrames[0xb]=ornament12,walkFrames[0xc]=ornament13,food=_0x172ec2(0x121)),skin===_0x172ec2(0xf3)&&walkFrames[0x0]!==cookie1&&(walkFrames[0x0]=cookie1,walkFrames[0x1]=cookie2,walkFrames[0x2]=cookie3,walkFrames[0x3]=cookie4,walkFrames[0x4]=cookie5,walkFrames[0x5]=cookie6,walkFrames[0x6]=cookie7,walkFrames[0x7]=cookie8,walkFrames[0x8]=cookie1,walkFrames[0x9]=cookie10,walkFrames[0xa]=cookie11,walkFrames[0xb]=cookie12,walkFrames[0xc]=cookie13,food=_0x172ec2(0x190)),image(walkFrames[walkFrame],0x10e,player['y'],player[_0x172ec2(0x153)],player['Size']),showHitBox===!![]&&(noFill(),mode===_0x172ec2(0x185)&&stroke(0x0,0x0,0x0),mode===_0x172ec2(0xf4)&&stroke(0xff,0xff,0xff),rect(0x10e,player['y'],player[_0x172ec2(0x153)],player['Size']),stroke(0x0,0x0,0x0));},playerMove=function(){const _0x1c568b=_0x3ea020;player['y']>=height*0x4&&(player[_0x1c568b(0x102)]-=0x1),player['keys'][0x0]===!![]&&player['xVel']>-0x7&&player[_0x1c568b(0x102)]>0x0&&player[_0x1c568b(0x109)]--,player[_0x1c568b(0x19a)][0x2]===!![]&&player[_0x1c568b(0x109)]<0x7&&player[_0x1c568b(0x102)]>0x0&&player['xVel']++,player['y']<-0x1e&&(fill(0xe5,0xd5,0x0),image(arrow,0x122,0xa,0x14,0x1e)),player['onBlock']===!![]&&player[_0x1c568b(0x19a)][0x1]===!![]&&player[_0x1c568b(0x102)]>0x0&&(player['yVel']=-0x12),player['onBlock']===![]&&player[_0x1c568b(0x120)]<0x12&&player['yVel']++,player[_0x1c568b(0x109)]>0x0&&(player['xVel']-=0.5),player[_0x1c568b(0x109)]<0x0&&(player['xVel']+=0.5),player['x']+=player[_0x1c568b(0x109)],player['y']+=player[_0x1c568b(0x120)];},drawLevel=function(_0x3016aa,_0x31555e){const _0x4ca77a=_0x3ea020;(mode===_0x4ca77a(0x185)||mode===_0x4ca77a(0x164))&&(mode===_0x4ca77a(0x185)&&image(sun,0x190,0x64,0x78,0x78),image(cloud,0x12c,0xc8,0x3c,0x3c),image(cloud,0xc8,0x64,0x50,0x50),image(cloud,0x186,0x96,0x3c,0x3c),image(cloud,0x1e,0x3c,0x32,0x32),image(cloud,0x64,0xc8,0x3c,0x3c),image(cloud,0x1f4,0x32,0x3c,0x3c));mode===_0x4ca77a(0xf4)&&image(moon,0x190,0x64,0x78,0x78);push(),translate(-player['x']+0x10e,0x0);for(var _0x440738=0x0;_0x440738<levels[level-0x1]['length'];_0x440738++){for(var _0x24bac7=0x0;_0x24bac7<levels[level-0x1][_0x440738]['length'];_0x24bac7++){switch(levels[level-0x1][_0x440738][_0x24bac7]){case'B':block(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,!![],!![],_0x4ca77a(0xec));break;case'=':stereo(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e);break;case'@':player[_0x4ca77a(0x166)]=_0x24bac7*blockSize+_0x3016aa,player['spawnY']=_0x440738*blockSize+_0x31555e;break;case'#':portal(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e);break;case'D':block(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,!![],!![],'dirt1');break;case'b':block(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,!![],!![],'brick');break;case'x':block(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,!![],![],_0x4ca77a(0x18b));break;case'1':plant1(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e);break;case'd':block(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,!![],!![],_0x4ca77a(0x11c));break;case't':trampoline(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e);break;case'i':human(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,_0x440738+_0x24bac7+level);break;case'I':block(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,![],!![],_0x4ca77a(0xec));break;case'l':block(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e,!![],![],'block');break;case'c':image(coin,_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e+blockSize/0x4,blockSize,blockSize);break;case'-':mode===_0x4ca77a(0x164)&&((levels[level-0x1][_0x440738+0x1][_0x24bac7]==='B'||levels[level-0x1][_0x440738+0x1][_0x24bac7]==='D'||levels[level-0x1][_0x440738+0x1][_0x24bac7]==='b'||levels[level-0x1][_0x440738+0x1][_0x24bac7]==='d'||levels[level-0x1][_0x440738+0x1][_0x24bac7]==='l')&&snow(_0x24bac7*blockSize+_0x3016aa,_0x440738*blockSize+_0x31555e));break;}}}pop();};keyPressed=function(){const _0xf50df8=_0x3ea020;(key[_0xf50df8(0x154)]===0x11||key[_0xf50df8(0x154)]===0x5b)&&(k[0x0]=!![]),key[_0xf50df8(0x154)]===0x10&&(k[0x1]=!![]),key[_0xf50df8(0x154)]===0x49&&(k[0x2]=!![]),(key[_0xf50df8(0x154)]===0x61||keyCode===LEFT_ARROW||key==='a'||key==='A')&&(player[_0xf50df8(0x19a)][0x0]=!![]),(key[_0xf50df8(0x154)]===0x77||keyCode===UP_ARROW||key==='w'||key==='W')&&(player[_0xf50df8(0x19a)][0x1]=!![]),(key[_0xf50df8(0x154)]===0x64||keyCode===RIGHT_ARROW||key==='d'||key==='D')&&(player[_0xf50df8(0x19a)][0x2]=!![]);},keyReleased=function(){const _0x2afc02=_0x3ea020;(key[_0x2afc02(0x154)]===0x11||key[_0x2afc02(0x154)]===0x5b)&&(k[0x0]=![]),key['code']===0x10&&(k[0x1]=![]),key[_0x2afc02(0x154)]===0x49&&(k[0x2]=![]),(key[_0x2afc02(0x154)]===0x61||keyCode===LEFT_ARROW||key==='a'||key==='A')&&(player[_0x2afc02(0x19a)][0x0]=![]),(key['code']===0x77||keyCode===UP_ARROW||key==='w'||key==='W')&&(player['keys'][0x1]=![]),(key['code']===0x64||keyCode===RIGHT_ARROW||key==='d'||key==='D')&&(player[_0x2afc02(0x19a)][0x2]=![]);};function mouseReleased(){const _0x3982b6=_0x3ea020;mouseX>scene+0x2e4&&mouseX<scene+0x320&&mouseY>0xfa&&mouseY<0x15e&&level>0x1&&gamePlaying===![]&&level--,mouseX>scene+0x3e8&&mouseX<scene+0x424&&mouseY>0xfa&&mouseY<0x15e&&level<levels[_0x3982b6(0x135)]-0x1&&gamePlaying===![]&&level++,mouseX>scene+0x28a&&mouseX<scene+0x2ee&&mouseY>0x32&&mouseY<0x64&&gamePlaying===![]&&(scene=0x0),mouseX>scene+0x4e2&&mouseX<scene+0x546&&mouseY>0x32&&mouseY<0x64&&gamePlaying===![]&&(scene=0x0),mouseX>scene+0x73a&&mouseX<scene+0x79e&&mouseY>0x32&&mouseY<0x64&&gamePlaying===![]&&(scene=0x0),mouseX>scene+0x992&&mouseX<scene+0xa5a&&mouseY>0x32&&mouseY<0x64&&gamePlaying===![]&&(scene=0x0),mouseX>scene+0xbea&&mouseX<scene+0xc4e&&mouseY>0x32&&mouseY<0x64&&gamePlaying===![]&&(scene=0x0),mouseX>scene+0x320&&mouseX<scene+0x3e8&&mouseY>0x1ae&&mouseY<0x1e0&&gamePlaying===![]&&(gamePlaying=!![]),mouseX>scene+0x82a&&mouseX<scene+0x83e&&mouseY>0x18b&&mouseY<0x1a9&&showHitBox===!![]&&clickTimer>0x3&&(showHitBox=![],clickTimer=0x0),mouseX>scene+0x82a&&mouseX<scene+0x83e&&mouseY>0x18b&&mouseY<0x1a9&&showHitBox===![]&&clickTimer>0x3&&(showHitBox=!![],clickTimer=0x0);}draw=function(){const _0x400568=_0x3ea020;imageMode(CORNER);if(timer===0x1&&mode!=='classic')for(var _0x2a25e6=0x0;_0x2a25e6<0x1e;_0x2a25e6++){dx[_0x2a25e6]=random(0x0,width),dy[_0x2a25e6]=random(0x0,height);}textAlign(LEFT),angleMode(DEGREES),clickTimer++,background(0x0,0xc8,0xff);if(gamePlaying===![]){!themeSong[_0x400568(0x169)]&&themeSong[_0x400568(0x138)]();strokeWeight(0x1),stroke(0x0,0x0,0x0),fill(0x64,0xc8,0xc8),rect(scene,0x0,width*0x6,height),textFont(impact),fill(0x0),text(coins,width/0x2,0x32),image(coin,width/0x2-0x19,0x1c,0x1e,0x1e),fill(0xff,0x0,0x0),textSize(0x28),text(_0x400568(0x195),scene+0x28,0x64),text(_0x400568(0x18a),scene+0x28a,0x12c),rect(scene+0xc8,0x82,0xc8,0x32,0x5),rect(scene+0xc8,0xbe,0xc8,0x32,0x5),rect(scene+0xc8,0xfa,0xc8,0x32,0x5),rect(scene+0xc8,0x136,0xc8,0x32,0x5),rect(scene+0xc8,0x172,0xc8,0x32,0x5),textFont(impact),fill(0x0,0x0,0x0),textSize(0x1e),noStroke(),text(_0x400568(0x187),scene+0x109,0xa5),text(_0x400568(0x189),scene+0x109,0xe1),text('Settings',scene+0xfa,0x11d),text(_0x400568(0xe7),scene+0xfa,0x159),text(_0x400568(0x179),scene+0x109,0x195),textAlign(CENTER),textSize(0x14),translate(scene+0x12c,0x78),rotate(sin(frameCount*0xa)*0x4),text(menuText[num],0x0,0x0),textAlign(LEFT),rotate(-sin(frameCount*0xa)*0x4),translate(-(scene+0x12c),-0x78),image(menuTomato,scene+0x78,0x19a,0x15e,0x12c),stroke(0x0),fill(0x78,0x78,0x78),rect(scene+0x2e4,0xfa,0x50,0x64,0xa),rect(scene+0x3d4,0xfa,0x50,0x64,0xa),fill(0x0,0x0,0x0),rect(scene+0x320,0xc8,0xc8,0xc8,0xa),fill(0xff,0x0,0x0),rect(scene+0x320,0x1ae,0xc8,0x32,0x5),rect(scene+0x28a,0x32,0x64,0x32,0x5),rect(scene+0x4e2,0x32,0x64,0x32,0x5),rect(scene+0x73a,0x32,0x64,0x32,0x5),rect(scene+0x992,0x32,0x64,0x32,0x5),rect(scene+0xbea,0x32,0x64,0x32,0x5);showHitBox===!![]?fill(0x0,0xff,0x0):fill(0xff,0x0,0x0);rect(scene+0x82f,0x190,0x14,0x14,0x4),fill(0x0,0x0,0x0),textSize(0x3c),text(_0x400568(0x131),scene+0x2ee,0x140),fill(0xff,0xff,0xff),text(level,scene+0x370,0x12c),fill(0x0,0x0,0x0),textSize(0x1e),text('PLAY',scene+0x366,0x1d1),text('EXIT',scene+0x294,0x55),text(_0x400568(0x16f),scene+0x4ec,0x55),text(_0x400568(0x16f),scene+0x744,0x55),text(_0x400568(0x16f),scene+0x99c,0x55),text(_0x400568(0x16f),scene+0xbf4,0x55),text(_0x400568(0x179),scene+0xcb2,0x5a),textSize(0x19),display=null;for(var _0x42bfbd=0x0;_0x42bfbd<skins[_0x400568(0x135)];_0x42bfbd++){stroke(0x0),fill(0xc8,0xc8,0xc8),rect(scene+0xbf4,0x78+_0x42bfbd*0x32,0x208,0x2d,0x4),image(skinsPfp[_0x42bfbd],scene+0xbfe,0x7a+_0x42bfbd*0x32,0x28,0x28),fill(0x0,0x0,0x0),noStroke(),ownedSkins[_0x42bfbd]===!![]?text(skins[_0x42bfbd],scene+0xc30,0x96+_0x42bfbd*0x32):text('?',scene+0xc30,0x96+_0x42bfbd*0x32),skin===skins[_0x42bfbd]&&text(_0x400568(0x1a5),scene+0xd48,0x96+_0x42bfbd*0x32),mouseX>=scene+0xbf4&&mouseX<=scene+0xdfc&&mouseY>=0x78+_0x42bfbd*0x32&&mouseY<=0xb9+_0x42bfbd*0x32&&(ownedSkins[_0x42bfbd]===!![]&&(display=skinDesc[_0x42bfbd]),ownedSkins[_0x42bfbd]!==!![]&&(display=_0x400568(0x19d)),mouseIsPressed&&mouseX>=scene+0xbf4&&mouseX<=scene+0xdfc&&mouseY>=0x78+_0x42bfbd*0x32&&mouseY<=0xb9+_0x42bfbd*0x32&&ownedSkins[_0x42bfbd]===!![]&&(skin=skins[_0x42bfbd]));}stroke(0x0),trophyDisplay(0x0,scene+0x992,0x64),trophyDisplay(0x1,scene+0x9f6,0x64),trophyDisplay(0x2,scene+0xa5a,0x64),trophyDisplay(0x3,scene+0xabe,0x64),trophyDisplay(0x4,scene+0xb22,0x64),trophyDisplay(0x5,scene+0x992,0xc8),trophyDisplay(0x6,scene+0x9f6,0xc8);mouseIsPressed&&mouseX>scene+0xb22&&mouseX<scene+0xb72&&mouseY>0x64&&mouseY<0xb4&&(window[_0x400568(0x122)](_0x400568(0x1ac)),trophiesOwned[0x4]=!![],storeItem(_0x400568(0x157),trophiesOwned));textFont(impact),fill(0x0,0x0,0x0);display!==null&&text(display,mouseX+0xf,mouseY,width-mouseX-0xf,height-mouseY);textFont(impact),textSize(0x1e),fill(0xdc,0xdc,0xdc),stroke(0x0),rect(scene+0x7d0,0x122,0xc8,0x14,0x5),fill(0xb4,0xb4,0xb4),rect(scene+0x7c6+gameVolume,0x11d,0x1e,0x1e,0x5),fill(0x0,0x0,0x0),text(_0x400568(0xf0),scene+0x7e4,0x104),fill(0xff,0x0,0x0),textSize(0x28),text(_0x400568(0x156),scene+0x5aa,0x64),textSize(0x1e),fill(0x0,0x0,0x0),text(_0x400568(0x13f),scene+0x514,0xc8,0x190,0x190);for(var _0x344bd9=0x0;_0x344bd9<grey['codes'][_0x400568(0x135)];_0x344bd9++){grey[_0x400568(0x10d)][_0x344bd9]!==_0x400568(0x17c)&&inputCode[_0x400568(0x19e)]()==grey[_0x400568(0x10d)][_0x344bd9]&&(ownedSkins[_0x344bd9]=!![],storeItem(_0x400568(0x100),ownedSkins));}inputCode[_0x400568(0x19e)]()==_0x400568(0x193)&&(ownedSkins=[!![],![],![],!![],!![],!![]],storeItem('skins',ownedSkins),trophiesOwned=[![],!![],!![],!![],!![],![],!![]],storeItem(_0x400568(0x157),trophiesOwned),coins=0x1068,storeItem('coins',coins)),textSize(0xc),themeSong[_0x400568(0x108)](gameVolume/0xc8),pianoTheme[_0x400568(0x108)](gameVolume/0xc8),scream['setVolume'](gameVolume/0xc8),pubertyLove[_0x400568(0x108)](gameVolume/0xc8),splatSound[_0x400568(0x108)](gameVolume/0xc8),spring['setVolume'](gameVolume/0xc8),mouseIsPressed&&mouseX>scene+0xc8&&mouseX<scene+0x190&&mouseY>0x82&&mouseY<0xb4&&(gamePlaying=!![],themeSong['stop']()),mouseIsPressed&&mouseX>scene+0xc8&&mouseX<scene+0x190&&mouseY>0xbe&&mouseY<0xf0&&(scene=-0x4b0),mouseIsPressed&&mouseX>scene+0xc8&&mouseX<scene+0x190&&mouseY>0xfa&&mouseY<0x12c&&(scene=-0x708),mouseIsPressed&&mouseX>scene+0xc8&&mouseX<scene+0x190&&mouseY>0x136&&mouseY<0x168&&(scene=-0x960),mouseIsPressed&&mouseX>scene+0xc8&&mouseX<scene+0x190&&mouseY>0x172&&mouseY<0x1a4&&(scene=-0xbb8);}mouseIsPressed&&mouseX>scene+0x7d0&&mouseX<scene+0x898&&mouseY>0x11d&&mouseY<0x131&&(gameVolume=mouseX+0xf-0xdc);deathTimer>0xa&&walkFrame!==0xc&&player[_0x400568(0x102)]<0x1&&(walkFrame++,deathTimer=0x0);player[_0x400568(0x102)]<0x1&&walkFrame===0xc&&deathTimer===0x1f4&&(walkFrame=0x0,deathTimer=0x0,player['respawn']=!![]);player[_0x400568(0x15b)]&&playerSpawn();if(gamePlaying===!![]){player['onBlock']=![];mode===_0x400568(0x185)&&background(0x0,0xc8,0xff);mode===_0x400568(0xf4)&&background(0x0);mode==='christmas'&&background(0xc8);inside=![],drawLevel(0x0,-0x3c),stroke(0x0,0x0,0x0);(mode===_0x400568(0x185)||mode===_0x400568(0x164))&&fill(0x0,0x0,0x0);mode==='halloween'&&fill(0xff,0xff,0xff);text(score,0x1c2,0x32),text(speedRunTimerSec+'.'+speedRunTimerMil,0x1f4,0x32),fill(0xff,0x0,0x0),rect(0x14,0x14,0x50,0x28,0x5),rect(0x78,0x14,0x64,0x28,0x5),fill(0x0,0x0,0x0),text(_0x400568(0x13e),0x23,0x2f),push(),playerDraw(),playerMove();for(f=0x0;f<dx[_0x400568(0x135)];f++){imageMode(CENTER),translate(dx[f],dy[f]),rotate(dy[f]),mode===_0x400568(0x164)&&image(snowflake,0x0,0x0,0x14,0x14),imageMode(CORNER),rotate(-dy[f]),translate(-dx[f],-dy[f]),dx[f]--,dy[f]++,dx[f]<=-0xa&&(dx[f]=width+0xa),dy[f]>=0x262&&(dy[f]=-0xa);}timer++;}player[_0x400568(0x102)]<0x1&&gamePlaying==!![]&&(deathTimer++,fill(0xff,0x0,0x0),textSize(0x1e),text('You\x27re\x20'+food,0xc8,0x12c,0x190,0x12c)),walkFrame===0x8&&walkTimer===0x4&&player[_0x400568(0x19a)][0x2]===!![]&&(walkFrame=0x1,walkTimer=0x0),walkFrame===0x1&&walkTimer===-0x4&&player[_0x400568(0x19a)][0x0]===!![]&&(walkFrame=0x8,walkTimer=0x0),walkTimer>0x4&&(walkFrame++,walkTimer=0x0),walkTimer<-0x4&&(walkFrame--,walkTimer=0x0),player[_0x400568(0x19a)][0x0]===!![]&&player[_0x400568(0x102)]>0x0&&walkTimer--,player['keys'][0x2]===!![]&&player['health']>0x0&&walkTimer++,gameVolume<0x0&&(gameVolume=0x0),gameVolume>0xc8&&(gameVolume=0xc8),level===levels['length']&&(fill(0x64,0xc8,0xc8),rect(0x0,0x0,0x258,0x258),fill(0xff,0x0,0x0),rect(0x14,0x14,0x50,0x28,0x5),textSize(0x28),text(_0x400568(0x174),0x28,0x64),textSize(0x14),text(_0x400568(0x167)+score+_0x400568(0x16b)+speedRunTimerSec+'.'+speedRunTimerMil+_0x400568(0x163),0x28,0x96,0x208,0x12c),speedRunTimerMil--,fill(0x0,0x0,0x0),text(_0x400568(0x16f),0x1e,0x32),player[_0x400568(0xef)]=-0x1e,score>=0x14&&(trophiesOwned[0x2]=!![]),score>=0x1e&&month()===0xa&&(trophiesOwned[0x5]=!![],ownedSkins[0x3]=!![],storeItem(_0x400568(0x100),ownedSkins)),speedRunTimerSec<=0x1e&&(trophiesOwned[0x3]=!![]),score===0x0&&(trophiesOwned[0x1]=!![]),score===0x0&&month()===0xc&&(trophiesOwned[0x6]=!![],ownedSkins[0x4]=!![],storeItem(_0x400568(0x100),ownedSkins)),storeItem(_0x400568(0x157),trophiesOwned),speedRunTimerSec+speedRunTimerMil/0xa>highScore&&(highScore=speedRunTimerSec+speedRunTimerMil/0xa),mouseIsPressed&&mouseX>0x14&&mouseX<0x64&&mouseY>0x14&&mouseY<0x3c&&(score=0x0,speedRunTimerSec=0x0,speedRunTimerMil=0x0,level=0x1,gamePlaying=![],player['spawnX']=0xc8,player['spawnY']=0xc8,timer=0x0,player[_0x400568(0x15b)]=!![])),inputCode['show'](),(gamePlaying==!![]||scene!==0x0)&&inputCode[_0x400568(0x17f)](),gamePlaying===!![]&&(textSize(0x14),fill(0x0),text(coins,0x17c,0x32),image(coin,0x163,0x1c,0x1e,0x1e),splatSound['isPlaying']===!![]&&speedRunTimerMil--,speedRunTimerMil++,speedRunTimerMil>0x3c&&(speedRunTimerSec++,speedRunTimerMil=0x0)),soundWanted===!![]&&!themeSong[_0x400568(0x169)]()&&gamePlaying===![]&&(themeSong[_0x400568(0x138)](),pianoTheme[_0x400568(0x168)](),soundPlaying=!![]),soundWanted===!![]&&!pianoTheme[_0x400568(0x169)]()&&gamePlaying===!![]&&player['health']>0x0&&(themeSong['stop'](),pianoTheme[_0x400568(0x138)]()),mouseIsPressed&&mouseX>0x14&&mouseX<0x64&&mouseY>0x14&&mouseY<0x3c&&gamePlaying===!![]&&(gamePlaying=![]),textSize(width/0x1e),fill(0xff,0xff,0xff),text('Made\x20by\x20Wet\x20Takis\x20Games',0x14,0x23a),mode===_0x400568(0xf4)&&fill(0xff,0xff,0xff),mode==='christmas'&&fill(0x0,0x0,0x0),(mode==='classic'||gamePlaying!==!![])&&fill(0x0),document['addEventListener'](_0x400568(0x144),_0x48f32c=>_0x48f32c['preventDefault']()),(keyCode===0x7b||k[0x0]===!![]&&k[0x1]===!![]&&k[0x2]===!![])&&(hacker=!![],storeItem(_0x400568(0xfa),hacker)),hacker===!![]&&(coins=0x0,storeItem(_0x400568(0x17e),coins),ownedSkins=[!![],![],![],![],![],![]],storeItem('skins',ownedSkins),trophiesOwned=[![],![],![],![],![],![]],storeItem('myTrophies',trophiesOwned),accepting=![]),player[_0x400568(0x102)]<=0x1&&gamePlaying===!![]&&(fill(0xff,0x0,0x0),stroke(0x0),rect(0xf0,0x14,0x64,0x28,0x5),fill(0x0),textSize(0x14),text(_0x400568(0x151),0xfa,0x30),mouseIsPressed&&mouseX>=0xf0&&mouseX<=0x154&&mouseY>=0x14&&mouseY<=0x3c&&(level=0x1,timer=0x0,player['x']=0x3c,player['y']=0xb4,pubertyLove[_0x400568(0x168)](),player[_0x400568(0x102)]=0xa,gamePlaying=!![],walkFrame=0x4,speedRunTimerSec=0x0,speedRunTimerMil=0x0,score=0x0));};
+// omg! you are so cool!
+// this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
+// have fun!
+var hacker;
+let spring;
+let impact; 
+var menuText = [
+  "Tomatoes rule the world",
+  "In colour!",
+  "Total profits ¢11!",
+  "Produced 300 ketchup bottles in 2020!",
+  "Jump on stereos to level up!",
+  "A toomaaatoooo ate my sister",
+  "Is it wrong that I like ketchup?",
+  "2019 was 5 years ago????!!!!"
+];
+let num;
+var codes = ["none", "skcudge", "ybeicuh", "none"];
+var accepting = true;
+var speedRunTimerSec = 0;
+var speedRunTimerMil = 0;
+var multi = 1;
+var score = 0;
+var highScore = 0;
+var deathTimer = 0;
+var timer = 0;
+var gamePlaying = false;
+let menuTomato;
+let blockGraphic;
+let tomatoCrateGraphic;
+let dirtBlockGraphic;
+let dirtBlock2Graphic;
+let pianoTheme;
+let pubertyLove;
+let D = 'D';
+let scream;
+let splatSound;
+let blankDirt;
+let plant1Graphic;
+let plant2Graphic;
+let plant3Graphic;
+let plant4Graphic;
+let B = 'B', b = 'b', t = 't', equals = '=', one = '1';
+let ornament1,
+  ornament2,
+  ornament3,
+  ornament4,
+  ornament5,
+  ornament6,
+  ornament7,
+  ornament8,
+  ornament9,
+  ornament10,
+  ornament11,
+  ornament12,
+  ornament13;
+let cookie1,
+  cookie2,
+  cookie3,
+  cookie4,
+  cookie5,
+  cookie6,
+  cookie7,
+  cookie8,
+  cookie9,
+  cookie10,
+  cookie11,
+  cookie12,
+  cookie13;
+let brickGraphic;
+let humanGraphic;
+let stereoGraphic;
+let coin;
+let sun;
+let moon;
+let cloud;
+let trophy;
+let arrow;
+let trampolineImg;
+let themeSong;
+var coins = 0;
+var trophies = [
+  "Booster",
+  "Pacifist",
+  "Bounty Hunter",
+  "Pro",
+  "Server Member",
+  "Candy Thief",
+  "Deck the Halls",
+];
+var trophiesOwned = [false, false, false, false, false, false];
+var trophyDescription = [
+  "Boost the discord server",
+  "Win the game without killing any humans",
+  "Win the game and kill 20 or more humans",
+  "Win the game in 30 seconds or less",
+  "Join the discord server (click on this box)",
+  "Oct 2021 only. Win the game and collect 30 lollypops. Get pumpkin skin as reward",
+  "Don't kill any elves. Get ornament skin as reward",
+];
+var display = null;
+var walkFrames = [];
+var walkFrame = 1;
+var walkTimer = 0;
+var blockSize = 60;
+var upKeyPressed = false;
+var leftKeyPressed = false;
+var rightKeyPressed = false;
+var scene = 0;
+var gameVolume = 100;
+var soundWanted = true;
+var soundPlaying = false;
+var humany = [];
+var showHitBox = false;
+var clickTimer = 0;
+let snow1;
+let snowflake;
+let lollypop;
+let elf;
+let snowtree;
+let yellowsnow;
+var dx = [];
+var dy = [];
+let tomato1;
+let tomato2;
+let tomato3;
+let tomato4;
+let tomato5;
+let tomato6;
+let tomato7;
+let tomato8;
+let tomato9;
+let tomato10;
+let tomato11;
+let tomato12;
+let tomato13;
+let boosterbase1;
+let boosterbase2;
+let boosterbase3;
+let boosterbase4;
+let boosterbase5;
+let boosterbase6;
+let boosterbase7;
+let boosterbase8;
+let boosterbase9;
+let boosterbase10;
+let boosterbase11;
+let boosterbase12;
+let boosterbase13;
+let pumpkin1;
+let pumpkin2;
+let pumpkin3;
+let pumpkin4;
+let pumpkin5;
+let pumpkin6;
+let pumpkin7;
+let pumpkin8;
+let pumpkin9;
+let pumpkin10;
+let pumpkin11;
+let pumpkin12;
+let pumpkin13;
+var skin = "Tomato";
+var skins = ["Tomato", "Booster", "Camo", "Pumpkin", "Ornament", "Cookie"];
+let skinsPfp;
+var skinDesc = [
+  "The default. An icon of early tomato-hood.",
+  "Can only be acquired by boosting the discord server.",
+  "Camouflage. Originally used in the great tomato wars against the human forces.",
+  "Exclusive to Oct. 2021. One of the species main allies",
+  "I don't care what it looks like. ",
+  "A gift from Santomato: 2021",
+];
+let ownedSkins;
+var food = "Ketchup";
+var mode = "classic";
+var inside = false;
+var colours;
+var k = [false, false, false];
+function preload() {
+  soundFormats("ogg", "mp3");
+  impact = loadFont("copyfonts.com_impact-opentype.otf");
+  themeSong = loadSound("themesong.mp3");
+  splatSound = loadSound("tomatosplat.mp3");
+  pubertyLove = loadSound("pubertyLoveSong.mp3");
+  pianoTheme = loadSound("Tomatoes-Theme.mp3");
+  scream = loadSound("scream.mp3");
+  menuTomato = loadImage("Tomato_menu_graphic.png");
+  blockGraphic = loadImage("stone_block.png");
+  humanGraphic = loadImage("human_graphic.png");
+  stereoGraphic = loadImage("stereo.png");
+  tomatoCrateGraphic = loadImage("tomato_crate.png");
+  dirtBlockGraphic = loadImage("dirt_block.png");
+  brickGraphic = loadImage("brick_block.png");
+  plant1Graphic = loadImage("plant1.png");
+  plant2Graphic = loadImage("plant2Graphic.png");
+  plant3Graphic = loadImage("plant3Graphic.png");
+  plant4Graphic = loadImage("plant4Graphic.png");
+  blankDirt = loadImage("dirt_block!grass.png");
+  dirtBlock2Graphic = loadImage("dirt_block.rot1.png");
+  cloud = loadImage("cloud.png");
+  sun = loadImage("sun.png");
+  moon = loadImage("moon.png");
+  ghost = loadImage("ghost.png");
+  lollypop = loadImage("lollypop.png");
+  snow1 = loadImage("snow1.png");
+  snowflake = loadImage("snowflake.png");
+  tomato1 = loadImage("tomato_graphic1.png");
+  tomato2 = loadImage("tomato_graphic2.png");
+  tomato3 = loadImage("tomato_graphic3.png");
+  tomato4 = loadImage("tomato_graphic4.png");
+  tomato5 = loadImage("tomato_graphic5.png");
+  tomato6 = loadImage("tomato_graphic6.png");
+  tomato7 = loadImage("tomato_graphic7.png");
+  tomato8 = loadImage("tomato_graphic8.png");
+  tomato9 = loadImage("tomato_graphic1.png");
+  tomato10 = loadImage("tomato10.png");
+  tomato11 = loadImage("tomato11.png");
+  tomato12 = loadImage("tomato12.png");
+  tomato13 = loadImage("tomato13.png");
+  arrow = loadImage("arrow.png");
+  spring = loadSound("spring.mp3");
+  trampolineImg = loadImage("trampoline.png");
+  boosterbase1 = loadImage("boosterbase1.png");
+  boosterbase2 = loadImage("boosterbase2.png");
+  boosterbase3 = loadImage("boosterbase3.png");
+  boosterbase4 = loadImage("boosterbase4.png");
+  boosterbase5 = loadImage("boosterbase5.png");
+  boosterbase6 = loadImage("boosterbase6.png");
+  boosterbase7 = loadImage("boosterbase7.png");
+  boosterbase8 = loadImage("boosterbase8.png");
+  boosterbase9 = loadImage("boosterbase1.png");
+  boosterbase10 = loadImage("boosterbase10.png");
+  boosterbase11 = loadImage("boosterbase11.png");
+  boosterbase12 = loadImage("boosterbase12.png");
+  boosterbase13 = loadImage("boosterbase13.png");
+  pumpkin1 = loadImage("pumpkin1.png");
+  pumpkin2 = loadImage("pumpkin2.png");
+  pumpkin3 = loadImage("pumpkin3.png");
+  pumpkin4 = loadImage("pumpkin4.png");
+  pumpkin5 = loadImage("pumpkin5.png");
+  pumpkin6 = loadImage("pumpkin6.png");
+  pumpkin7 = loadImage("pumpkin7.png");
+  pumpkin8 = loadImage("pumpkin8.png");
+  pumpkin9 = loadImage("pumpkin1.png");
+  pumpkin10 = loadImage("pumpkin10.png");
+  pumpkin11 = loadImage("pumpkin11.png");
+  pumpkin12 = loadImage("pumpkin12.png");
+  pumpkin13 = loadImage("pumpkin13.png");
+  cookie1 = loadImage("cookie1.png");
+  cookie2 = loadImage("cookie2.png");
+  cookie3 = loadImage("cookie3.png");
+  cookie4 = loadImage("cookie4.png");
+  cookie5 = loadImage("cookie5.png");
+  cookie6 = loadImage("cookie6.png");
+  cookie7 = loadImage("cookie7.png");
+  cookie8 = loadImage("cookie8.png");
+  cookie9 = loadImage("cookie1.png");
+  cookie10 = loadImage("cookie1.png");
+  cookie11 = loadImage("cookie1.png");
+  cookie12 = loadImage("cookie1.png");
+  cookie13 = loadImage("cookie1.png");
+  coin = loadImage("coin.png");
+  trophy = loadImage("trophy.png");
+  walkFrames[0] = tomato1;
+  walkFrames[1] = tomato2;
+  walkFrames[2] = tomato3;
+  walkFrames[3] = tomato4;
+  walkFrames[4] = tomato5;
+  walkFrames[5] = tomato6;
+  walkFrames[6] = tomato7;
+  walkFrames[7] = tomato8;
+  walkFrames[8] = tomato9;
+  walkFrames[9] = tomato10;
+  walkFrames[10] = tomato11;
+  walkFrames[11] = tomato12;
+  walkFrames[12] = tomato13;
+  ornament1 = loadImage("ornament1.png");
+  ornament2 = loadImage("ornament2.png");
+  ornament3 = loadImage("ornament3.png");
+  ornament4 = loadImage("ornament4.png");
+  ornament5 = loadImage("ornament5.png");
+  ornament6 = loadImage("ornament6.png");
+  ornament7 = loadImage("ornament7.png");
+  ornament8 = loadImage("ornament8.png");
+  ornament9 = loadImage("ornament1.png");
+  ornament10 = loadImage("ornament10.png");
+  ornament11 = loadImage("ornament11.png");
+  ornament12 = loadImage("ornament12.png");
+  ornament13 = loadImage("ornament13.png");
+  grey = {colours: {
+red: "255, 0, 0",
+green: "0, 255, 0",
+blue: "0, 0, 255",
+cyan: "0, 255, 255",
+yellow: "255, 255, 51",
+brown: "153, 76, 0",
+black: "0, 0, 0",
+white: "255, 255, 255",
+lightGrey: "120, 120, 120",
+darkGrey: "30, 30, 30"
+},
+codes: [
+"none",
+"cuwocjwucadakjsdnjk",
+"wickwncaowkcdjjs",
+"fkjshbfksjhdbakjshdb",
+"ljfsjkdflsdjflsjhljfljs",
+"dkfshkjhfgksdhfkhsdh"
+]};
+  snowtree = loadImage("snowtree.png");
+  yellowsnow = loadImage("yellowsnow.png");
+  elf = loadImage("elf.png");
+}
+let inputCode;
+function setup() {
+  inputCode = createInput('');
+  inputCode.position(windowWidth / 2 + 130, 650);
+  hacker = false;
+  if (getItem("hacker") === null) {
+    hacker = false;
+    storeItem("hacker", hacker);
+  }
+  if (getItem("hacker") !== null) {
+    hacker = getItem("hacker");
+    storeItem("hacker", hacker);
+  }
+  if (getItem("number") === null) {
+    num = 0;
+    storeItem("number", num);
+  }
+  if (getItem("number") !== null) {
+    num = getItem("number");
+    num++;
+    storeItem("number", num);
+  }
+  if (num === menuText.length) {
+    num = 0;
+    storeItem("number", num);
+  }
+  ownedSkins = [true, false, false, false, false, false];
+  if (getItem("skins") !== null) {
+    ownedSkins = getItem("skins");
+  }
+  storeItem("skins", ownedSkins);
+  if (month() === 10) {
+    mode = "halloween";
+  }
+  if (month() === 12) {
+    mode = "christmas";
+  }
+  skinsPfp = [
+    tomato1,
+    boosterbase1,
+    plant1Graphic,
+    pumpkin1,
+    ornament1,
+    cookie1,
+  ];
+  let cnv = createCanvas(600, 600);
+  cnv.position(windowWidth / 2 - width / 2, 100);
+  ownedSkins = [true, false, false, false, false, false];
+  if (getItem("skins") !== null) {
+    ownedSkins = getItem("skins");
+  }
+  coins = 0;
+  if (getItem("coins") !== null) {
+    coins = getItem("coins");
+  }
+  for (var i = 0; i < trophiesOwned.length; i++) {
+    trophiesOwned[i] = false;
+  }
+  if (getItem("myTrophies") !== null) {
+    trophiesOwned = getItem("myTrophies");
+  }
+  if (getItem("myTrophies") === null) {
+    storeItem("myTrophies", [false, false, false, false, false, false]);
+  }
+  if (day() === 25 && month() === 12) {
+    ownedSkins[5] = true;
+    storeItem("skins", ownedSkins);
+  }
+}
+var level = 1;
+var blockSize = 60;
+var player = {
+  spawnX: 60,
+  spawnY: 200,
+  x: 60,
+  y: 200,
+  Size: 60,
+  camX: -30,
+  xVel: 0,
+  yVel: 0,
+  onBlock: false,
+  keys: [false, false, false],
+  respawn: true,
+  transfer: true,
+  health: 10,
+};
+var levels = [
+  [
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbI",
+    "b----------------------------I",
+    "b----------i------i----------I",
+    "b-@---bbbbbbbbbbbbbbbb-------I",
+    "b--------------------b-------I",
+    "bb-------------------x-------I",
+    "bbb------------------x-------I",
+    "bbbb-----------------b-------I",
+    "bbbbb--1=i----i-1----b---#--=I",
+    "dddddDDDDDDDDDDDDDDDDdDDDDDDDd",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  ],
+  [
+    "bbbbbbbbbbbbbbbbbbbbbbbbbb==============bbbbbbbb",
+    "b---------b------------------------------------x",
+    "b---------b------------------------------------x",
+    "b---------i-----------------------------------#b",
+    "b---------b--------------------------------xxxxb",
+    "b---------b------------------------------------x",
+    "b---------b-----i-----i------------------------x------------------I",
+    "b---------b-----b--b--b------------------------x------------------I",
+    "b@--i-t---b-----b--b--b-----t-i-t--------i----tb------iiiiiiiiiiiI",
+    "dDDDDDD===dDDDDDb==b==b===DDDDDDDDDD---DDDDDDDDdDDDDDDDDDDDDDDDDDI",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB---BBBBBBBBBBBBBBBBBBBBBBBBBBI",
+  ],
+  [
+    "bI----------------------------b----I------------II",
+    "b------------------b--bbbbbbxxb----I-------------I",
+    "b---------------b--b--b-------b----I-------------I",
+    "b------b----b------b--b----b--b----I-------------I",
+    "b--b---------------b---i---b--b----I-------------I",
+    "b------------------bbbbbbbbb--x----I-------------I",
+    "b-----i------------b----------x----I-------------I",
+    "b-----b------------b--bbbbbbbbb----I-------------I",
+    "b@--------i---1----b----i----#x----I-------------I",
+    "dDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD-------------I",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-------------I",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB==================I",
+  ],
+  [
+    "II------------------------------------------------------II",
+    "I--------------------------------------------------------I",
+    "I------------------1-----------1-------------------------I",
+    "I-----------------DDDD----DDDDDDDDDDD--------------------I",
+    "I----------------Ddddd---DdddddddddddD-------------------I",
+    "I---------------DdBBBBB----BBBBBBBBBBdD------------------I",
+    "I--------------DdBBBBBB--i-----BBBBBBBdD-----------------I",
+    "I-------------DdBBBBB----BB-----BBBBBBBdD---------------#I",
+    "I@---i---1---DdBBB------BBBB------BBBBBBdDDD---DD---DDDDDD",
+    "DDDDDDDDDDDDDdBBBB------BBBBBBBB-----------i---BB===BBBBBB",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  ],
+  [
+    "IIIIIII--b-------------------------bbbbIIIIII",
+    "I-----I--b--b-------------------------b-----I",
+    "I-----I--b--b--B----------------------b-----I",
+    "I-----I--b--b-----i----B--------------b-----I",
+    "I-----I--b#-b-----B--------B----------b-----I",
+    "I-----I--bbb--------------------------b-----I",
+    "I-----I--b-------------B-----B--------b-----I",
+    "I-----I--b----B-----------------------b-----I",
+    "I-----I--bi---------------i--------@--x-----I",
+    "I-----I--dDD==============DDDDDDDDDDDDd-----I",
+    "I-----I--BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
+    "I-----I--BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-----I",
+    "I-----I-------------------------------------I",
+    "I-----I-------------------------------------I",
+    "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  ],
+  [
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b----------------------------b",
+    "b---------------------------@b",
+    "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  ],
+];
+var trophyDisplay = function (num, x, y) {
+  if (trophiesOwned[num] === false) {
+    fill(100, 100, 100);
+  }
+  if (trophiesOwned[num] === true) {
+    fill(0, 200, 0);
+  }
+  stroke(0);
+  rect(x + 10, y + 10, 80, 80, 5);
+  image(trophy, x + 10, y - 2, 80, 80);
+  fill(0, 0, 0);
+  textSize(11);
+  textAlign(CENTER);
+  noStroke();
+  textFont(impact);
+  text(trophies[num], x + 50, y + 85);
+  textAlign(LEFT);
+  if (
+    mouseX > x + 10 &&
+    mouseX < x + 90 &&
+    mouseY > y + 10 &&
+    mouseY < y + 90
+  ) {
+    display = trophyDescription[num];
+  }
+  textFont(impact);
+  fill(100, 100, 100);
+};
+var trampoline = function(x, y) {
+  image(trampolineImg, x, y, blockSize, blockSize);
+  if(player.health > 0 && player.x + player.Size >= x && player.x <= x + blockSize && player.y + player.Size >= y + blockSize / 3 && player.y <= y + blockSize) {
+    inside = true;
+    player.yVel = -30;
+    spring.play();
+  }
+  if (showHitBox === true) {
+    noFill();
+    if (mode === "classic") {
+      stroke(0, 0, 0);
+    }
+    if (mode === "halloween") {
+      stroke(255, 255, 255);
+    }
+    rect(x, y + blockSize / 3, blockSize, blockSize - blockSize / 3);
+    stroke(0, 0, 0);
+  }
+}
+var human = function (x, y, num) {
+  if (timer === 0) {
+    humany[num] = y;
+  }
+  if (timer > 0) {
+    if (mode === "classic") {
+      image(humanGraphic, x, humany[num], blockSize, blockSize);
+    }
+    if (mode === "halloween") {
+      image(lollypop, x, humany[num], blockSize, blockSize);
+    }
+    if (mode === "christmas") {
+      image(elf, x, humany[num], blockSize, blockSize);
+    }
+    if (
+      dist(
+        player.x + player.Size / 2,
+        player.y + blockSize / 2,
+        x + blockSize / 2,
+        humany[num] + blockSize / 2
+      ) <=
+      blockSize + 5
+    ) {
+      score++;
+      coins += 10;
+      humany[num] = 800;
+      scream.play();
+      if (isNaN(coins)) {
+        storeItem("coins", score * 10);
+      } else {
+        storeItem("coins", coins);
+      }
+    }
+  }
+  if (mode === "christmas") {
+    image(snow1, x, y + 57, blockSize, blockSize);
+  }
+  if (showHitBox === true && humany[num] <= height) {
+    noFill();
+    if (mode === "classic") {
+      stroke(0, 0, 0);
+    }
+    if (mode === "halloween") {
+      stroke(255, 255, 255);
+    }
+    rect(x, y, blockSize, blockSize);
+    stroke(0, 0, 0);
+  }
+};
+var block = function (x, y, visible, solid, type) {
+  if (visible === true) {
+    switch (type) {
+      case "brick":
+        image(brickGraphic, x, y, blockSize, blockSize);
+        break;
+      case "block":
+        image(blockGraphic, x, y, blockSize, blockSize);
+        break;
+      case "dirt1":
+        if (mode === "christmas") {
+          image(snow1, x, y - 3, blockSize, blockSize);
+        }
+        image(dirtBlockGraphic, x, y, blockSize, blockSize);
+        break;
+      case "dirt2":
+        image(blankDirt, x, y, blockSize, blockSize);
+        break;
+    }
+  }
+  if (solid === true) {
+    if (
+      player.y >= y - blockSize &&
+      player.y < y &&
+      player.x > x - blockSize &&
+      player.x < x + blockSize
+    ) {
+      player.y = y - player.Size;
+      player.onBlock = true;
+      inside = true;
+    }
+    if (
+      player.y < y + blockSize &&
+      player.y > y - blockSize &&
+      player.x < x - blockSize / 2 &&
+      player.x > x - blockSize
+    ) {
+      player.x = x - blockSize;
+      player.xVel = 0;
+      inside = true;
+    }
+    if (
+      player.y < y + blockSize &&
+      player.y > y - blockSize &&
+      player.x > x + blockSize / 2 &&
+      player.x < x + blockSize
+    ) {
+      player.x = x + blockSize;
+      player.xVel = 0;
+      inside = true;
+    }
+    if (
+      player.y <= y + blockSize &&
+      player.y > y + 30 &&
+      player.x > x - blockSize &&
+      player.x < x + blockSize
+    ) {
+      player.yVel = 0;
+      player.y = y + blockSize;
+      player.onBlock = false;
+      inside = true;
+      if (player.yVel > 15) {
+        player.health -= 10;
+      }
+    }
+  }
+};
+var plant1 = function (x, y) {
+  if (mode === "classic") {
+    image(plant1Graphic, x, y, blockSize, blockSize);
+  }
+  if (mode === "halloween") {
+    image(pumpkin1, x, y, blockSize, blockSize);
+  }
+  if (mode === "christmas") {
+    image(snowtree, x, y, blockSize, blockSize);
+  }
+};
+var portal = function (x, y) {
+  image(tomatoCrateGraphic, x, y, blockSize, blockSize);
+  if (
+    dist(
+      player.x + player.Size / 2,
+      player.y + blockSize / 2,
+      x + blockSize / 2,
+      y + blockSize / 2
+    ) <=
+    blockSize + 5
+  ) {
+    level++;
+    player.respawn = true;
+    player.transfer = false;
+    timer = -1;
+    inside = true;
+    player.yVel = 0;
+  }
+};
+var stereo = function (x, y) {
+  imageMode(CORNER);
+  if (mode === "classic") {
+    image(stereoGraphic, x, y, blockSize, blockSize);
+  }
+  if (mode === "halloween") {
+    image(ghost, x, y, blockSize, blockSize);
+  }
+  if (mode === "christmas") {
+    image(yellowsnow, x, y, blockSize, blockSize);
+  }
+  if (
+    player.y + player.Size > y + blockSize / 3 &&
+    player.y < y + blockSize &&
+    player.x + player.Size > x &&
+    player.x < x + blockSize &&
+    player.health > 0
+  ) {
+    player.health -= 10;
+    player.yVel = -15;
+    player.y = y - 30;
+    if (!splatSound.isPlaying()) {
+      splatSound.play();
+      walkFrame = 8;
+      walkTimer = 0;
+      pubertyLove.play();
+      pianoTheme.stop();
+    }
+  }
+  if (
+    dist(300, player.x, x + blockSize / 2, y + blockSize / 2) <= 100 &&
+    !pubertyLove.isPlaying()
+  ) {
+    pubertyLove.play();
+  }
+  if (showHitBox === true) {
+    noFill();
+    if (mode === "classic") {
+      stroke(0, 0, 0);
+    }
+    if (mode === "halloween") {
+      stroke(255, 255, 255);
+    }
+    rect(x, y + blockSize / 3, blockSize, blockSize - blockSize / 3);
+    stroke(0, 0, 0);
+  }
+};
+var snow = function (x, y) {
+  image(snow1, x, y + 57, blockSize, blockSize);
+};
+var playerSpawn = function () {
+  player.y = player.spawnY;
+  player.x = player.spawnX;
+  player.health = 10;
+  player.respawn = false;
+  walkFrame = 3;
+};
+var playerDraw = function () {
+  if (skin === "Tomato" && walkFrames[0] !== tomato1) {
+    walkFrames[0] = tomato1;
+    walkFrames[1] = tomato2;
+    walkFrames[2] = tomato3;
+    walkFrames[3] = tomato4;
+    walkFrames[4] = tomato5;
+    walkFrames[5] = tomato6;
+    walkFrames[6] = tomato7;
+    walkFrames[7] = tomato8;
+    walkFrames[8] = tomato9;
+    walkFrames[9] = tomato10;
+    walkFrames[10] = tomato11;
+    walkFrames[11] = tomato12;
+    walkFrames[12] = tomato13;
+    food = "Ketchup";
+  }
+  if (
+    skin === "Booster" &&
+    walkFrames[0] !== boosterbase1 &&
+    ownedSkins[1] === true
+  ) {
+    walkFrames[0] = boosterbase1;
+    walkFrames[1] = boosterbase2;
+    walkFrames[2] = boosterbase3;
+    walkFrames[3] = boosterbase4;
+    walkFrames[4] = boosterbase5;
+    walkFrames[5] = boosterbase6;
+    walkFrames[6] = boosterbase7;
+    walkFrames[7] = boosterbase8;
+    walkFrames[8] = boosterbase9;
+    walkFrames[9] = boosterbase10;
+    walkFrames[10] = boosterbase11;
+    walkFrames[11] = boosterbase12;
+    walkFrames[12] = boosterbase13;
+    food = "Broke";
+  }
+  if (
+    skin === "Camo" &&
+    walkFrames[0] !== plant1Graphic &&
+    ownedSkins[2] === true
+  ) {
+    walkFrames[0] = plant1Graphic;
+    walkFrames[1] = plant1Graphic;
+    walkFrames[2] = plant1Graphic;
+    walkFrames[3] = plant1Graphic;
+    walkFrames[4] = plant1Graphic;
+    walkFrames[5] = plant1Graphic;
+    walkFrames[6] = plant1Graphic;
+    walkFrames[7] = plant1Graphic;
+    walkFrames[8] = plant1Graphic;
+    walkFrames[9] = plant1Graphic;
+    walkFrames[10] = plant2Graphic;
+    walkFrames[11] = plant3Graphic;
+    walkFrames[12] = plant4Graphic;
+    food = "Salad";
+  }
+  if (
+    skin === "Pumpkin" &&
+    walkFrames[0] !== pumpkin1 &&
+    ownedSkins[3] === true
+  ) {
+    walkFrames[0] = pumpkin1;
+    walkFrames[1] = pumpkin2;
+    walkFrames[2] = pumpkin3;
+    walkFrames[3] = pumpkin4;
+    walkFrames[4] = pumpkin5;
+    walkFrames[5] = pumpkin6;
+    walkFrames[6] = pumpkin7;
+    walkFrames[7] = pumpkin8;
+    walkFrames[8] = pumpkin1;
+    walkFrames[9] = pumpkin10;
+    walkFrames[10] = pumpkin11;
+    walkFrames[11] = pumpkin12;
+    walkFrames[12] = pumpkin13;
+    food = "Pie";
+  }
+  if (skin === "Ornament" && walkFrames[0] !== ornament1) {
+    walkFrames[0] = ornament1;
+    walkFrames[1] = ornament2;
+    walkFrames[2] = ornament3;
+    walkFrames[3] = ornament4;
+    walkFrames[4] = ornament5;
+    walkFrames[5] = ornament6;
+    walkFrames[6] = ornament7;
+    walkFrames[7] = ornament8;
+    walkFrames[8] = ornament1;
+    walkFrames[9] = ornament10;
+    walkFrames[10] = ornament11;
+    walkFrames[11] = ornament12;
+    walkFrames[12] = ornament13;
+    food = 'Smashed';
+  }
+  if (skin === "Cookie" && walkFrames[0] !== cookie1) {
+    walkFrames[0] = cookie1;
+    walkFrames[1] = cookie2;
+    walkFrames[2] = cookie3;
+    walkFrames[3] = cookie4;
+    walkFrames[4] = cookie5;
+    walkFrames[5] = cookie6;
+    walkFrames[6] = cookie7;
+    walkFrames[7] = cookie8;
+    walkFrames[8] = cookie1;
+    walkFrames[9] = cookie10;
+    walkFrames[10] = cookie11;
+    walkFrames[11] = cookie12;
+    walkFrames[12] = cookie13;
+    food = "Crumbled";
+  }
+  image(walkFrames[walkFrame], 270, player.y, player.Size, player.Size);
+  if (showHitBox === true) {
+    noFill();
+    if (mode === "classic") {
+      stroke(0, 0, 0);
+    }
+    if (mode === "halloween") {
+      stroke(255, 255, 255);
+    }
+    rect(270, player.y, player.Size, player.Size);
+    stroke(0, 0, 0);
+  }
+};
+var playerMove = function () {
+  if(player.y >= height * 4) {
+    player.health -= 1;
+  }
+  if (player.keys[0] === true && player.xVel > -7 && player.health > 0) {
+    player.xVel--;
+  }
+  if (player.keys[2] === true && player.xVel < 7 && player.health > 0) {
+    player.xVel++;
+  }
+  if (player.y < -30) {
+    fill(229, 213, 0);
+    image(arrow, 290, 10, 20, 30);
+  }
+  if (player.onBlock === true && player.keys[1] === true && player.health > 0) {
+    player.yVel = -18;
+  }
+  if (player.onBlock === false && player.yVel < 18) {
+    player.yVel++;
+  }
+  if (player.xVel > 0) {
+    player.xVel -= 0.5;
+  }
+  if (player.xVel < 0) {
+    player.xVel += 0.5;
+  }
+  player.x += player.xVel;
+  player.y += player.yVel;
+};
+var drawLevel = function (x, y) {
+  if (mode === "classic" || mode === "christmas") {
+    if (mode === "classic") {
+      image(sun, 400, 100, 120, 120);
+    }
+    image(cloud, 300, 200, 60, 60);
+    image(cloud, 200, 100, 80, 80);
+    image(cloud, 390, 150, 60, 60);
+    image(cloud, 30, 60, 50, 50);
+    image(cloud, 100, 200, 60, 60);
+    image(cloud, 500, 50, 60, 60);
+  }
+  if (mode === "halloween") {
+    image(moon, 400, 100, 120, 120);
+  }
+  push();
+  translate(-player.x + 270, 0);
+  for (var i = 0; i < levels[level - 1].length; i++) {
+    for (var j = 0; j < levels[level - 1][i].length; j++) {
+      switch (levels[level - 1][i][j]) {
+        case "B":
+          block(j * blockSize + x, i * blockSize + y, true, true, "block");
+          break;
+        case "=":
+          stereo(j * blockSize + x, i * blockSize + y);
+          break;
+        case "@":
+          player.spawnX = j * blockSize + x;
+          player.spawnY = i * blockSize + y;
+          break;
+        case "#":
+          portal(j * blockSize + x, i * blockSize + y);
+          break;
+        case "D":
+          block(j * blockSize + x, i * blockSize + y, true, true, "dirt1");
+          break;
+        case "b":
+          block(j * blockSize + x, i * blockSize + y, true, true, "brick");
+          break;
+        case "x":
+          block(j * blockSize + x, i * blockSize + y, true, false, "brick");
+          break;
+        case "1":
+          plant1(j * blockSize + x, i * blockSize + y);
+          break;
+        case "d":
+          block(j * blockSize + x, i * blockSize + y, true, true, "dirt2");
+          break;
+          case "t":
+          trampoline(j * blockSize + x, i * blockSize + y);
+          break;
+          case "i":
+          human(j * blockSize + x, i * blockSize + y, i + j + level);
+          break;
+        case "I":
+          block(j * blockSize + x, i * blockSize + y, false, true, "block");
+          break;
+        case "l":
+          block(j * blockSize + x, i * blockSize + y, true, false, "block");
+          break;
+          case "c":
+          image(coin, j * blockSize + x, i * blockSize + y + blockSize / 4, blockSize, blockSize);
+          break;
+          case "-":
+          if (mode === "christmas") {
+            if (
+              levels[level - 1][i + 1][j] === "B" ||
+              levels[level - 1][i + 1][j] === "D" ||
+              levels[level - 1][i + 1][j] === "b" ||
+              levels[level - 1][i + 1][j] === "d" ||
+              levels[level - 1][i + 1][j] === "l"
+            ) {
+              snow(j * blockSize + x, i * blockSize + y);
+            }
+          }
+          break;
+      }
+    }
+  }
+  pop();
+};
+keyPressed = function () {
+  if (key.code === 17 || key.code === 91) {
+    k[0] = true;
+  }
+  if (key.code === 16) {
+    k[1] = true;
+  }
+  if (key.code === 73) {
+    k[2] = true;
+  }
+  if (key.code === 97 || keyCode === LEFT_ARROW || key === "a" || key === "A") {
+    player.keys[0] = true;
+  }
+  if (key.code === 119 || keyCode === UP_ARROW || key === "w" || key === "W") {
+    player.keys[1] = true;
+  }
+  if (
+    key.code === 100 ||
+    keyCode === RIGHT_ARROW ||
+    key === "d" ||
+    key === "D"
+  ) {
+    player.keys[2] = true;
+  }
+};
+
+keyReleased = function () {
+  if (key.code === 17 || key.code === 91) {
+    k[0] = false;
+  }
+  if (key.code === 16) {
+    k[1] = false;
+  }
+  if (key.code === 73) {
+    k[2] = false;
+  }
+  if (key.code === 97 || keyCode === LEFT_ARROW || key === "a" || key === "A") {
+    player.keys[0] = false;
+  }
+  if (key.code === 119 || keyCode === UP_ARROW || key === "w" || key === "W") {
+    player.keys[1] = false;
+  }
+  if (
+    key.code === 100 ||
+    keyCode === RIGHT_ARROW ||
+    key === "d" ||
+    key === "D"
+  ) {
+    player.keys[2] = false;
+  }
+};
+
+function mouseReleased() {
+  if (
+    mouseX > scene + 740 &&
+    mouseX < scene + 800 &&
+    mouseY > 250 &&
+    mouseY < 350 &&
+    level > 1 &&
+    gamePlaying === false
+  ) {
+    level--;
+  }
+  if (
+    mouseX > scene + 1000 &&
+    mouseX < scene + 1060 &&
+    mouseY > 250 &&
+    mouseY < 350 &&
+    level < levels.length - 1 &&
+    gamePlaying === false
+  ) {
+    level++;
+  }
+  if (
+    mouseX > scene + 650 &&
+    mouseX < scene + 750 &&
+    mouseY > 50 &&
+    mouseY < 100 &&
+    gamePlaying === false
+  ) {
+    scene = 0;
+  }
+  if (
+    mouseX > scene + 1250 &&
+    mouseX < scene + 1350 &&
+    mouseY > 50 &&
+    mouseY < 100 &&
+    gamePlaying === false
+  ) {
+    scene = 0;
+  }
+  if (
+    mouseX > scene + 1850 &&
+    mouseX < scene + 1950 &&
+    mouseY > 50 &&
+    mouseY < 100 &&
+    gamePlaying === false
+  ) {
+    scene = 0;
+  }
+  if (
+    mouseX > scene + 2450 &&
+    mouseX < scene + 2650 &&
+    mouseY > 50 &&
+    mouseY < 100 &&
+    gamePlaying === false
+  ) {
+    scene = 0;
+  }
+  if (
+    mouseX > scene + 3050 &&
+    mouseX < scene + 3150 &&
+    mouseY > 50 &&
+    mouseY < 100 &&
+    gamePlaying === false
+  ) {
+    scene = 0;
+  }
+  if (
+    mouseX > scene + 800 &&
+    mouseX < scene + 1000 &&
+    mouseY > 430 &&
+    mouseY < 480 &&
+    gamePlaying === false
+  ) {
+    gamePlaying = true;
+  }
+  if (
+    mouseX > scene + 2090 &&
+    mouseX < scene + 2110 &&
+    mouseY > 395 &&
+    mouseY < 425 &&
+    showHitBox === true &&
+    clickTimer > 3
+  ) {
+    showHitBox = false;
+    clickTimer = 0;
+  }
+  if (
+    mouseX > scene + 2090 &&
+    mouseX < scene + 2110 &&
+    mouseY > 395 &&
+    mouseY < 425 &&
+    showHitBox === false &&
+    clickTimer > 3
+  ) {
+    showHitBox = true;
+    clickTimer = 0;
+  }
+}
+
+draw = function () {
+  imageMode(CORNER);
+  if (timer === 1 && mode !== "classic") {
+    for (var c = 0; c < 30; c++) {
+      dx[c] = random(0, width);
+      dy[c] = random(0, height);
+    }
+  }
+  textAlign(LEFT);
+  angleMode(DEGREES);
+  clickTimer++;
+  background(0, 200, 255);
+  if (gamePlaying === false) {
+    if (!themeSong.isPlaying) {
+      themeSong.play();
+    }
+    strokeWeight(1);
+    stroke(0, 0, 0);
+    fill(100, 200, 200);
+    rect(scene, 0, width * 6, height);
+    textFont(impact);
+    fill(0);
+    text(coins, width / 2, 50);
+    image(coin, width / 2 - 25, 28, 30, 30);
+    fill(255, 0, 0);
+    textSize(40);
+    text("ATTACK OF THE KILLER TOMATOES", scene + 40, 100);
+    text("YOU WIN!", scene + 650, 300);
+    rect(scene + 200, 130, 200, 50, 5);
+    rect(scene + 200, 190, 200, 50, 5);
+    rect(scene + 200, 250, 200, 50, 5);
+    rect(scene + 200, 310, 200, 50, 5);
+    rect(scene + 200, 370, 200, 50, 5);
+    textFont(impact);
+    fill(0, 0, 0);
+    textSize(30);
+    noStroke();
+    text("Play", scene + 265, 165);
+    text("Help", scene + 265, 225);
+    text("Settings", scene + 250, 285);
+    text("Trophies", scene + 250, 345);
+    text("Skins", scene + 265, 405);
+    textAlign(CENTER);
+    textSize(20);
+    translate(scene + 300, 120);
+    rotate(sin(frameCount * 10) * 4);
+    text(menuText[num], 0, 0);
+    textAlign(LEFT);
+    rotate(-sin(frameCount * 10) * 4);
+    translate(-(scene + 300), -120);
+    image(menuTomato, scene + 120, 410, 350, 300);
+    stroke(0);
+    fill(120, 120, 120);
+    rect(scene + 740, 250, 80, 100, 10);
+    rect(scene + 980, 250, 80, 100, 10);
+    fill(0, 0, 0);
+    rect(scene + 800, 200, 200, 200, 10);
+    fill(255, 0, 0);
+    rect(scene + 800, 430, 200, 50, 5);
+    rect(scene + 650, 50, 100, 50, 5);
+    rect(scene + 1250, 50, 100, 50, 5);
+    rect(scene + 1850, 50, 100, 50, 5);
+    rect(scene + 2450, 50, 100, 50, 5);
+    rect(scene + 3050, 50, 100, 50, 5);
+    if (showHitBox === true) {
+      fill(0, 255, 0);
+    } else {
+      fill(255, 0, 0);
+    }
+    rect(scene + 2095, 400, 20, 20, 4);
+    fill(0, 0, 0);
+    textSize(60);
+    text("<                      >", scene + 750, 320);
+    fill(255, 255, 255);
+    text(level, scene + 880, 300);
+    fill(0, 0, 0);
+    textSize(30);
+    text("PLAY", scene + 870, 465);
+    text("EXIT", scene + 660, 85);
+    text("EXIT", scene + 1260, 85);
+    text("EXIT", scene + 1860, 85);
+    text("EXIT", scene + 2460, 85);
+    text("EXIT", scene + 3060, 85);
+    text("Skins", scene + 3250, 90);
+    textSize(25);
+    display = null;
+    for (var i = 0; i < skins.length; i++) {
+      stroke(0);
+      fill(200, 200, 200);
+      rect(scene + 3060, 120 + i * 50, 520, 45, 4);
+      image(skinsPfp[i], scene + 3070, 122 + i * 50, 40, 40);
+      fill(0, 0, 0);
+      noStroke();
+      if (ownedSkins[i] === true) {
+        text(skins[i], scene + 3120, 150 + i * 50);
+      } else {
+        text("?", scene + 3120, 150 + i * 50);
+      }
+      if (skin === skins[i]) {
+        text("Equipped", scene + 3400, 150 + i * 50);
+      }
+      if (
+        mouseX >= scene + 3060 &&
+        mouseX <= scene + 3580 &&
+        mouseY >= 120 + i * 50 &&
+        mouseY <= 185 + i * 50
+      ) {
+        if (ownedSkins[i] === true) {
+          display = skinDesc[i];
+        }
+        if (ownedSkins[i] !== true) {
+          display = "Obtain this skin to see the description";
+        }
+        if (
+          mouseIsPressed &&
+          mouseX >= scene + 3060 &&
+          mouseX <= scene + 3580 &&
+          mouseY >= 120 + i * 50 &&
+          mouseY <= 185 + i * 50 &&
+          ownedSkins[i] === true
+        ) {
+          skin = skins[i];
+        }
+      }
+    }
+    stroke(0);
+    trophyDisplay(0, scene + 2450, 100);
+    trophyDisplay(1, scene + 2550, 100);
+    trophyDisplay(2, scene + 2650, 100);
+    trophyDisplay(3, scene + 2750, 100);
+    trophyDisplay(4, scene + 2850, 100);
+    trophyDisplay(5, scene + 2450, 200);
+    trophyDisplay(6, scene + 2550, 200);
+    if (
+      mouseIsPressed &&
+      mouseX > scene + 2850 &&
+      mouseX < scene + 2930 &&
+      mouseY > 100 &&
+      mouseY < 180
+    ) {
+      window.open("https://discord.gg/ZXKx2kmKnp");
+      trophiesOwned[4] = true;
+      storeItem("myTrophies", trophiesOwned);
+    }
+    textFont(impact);
+    fill(0, 0, 0);
+    if (display !== null) {
+      text(display, mouseX + 15, mouseY, width - mouseX - 15, height - mouseY);
+    }
+    textFont(impact);
+    textSize(30);
+    fill(220, 220, 220);
+    stroke(0);
+    rect(scene + 2000, 290, 200, 20, 5);
+    fill(180, 180, 180);
+    rect(scene + 1990 + gameVolume, 285, 30, 30, 5);
+    fill(0, 0, 0);
+    text("     Volume\n\n\nShow hitbox", scene + 2020, 260);
+    fill(255, 0, 0);
+    textSize(40);
+    text("HELP", scene + 1450, 100);
+    textSize(30);
+    fill(0, 0, 0);
+    text(
+      "To play, use WAD. Avoid the stereos. Crush humans to get points. Jump and run into a wall to roll up it! Try to get to the crate of tomatoes to complete the level. Enjoy!",
+      scene + 1300,
+      200,
+      400,
+      400
+    );
+    for(var v = 0; v < grey.codes.length; v++) {
+      if(grey.codes[v] !== "none" && inputCode.value() == grey.codes[v]) {
+        ownedSkins[v] = true;
+        storeItem("skins", ownedSkins);
+      }
+    }
+    if(inputCode.value() == 'ksjdhfljshdflsjhflksjhflsjdfhsl') {
+      ownedSkins = [true, false, false, true, true, true];
+      storeItem("skins", ownedSkins);
+      trophiesOwned = [false, true, true, true, true, false, true];
+      storeItem("myTrophies", trophiesOwned);
+      coins = 4200;
+      storeItem("coins", coins);
+    }
+    textSize(12);
+    themeSong.setVolume(gameVolume / 200);
+    pianoTheme.setVolume(gameVolume / 200);
+    scream.setVolume(gameVolume / 200);
+    pubertyLove.setVolume(gameVolume / 200);
+    splatSound.setVolume(gameVolume / 200);
+    spring.setVolume(gameVolume / 200);
+    if (
+      mouseIsPressed &&
+      mouseX > scene + 200 &&
+      mouseX < scene + 400 &&
+      mouseY > 130 &&
+      mouseY < 180
+    ) {
+      gamePlaying = true;
+      themeSong.stop();
+    }
+    if (
+      mouseIsPressed &&
+      mouseX > scene + 200 &&
+      mouseX < scene + 400 &&
+      mouseY > 190 &&
+      mouseY < 240
+    ) {
+      scene = -1200;
+    }
+    if (
+      mouseIsPressed &&
+      mouseX > scene + 200 &&
+      mouseX < scene + 400 &&
+      mouseY > 250 &&
+      mouseY < 300
+    ) {
+      scene = -1800;
+    }
+    if (
+      mouseIsPressed &&
+      mouseX > scene + 200 &&
+      mouseX < scene + 400 &&
+      mouseY > 310 &&
+      mouseY < 360
+    ) {
+      scene = -2400;
+    }
+    if (
+      mouseIsPressed &&
+      mouseX > scene + 200 &&
+      mouseX < scene + 400 &&
+      mouseY > 370 &&
+      mouseY < 420
+    ) {
+      scene = -3000;
+    }
+  }
+
+  if (
+    mouseIsPressed &&
+    mouseX > scene + 2000 &&
+    mouseX < scene + 2200 &&
+    mouseY > 285 &&
+    mouseY < 305
+  ) {
+    gameVolume = mouseX + 15 - 220;
+  }
+  if (deathTimer > 10 && walkFrame !== 12 && player.health < 1) {
+    walkFrame++;
+    deathTimer = 0;
+  }
+  if (player.health < 1 && walkFrame === 12 && deathTimer === 500) {
+    walkFrame = 0;
+    deathTimer = 0;
+    player.respawn = true;
+  }
+  if (player.respawn) {
+    playerSpawn();
+  }
+  if (gamePlaying === true) {
+    player.onBlock = false;
+    if (mode === "classic") {
+      background(0, 200, 255);
+    }
+    if (mode === "halloween") {
+      background(0);
+    }
+    if (mode === "christmas") {
+      background(200);
+    }
+    inside = false;
+    drawLevel(0, -60);
+    stroke(0, 0, 0);
+    if (mode === "classic" || mode === "christmas") {
+      fill(0, 0, 0);
+    }
+    if (mode === "halloween") {
+      fill(255, 255, 255);
+    }
+    text(score, 450, 50);
+    text(speedRunTimerSec + "." + speedRunTimerMil, 500, 50);
+    fill(255, 0, 0);
+    rect(20, 20, 80, 40, 5);
+    rect(120, 20, 100, 40, 5);
+    fill(0, 0, 0);
+    text("EXIT             FULLSCREEN", 35, 47);
+    push();
+    playerDraw();
+    playerMove();
+    for (f = 0; f < dx.length; f++) {
+      imageMode(CENTER);
+      translate(dx[f], dy[f]);
+      rotate(dy[f]);
+      if (mode === "christmas") {
+        image(snowflake, 0, 0, 20, 20);
+      }
+      imageMode(CORNER);
+      rotate(-dy[f]);
+      translate(-dx[f], -dy[f]);
+      dx[f]--;
+      dy[f]++;
+      if (dx[f] <= -10) {
+        dx[f] = width + 10;
+      }
+      if (dy[f] >= 610) {
+        dy[f] = -10;
+      }
+    }
+    timer++;
+  }
+  if (player.health < 1 && gamePlaying == true) {
+    deathTimer++;
+    fill(255, 0, 0);
+    textSize(30);
+    text("You're " + food, 200, 300, 400, 300);
+  }
+  if (walkFrame === 8 && walkTimer === 4 && player.keys[2] === true) {
+    walkFrame = 1;
+    walkTimer = 0;
+  }
+  if (walkFrame === 1 && walkTimer === -4 && player.keys[0] === true) {
+    walkFrame = 8;
+    walkTimer = 0;
+  }
+  if (walkTimer > 4) {
+    walkFrame++;
+    walkTimer = 0;
+  }
+  if (walkTimer < -4) {
+    walkFrame--;
+    walkTimer = 0;
+  }
+  if (player.keys[0] === true && player.health > 0) {
+    walkTimer--;
+  }
+  if (player.keys[2] === true && player.health > 0) {
+    walkTimer++;
+  }
+  if (gameVolume < 0) {
+    gameVolume = 0;
+  }
+  if (gameVolume > 200) {
+    gameVolume = 200;
+  }
+  if (level === levels.length) {
+    fill(100, 200, 200);
+    rect(0, 0, 600, 600);
+    fill(255, 0, 0);
+    rect(20, 20, 80, 40, 5);
+    textSize(40);
+    text("YOU WIN", 40, 100);
+    textSize(20);
+    text(
+      "With a total of " +
+        score +
+        " humans killed and a run time of " +
+        speedRunTimerSec +
+        "." +
+        speedRunTimerMil +
+        " seconds",
+      40,
+      150,
+      520,
+      300
+    );
+    speedRunTimerMil--;
+    fill(0, 0, 0);
+    text("EXIT", 30, 50);
+    player.camX = -30;
+    if (score >= 20) {
+      trophiesOwned[2] = true;
+    }
+    if (score >= 30 && month() === 10) {
+      trophiesOwned[5] = true;
+      ownedSkins[3] = true;
+      storeItem("skins", ownedSkins);
+    }
+    if (speedRunTimerSec <= 30) {
+      trophiesOwned[3] = true;
+    }
+    if (score === 0) {
+      trophiesOwned[1] = true;
+    }
+    if (score === 0 && month() === 12) {
+      trophiesOwned[6] = true;
+      ownedSkins[4] = true;
+      storeItem("skins", ownedSkins);
+    }
+    storeItem("myTrophies", trophiesOwned);
+    if (speedRunTimerSec + speedRunTimerMil / 10 > highScore) {
+      highScore = speedRunTimerSec + speedRunTimerMil / 10;
+    }
+    if (
+      mouseIsPressed &&
+      mouseX > 20 &&
+      mouseX < 100 &&
+      mouseY > 20 &&
+      mouseY < 60
+    ) {
+      score = 0;
+      speedRunTimerSec = 0;
+      speedRunTimerMil = 0;
+      level = 1;
+      gamePlaying = false;
+      player.spawnX = 200;
+      player.spawnY = 200;
+      timer = 0;
+      player.respawn = true;
+      //player.camX = -30;
+    }
+  }
+  inputCode.show();
+  if(gamePlaying == true || scene !== 0) {
+    inputCode.hide();
+  }
+  if (gamePlaying === true) {
+    textSize(20);
+    fill(0);
+    text(coins, 380, 50);
+    image(coin, 355, 28, 30, 30);
+    if (splatSound.isPlaying === true) {
+      speedRunTimerMil--;
+    }
+    speedRunTimerMil++;
+    if (speedRunTimerMil > 60) {
+      speedRunTimerSec++;
+      speedRunTimerMil = 0;
+    }
+  }
+  if (soundWanted === true && !themeSong.isPlaying() && gamePlaying === false) {
+    themeSong.play();
+    pianoTheme.stop();
+    soundPlaying = true;
+  }
+  if (
+    soundWanted === true &&
+    !pianoTheme.isPlaying() &&
+    gamePlaying === true &&
+    player.health > 0
+  ) {
+    themeSong.stop();
+    pianoTheme.play();
+  }
+  if (
+    mouseIsPressed &&
+    mouseX > 20 &&
+    mouseX < 100 &&
+    mouseY > 20 &&
+    mouseY < 60 &&
+    gamePlaying === true
+  ) {
+    gamePlaying = false;
+  }
+  textSize(width / 30);
+  fill(255, 255, 255);
+  text("Made by Wet Takis Games", 20, 570);
+  if (mode === "halloween") {
+    fill(255, 255, 255);
+  }
+  if (mode === "christmas") {
+    fill(0, 0, 0);
+  }
+  if (mode === "classic" || gamePlaying !== true) {
+    fill(0);
+  }
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
+  if (keyCode === 123 || (k[0] === true && k[1] === true && k[2] === true)) {
+    //hacker = true;
+    storeItem("hacker", hacker);
+  }
+  if (hacker === true) {
+    coins = 0;
+    storeItem("coins", coins);
+    ownedSkins = [true, false, false, false, false, false];
+    storeItem("skins", ownedSkins);
+    trophiesOwned = [false, false, false, false, false, false];
+    storeItem("myTrophies", trophiesOwned);
+    accepting = false;
+  }
+  if(player.health <= 1 && gamePlaying === true) {
+    fill(255, 0, 0);
+    stroke(0);
+    rect(240, 20, 100, 40, 5);
+    fill(0);
+    textSize(20);
+    text("RESPAWN", 250, 48);
+    if(mouseIsPressed && mouseX >= 240 && mouseX <= 340 && mouseY >= 20 && mouseY <= 60) {
+      level = 1;
+      timer = 0;
+      player.x = 60;
+      player.y = 180;
+      pubertyLove.stop();
+      player.health = 10;
+      gamePlaying = true;
+      walkFrame = 4;
+      speedRunTimerSec = 0;
+      speedRunTimerMil = 0;
+      score = 0;
+    }
+  }
+};
