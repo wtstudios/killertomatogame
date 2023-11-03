@@ -340,12 +340,6 @@ function setup() {
     ownedSkins = getItem("skins");
   }
   storeItem("skins", ownedSkins);
-  if (month() === 10) {
-    mode = "halloween";
-  }
-  if (month() === 12) {
-    mode = "christmas";
-  }
   skinsPfp = [
     tomato1,
     boosterbase1,
