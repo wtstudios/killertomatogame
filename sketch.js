@@ -1,6 +1,3 @@
-// omg! you are so cool!
-// this just makes you so much cooler than you already are, sitting on your fat ass "hacking". Get a life!
-// have fun!
 var hacker;
 let spring;
 let impact; 
@@ -319,11 +316,11 @@ function setup() {
   hacker = false;
   if (getItem("hacker") === null) {
     hacker = false;
-    storeItem("hacker", hacker);
+    //storeItem("hacker", hacker);
   }
   if (getItem("hacker") !== null) {
     hacker = getItem("hacker");
-    storeItem("hacker", hacker);
+    //storeItem("hacker", hacker);
   }
   if (getItem("number") === null) {
     num = 0;
@@ -1574,7 +1571,7 @@ draw = function () {
   }
   textSize(width / 30);
   fill(255, 255, 255);
-  text("Made by Wet Takis Games", 20, 570);
+  text("Made by Henry MacDougall", 20, 570);
   if (mode === "halloween") {
     fill(255, 255, 255);
   }
@@ -1587,9 +1584,9 @@ draw = function () {
   document.addEventListener("contextmenu", (event) => event.preventDefault());
   if (keyCode === 123 || (k[0] === true && k[1] === true && k[2] === true)) {
     //hacker = true;
-    storeItem("hacker", hacker);
+    //storeItem("hacker", hacker);
   }
-  if (hacker === true) {
+/*  if (hacker === true) {
     coins = 0;
     storeItem("coins", coins);
     ownedSkins = [true, false, false, false, false, false];
@@ -1597,7 +1594,7 @@ draw = function () {
     trophiesOwned = [false, false, false, false, false, false];
     storeItem("myTrophies", trophiesOwned);
     accepting = false;
-  }
+  }*/
   if(player.health <= 1 && gamePlaying === true) {
     fill(255, 0, 0);
     stroke(0);
